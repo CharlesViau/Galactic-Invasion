@@ -9,7 +9,7 @@ public class Gravity : MonoBehaviour
     {
         if (collider.CompareTag("Enemy"))
         {
-            collider.gameObject.GetComponent<Enemy>().UpdateGravityCenter(transform, gravityForce);
+            //collider.gameObject.GetComponent<Enemy>().UpdateGravityCenter(transform.position, gravityForce);
         }
     }
 }

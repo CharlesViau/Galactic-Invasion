@@ -3,11 +3,17 @@ using System.Collections.Generic;
 using TreeEditor;
 using UnityEngine;
 
-public class Orbit : MonoBehaviour
+public class Orbit : MonoBehaviour, IGravity
 {
     [SerializeField] private float orbitSpeed;
     [SerializeField] private float timeUntilDestroy;
+    
+    private Vector3 centerPosition;
 
+    private void Start()
+    {
+        centerPosition = transform.position;
+    }
     private void Update()
     {
         if (timeUntilDestroy <= 0)
@@ -22,7 +28,12 @@ public class Orbit : MonoBehaviour
     {
         if (collider.CompareTag("Enemy"))
         {
-            collider.gameObject.GetComponent<Enemy>().EnterOrbit(transform.position, timeUntilDestroy, orbitSpeed);
+            collider.gameObject.GetComponent<Enemy>().ChangeGravity(this);
         }
+    }
+    
+    public void Affect(Transform enemyTransform)
+    {
+        enemyTransform.RotateAround(centerPosition, Vector3.forward, orbitSpeed * Time.deltaTime);
     }
 }

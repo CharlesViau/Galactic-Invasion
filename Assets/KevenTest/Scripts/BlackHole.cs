@@ -6,7 +6,7 @@ public class BlackHole : MonoBehaviour
 {
     [SerializeField] private int numberOfEnemies;
 
-    public void AbsorbEnemy()
+    private void AbsorbEnemy()
     {
         numberOfEnemies -= 1;
         if (numberOfEnemies <= 0)

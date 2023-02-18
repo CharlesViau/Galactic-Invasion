@@ -1,28 +1,25 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using UnityEngine;
+using Quaternion = UnityEngine.Quaternion;
+using Vector3 = UnityEngine.Vector3;
 
 public class Enemy : MonoBehaviour
 {
-    private Transform gravityCenter;
-    private Transform baseGravityCenter;
-    private bool isInOrbit;
-    private float orbitTimer;
-    private Vector3 orbitCenterPoint;
-    private float orbitSpeed;
+    private Vector3 baseGravityCenter;
+    private Rigidbody rb;
 
     [SerializeField] private Vector3 rotationSpeed;
     [SerializeField] private float gravityStrength = 3f;
     
     public int damage;
-
-    private Rigidbody rb;
+    public IGravity gravity;
 
     void Awake()
     {
-        baseGravityCenter = GameObject.Find("MotherBase").transform;
-        gravityCenter = baseGravityCenter;
+        baseGravityCenter = GameObject.Find("MotherBase").transform.position;
     }
     void Start()
     {
@@ -32,9 +29,9 @@ public class Enemy : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (isInOrbit)
+        if (gravity != null)
         {
-            InOrbit();
+            gravity.Affect(transform);
         }
         else
         {
@@ -42,42 +39,15 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void UpdateGravityCenter(Transform newGravityCenter, float newGravityStrength)
+    public void ChangeGravity(IGravity newGravity)
     {
-        gravityCenter = newGravityCenter;
-        gravityStrength = newGravityStrength;
-    }
-
-    public void EnterOrbit(Vector3 position, float timer, float speed)
-    {
-        isInOrbit = true;
-        orbitTimer = timer;
-        orbitCenterPoint = position;
-        orbitSpeed = speed;
+        gravity = newGravity;
         rb.velocity = Vector3.zero;
-    }
-
-    private void InOrbit()
-    {
-        orbitTimer -= Time.deltaTime;
-        if (orbitTimer <= 0)
-        {
-            gravityCenter = baseGravityCenter;
-            isInOrbit = false;
-        }
-        else
-        {
-            transform.RotateAround(orbitCenterPoint, Vector3.forward, orbitSpeed * Time.deltaTime);
-        }
     }
 
     private void InGravity()
     {
-        if (!gravityCenter)
-        {
-            gravityCenter = baseGravityCenter;
-        }
-        Vector3 direction = (gravityCenter.position - transform.position).normalized;
+        Vector3 direction = (baseGravityCenter - transform.position).normalized;
         Vector3 gravityForce = direction * gravityStrength;
         rb.AddForce(gravityForce);
     }
