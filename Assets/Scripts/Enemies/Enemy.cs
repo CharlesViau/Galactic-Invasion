@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
+using System.Security.Cryptography;
 using Planets;
 using UnityEngine;
 using Quaternion = UnityEngine.Quaternion;
@@ -9,14 +10,15 @@ using Vector3 = UnityEngine.Vector3;
 
 public class Enemy : MonoBehaviour
 {
+    public int damage;
+    
+    [SerializeField] private Vector3 rotationSpeed;
+    [SerializeField] private float gravityStrength = 3f;
+    [SerializeField] private int hp;
+    
     private Vector3 baseGravityCenter;
     private Rigidbody rb;
     private bool isAffected;
-
-    [SerializeField] private Vector3 rotationSpeed;
-    [SerializeField] private float gravityStrength = 3f;
-    
-    public int damage;
     private Gravity gravity;
 
     void Awake()
@@ -47,6 +49,13 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    private void InGravity()
+    {
+        Vector3 direction = (baseGravityCenter - transform.position).normalized;
+        Vector3 gravityForce = direction * gravityStrength;
+        rb.AddForce(gravityForce);
+    }
+    
     public void ChangeGravity(Gravity newGravity)
     {
         gravity = newGravity;
@@ -54,10 +63,13 @@ public class Enemy : MonoBehaviour
         isAffected = true;
     }
 
-    private void InGravity()
+    public void Hit(int damage)
     {
-        Vector3 direction = (baseGravityCenter - transform.position).normalized;
-        Vector3 gravityForce = direction * gravityStrength;
-        rb.AddForce(gravityForce);
+        hp -= damage;
+        if (hp <= 0)
+        {
+            //animation?
+            Destroy(gameObject);
+        }
     }
 }
