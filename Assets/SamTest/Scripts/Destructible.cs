@@ -21,6 +21,11 @@ public class Destructible : MonoBehaviour
 
     private void OnMouseDown()
     {
+        FractureObject();
+    }
+
+    private void FractureObject()
+    {
         Instantiate(fracturedPlanet, transform.position, transform.rotation);
         Destroy(gameObject);
     }
