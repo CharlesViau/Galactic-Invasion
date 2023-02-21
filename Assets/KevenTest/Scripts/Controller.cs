@@ -16,7 +16,7 @@ public class Controller : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKey(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             if (GetWorldPosition() != Vector3.zero)
             {
@@ -24,7 +24,7 @@ public class Controller : MonoBehaviour
             }
         }
 
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             if (GetWorldPosition() != Vector3.zero)
             {
