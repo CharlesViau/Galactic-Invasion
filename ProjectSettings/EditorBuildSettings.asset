@@ -5,7 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/KevenTest/KevenProtoype1.unity
     guid: 8fdf51bb02bfd85428de4ad151f510c1
+  - enabled: 1
+    path: Assets/AntoineTest/PrototypeAnimMain.unity
+    guid: ee219899e6f98ff45a82a2464cd8d789
   m_configObjects: {}
