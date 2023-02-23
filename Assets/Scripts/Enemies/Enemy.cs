@@ -21,11 +21,11 @@ public class Enemy : MonoBehaviour
 
     void Awake()
     {
+        rb = GetComponent<Rigidbody>();
         baseGravityCenter = GameObject.Find("MotherBase").transform.position;
     }
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
         rb.angularVelocity = rotationSpeed;
         isAffected = false;
     }

@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
@@ -10,10 +7,10 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private float spawnCooldown;
 
     private float time;
-
+    
     private void Start()
     {
-        time = 0;
+        //Play animation
     }
 
     private void FixedUpdate()
