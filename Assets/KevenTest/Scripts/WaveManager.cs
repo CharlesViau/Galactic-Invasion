@@ -9,14 +9,27 @@ public class WaveManager : MonoBehaviour
 
     [SerializeField] private short numberOfSpawner;
 
-    [SerializeField] private float distanceFromOrigin;
+    [SerializeField] private float portalDistanceFromOrigin;
+
+    [SerializeField] private float scaling;
+
+    [SerializeField] private int waveCost;
+
+    [SerializeField] private float timeBetweenWaves;
+
+    private float time;
 
     private int numberOfDegreesBetweenSpawners;
 
     private List<int> spawnOrder;
+
+    private int currentWave;
+
+    private List<EnemySpawner> spawnerList;
     
     private void Start()
     {
+        spawnerList = new List<EnemySpawner>();
         spawnOrder = new List<int>();
         numberOfDegreesBetweenSpawners = 360 / numberOfSpawner;
         for (int i = 0; i < numberOfSpawner; i++)
@@ -24,42 +37,65 @@ public class WaveManager : MonoBehaviour
             spawnOrder.Add(numberOfDegreesBetweenSpawners * i);
         }
         Shuffle();
-        newSpawner();
+        NewSpawner();
+        NewSpawner();
+        GameStart();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        time += Time.deltaTime;
+
+        if (time >= timeBetweenWaves)
         {
-            newSpawner();
+            NextWave();
+            time = 0;
         }
     }
+    
     private void GameStart()
     {
-        
+        currentWave = 1;
+        NextWave();
     }
 
     private void NextWave()
     {
-        
+        if (currentWave % 5 == 0)
+        {
+            NewSpawner();
+        }
+        currentWave++;
+        PickEnemies();
     }
 
     private void PickEnemies()
     {
-        
+        waveCost = Mathf.FloorToInt(waveCost * scaling);
+
+        for (int i = 0; i < waveCost; i++)
+        {
+            GetRandomSpawner().AddEnemy();
+        }
     }
 
-    private void newSpawner()
+    private void NewSpawner()
     {
         if (spawnOrder.Count > 0)
         {
             Vector3 v = Quaternion.AngleAxis(spawnOrder[0], Vector3.forward) * Vector3.up;
             Ray ray = new Ray(Vector3.zero, v);
 
-            Instantiate(spawnerPrefab, ray.GetPoint(distanceFromOrigin), Quaternion.identity);
+            EnemySpawner spawner = Instantiate(spawnerPrefab, ray.GetPoint(portalDistanceFromOrigin), Quaternion.identity);
+            spawnerList.Add(spawner);
             
             spawnOrder.RemoveAt(0);
         }
+    }
+
+    private EnemySpawner GetRandomSpawner()
+    {
+        return spawnerList[Random.Range(0, spawnerList.Count)];
     }
     
     private void Shuffle()
@@ -69,9 +105,9 @@ public class WaveManager : MonoBehaviour
         while (n > 1) {  
             n--;  
             int k = rng.Next(n + 1);  
-            int value = spawnOrder[k];  
-            spawnOrder[k] = spawnOrder[n];  
-            spawnOrder[n] = value;  
+            int value = spawnOrder[k];
+            spawnOrder[k] = spawnOrder[n];
+            spawnOrder[n] = value;
         }  
     }
 }
