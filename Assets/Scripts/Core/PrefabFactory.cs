@@ -88,7 +88,7 @@ namespace Core
     public abstract class ConstructionArgs
     {
         // ReSharper disable once MemberCanBePrivate.Global
-        public Vector3 spawningPosition;
+        public Vector3 spawningPosition { get; }
 
         protected ConstructionArgs(Vector3 spawningPosition)
         {

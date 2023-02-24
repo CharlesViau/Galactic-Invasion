@@ -1,3 +1,4 @@
+using Enemies;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
@@ -36,6 +37,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void Spawn()
     {
-        Instantiate(enemy, transform.position, transform.rotation);
+        // ReSharper disable once Unity.InefficientPropertyAccess
+        EnemyManager.Instance.Create(EnemyTypes.Asteroid, new Enemy.Args(transform.position, transform.rotation));
     }
 }
