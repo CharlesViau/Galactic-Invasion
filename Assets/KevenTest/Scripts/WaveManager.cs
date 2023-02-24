@@ -81,6 +81,7 @@ public class WaveManager : MonoBehaviour
 
     private void NewSpawner()
     {
+        //After X spawner spawned, the next will be closer
         if (spawnOrder.Count > 0)
         {
             Vector3 v = Quaternion.AngleAxis(spawnOrder[0], Vector3.forward) * Vector3.up;

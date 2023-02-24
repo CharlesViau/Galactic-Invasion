@@ -7,6 +7,7 @@ namespace Planets
     public class Spiral : Gravity
     {
         [SerializeField] private float gravityForce;
+        [SerializeField] private float spiralForce;
         private Vector3 centerPosition;
     
         private void Start()
@@ -24,7 +25,7 @@ namespace Planets
         public override void Affect(Transform enemyTransform)
         {
             Vector3 direction = centerPosition - enemyTransform.position;
-            direction = Quaternion.Euler(0, 0, 60) * direction;
+            direction = Quaternion.Euler(0, 0, spiralForce) * direction;
             float distanceThisFrame = gravityForce * Time.deltaTime;
         
             enemyTransform.Translate(direction.normalized * distanceThisFrame, Space.World);
