@@ -105,6 +105,9 @@ namespace Enemies
             gameObject.SetActive(true);
             rb.velocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
+            gravity = null;
+            rb.angularVelocity = rotationSpeed;
+            isAffected = false;
         }
     }
 }
