@@ -132,8 +132,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 508667004432ac94dacb76839f862ba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectionRange: 150
-  attackSpeed: 1
+  detectionRange: 80
+  attackSpeed: 1.5
   types: 0
   projectileType: 0
   projectileDamage: 100

@@ -10,11 +10,11 @@ namespace Enemies
     public class Enemy : MonoBehaviour, ICreatable<Enemy.Args>, IPoolable, IHittable
     {
         public int damage;
-    
+
         [SerializeField] private Vector3 rotationSpeed;
         [SerializeField] private float gravityStrength = 3f;
         [SerializeField] private int hp;
-    
+
         private Vector3 baseGravityCenter;
         private Rigidbody rb;
         private bool isAffected;
@@ -25,6 +25,7 @@ namespace Enemies
             rb = GetComponent<Rigidbody>();
             baseGravityCenter = GameObject.Find("MotherBase").transform.position;
         }
+
         void Start()
         {
             rb.angularVelocity = rotationSpeed;
@@ -44,6 +45,7 @@ namespace Enemies
                     rb.velocity = Vector3.zero;
                     isAffected = false;
                 }
+
                 InGravity();
             }
         }
@@ -54,7 +56,7 @@ namespace Enemies
             Vector3 gravityForce = direction * gravityStrength;
             rb.AddForce(gravityForce);
         }
-    
+
         public void ChangeGravity(Gravity newGravity)
         {
             gravity = newGravity;
@@ -70,10 +72,11 @@ namespace Enemies
                 EnemyManager.Instance.Pool(this);
             }
         }
-    
-        public class Args: ConstructionArgs
+
+        public class Args : ConstructionArgs
         {
             public Quaternion? spawningRotation;
+
             public Args(Vector3 spawningPosition, Quaternion? spawningRotation = null) : base(spawningPosition)
             {
                 this.spawningRotation = spawningRotation;
@@ -90,8 +93,8 @@ namespace Enemies
         }
 
         public ValueType ValueType => _type;
-        [SerializeField]
-        private EnemyTypes _type;
+        [SerializeField] private EnemyTypes _type;
+
         public void Pool()
         {
             gameObject.SetActive(false);
@@ -100,6 +103,8 @@ namespace Enemies
         public void Depool()
         {
             gameObject.SetActive(true);
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
         }
     }
 }
