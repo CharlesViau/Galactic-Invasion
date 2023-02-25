@@ -8,6 +8,7 @@ using UnityEngine.Serialization;
 
 namespace Projectiles
 {
+    [RequireComponent(typeof(Rigidbody))]
     public class Projectile : MonoBehaviour, ICreatable<Projectile.Args>, IPoolable
     {
         [SerializeField] private ProjectileTypes type;

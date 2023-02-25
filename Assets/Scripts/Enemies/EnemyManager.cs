@@ -1,5 +1,6 @@
 using Core;
 using UnityEngine;
+using UnityEngine.Scripting;
 
 namespace Enemies
 {
@@ -7,6 +8,7 @@ namespace Enemies
     {
         protected override string PrefabLocation => "Prefabs/Enemies/";
         
+        [Preserve]
         public Transform GetClosest(Transform currentPosition, float range)
         {
             Transform transform = null;

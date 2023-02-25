@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Projectiles.Projectile_SO_Behaviours.Movement
 {
-    [CreateAssetMenu(fileName = "StraightMovement", menuName = "ScriptableObjects/Projectiles/Movement/Straight")]
+    [CreateAssetMenu(fileName = "StraightMovement", menuName = "ScriptableObjects/Projectiles/MovementBehaviour/Straight")]
 
     public class MovementStraightSo : MovementSo
     {

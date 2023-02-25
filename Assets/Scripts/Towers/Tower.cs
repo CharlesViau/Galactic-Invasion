@@ -95,13 +95,11 @@ namespace Towers
         private void Update()
         {
             _timer += Time.deltaTime;
-
-            if (_target is null || IsTargetOutOfRange())
-            {
-                _target = Helper.Helper.GetClosetInRange(typeof(EnemyManager), transform, detectionRange);
+            
+            _target = Helper.Helper.GetClosetInRange(typeof(EnemyManager), transform, detectionRange);
+            if (_target)
                 _targetRb = _target.GetComponent<Rigidbody>();
-            }
-
+            
             if (_timer > attackSpeed && _target)
             {
                 OnFire?.Invoke(_target);

@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Projectiles.Projectile_SO_Behaviours.Collision
 {
-    [CreateAssetMenu(fileName = "OnCollision", menuName = "ScriptableObjects/OnCollision/HitObject")]
+    [CreateAssetMenu(fileName = "OnCollision", menuName = "ScriptableObjects/Projectiles/OnCollisionBehaviour/HitObject")]
     public class DoSingleTargetDamage : OnCollisionSo
     {
         public override void OnEnterCollision(Vector3 position, GameObject collisionObject, bool isPlayerOwner)

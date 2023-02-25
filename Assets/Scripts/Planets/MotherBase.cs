@@ -27,7 +27,7 @@ namespace Planets
             if (collider.CompareTag("Enemy"))
             {
                 ReceiveDamage(collider.gameObject.GetComponent<Enemy>().damage);
-                Destroy(collider.gameObject);
+                EnemyManager.Instance.Pool(collider.gameObject.GetComponent<Enemy>());
             }
         }
     }

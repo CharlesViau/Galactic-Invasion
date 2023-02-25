@@ -1,4 +1,5 @@
 using Enemies;
+using Interfaces;
 using UnityEngine;
 
 namespace KevenTest.Scripts
@@ -25,7 +26,7 @@ namespace KevenTest.Scripts
         {
             if (collider.CompareTag("Enemy"))
             {
-                collider.gameObject.GetComponent<Enemy>().Hit(projectileDamage);
+                collider.gameObject.GetComponent<IHittable>().TakeDamage(projectileDamage);
             }
         }
     }

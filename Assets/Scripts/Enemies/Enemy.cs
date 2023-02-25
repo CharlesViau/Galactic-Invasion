@@ -62,22 +62,12 @@ namespace Enemies
             isAffected = true;
         }
 
-        public void Hit(int damage)
-        {
-            hp -= damage;
-            if (hp <= 0)
-            {
-                //animation?
-                Destroy(gameObject);
-            }
-        }
-        
         public void TakeDamage(int _damage)
         {
             hp -= _damage;
             if (hp <= 0)
             {
-                Pool();
+                EnemyManager.Instance.Pool(this);
             }
         }
     

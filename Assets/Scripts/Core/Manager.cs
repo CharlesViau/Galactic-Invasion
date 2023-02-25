@@ -530,7 +530,12 @@ namespace Core
             //Factory
             if (string.IsNullOrEmpty(PrefabLocation))
                 Debug.LogError("The PrefabLocation Property of " + typeof(M) + " has not been set");
-            else m_prefabFactory = new PrefabFactory<T, E, A>(PrefabLocation);
+            else
+            {
+                m_prefabFactory = new PrefabFactory<T, E, A>(PrefabLocation);
+                m_prefabFactory.Init();
+            }
+            
 
             //ObjectPool
             m_pool = new ObjectPool();
