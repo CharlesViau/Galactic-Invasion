@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] private Enemy enemy;
-
     [SerializeField] private float spawnCooldown;
 
     private int numberOfEnemiesToSpawn;

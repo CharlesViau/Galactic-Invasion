@@ -37,6 +37,7 @@ public class WaveManager : MonoBehaviour
             spawnOrder.Add(numberOfDegreesBetweenSpawners * i);
         }
         Shuffle();
+        StartingSpawner();
         NewSpawner();
         NewSpawner();
         GameStart();
@@ -81,7 +82,11 @@ public class WaveManager : MonoBehaviour
 
     private void NewSpawner()
     {
-        //After X spawner spawned, the next will be closer
+        //After X spawner spawned, the next will be closer?
+        
+        //2, 3 hardcoded spawner?
+        
+        //Divise world in 4, lock one part when spawner is spawned in it
         if (spawnOrder.Count > 0)
         {
             Vector3 v = Quaternion.AngleAxis(spawnOrder[0], Vector3.forward) * Vector3.up;
@@ -110,5 +115,23 @@ public class WaveManager : MonoBehaviour
             spawnOrder[k] = spawnOrder[n];
             spawnOrder[n] = value;
         }  
+    }
+
+    private void StartingSpawner()
+    {
+        for (int i = 0; i < spawnOrder.Count; i++)
+        {
+            if (spawnOrder[i] == 0)
+            {
+                int tmp = spawnOrder[0];
+                spawnOrder[0] = 0;
+                spawnOrder[i] = tmp;
+            } else if (spawnOrder[i] == 180)
+            {
+                int tmp = spawnOrder[1];
+                spawnOrder[1] = 180;
+                spawnOrder[i] = tmp;
+            }
+        }
     }
 }
