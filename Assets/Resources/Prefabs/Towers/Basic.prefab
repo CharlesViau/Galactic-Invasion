@@ -133,11 +133,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectionRange: 80
-  attackSpeed: 1.5
+  attackSpeed: 1
   types: 0
   projectileType: 0
-  projectileDamage: 100
-  projectileSpeed: 100
+  projectileDamage: 1
+  projectileSpeed: 150
   head: {fileID: 3876166120045188934}
   barrel: {fileID: 3876166119782737240}
   particlePosition: {fileID: 0}

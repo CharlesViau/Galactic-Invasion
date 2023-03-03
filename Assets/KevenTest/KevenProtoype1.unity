@@ -180,7 +180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6579477894108802469, guid: 18d1d6654e6904249bc0aab1c2cdeefb, type: 3}
       propertyPath: scaling
-      value: 2
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 6579477894108802469, guid: 18d1d6654e6904249bc0aab1c2cdeefb, type: 3}
       propertyPath: fastCost
@@ -192,7 +192,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6579477894108802469, guid: 18d1d6654e6904249bc0aab1c2cdeefb, type: 3}
       propertyPath: waveCost
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6579477894108802469, guid: 18d1d6654e6904249bc0aab1c2cdeefb, type: 3}
       propertyPath: normalCost
