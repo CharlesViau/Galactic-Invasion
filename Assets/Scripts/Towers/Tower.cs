@@ -52,7 +52,7 @@ namespace Towers
         private Transform _target;
         private float _timer = 0;
         private int _detectionRangePow2;
-        private Rigidbody _targetRb;
+        private Enemy _targetRb;
 
         #endregion
 
@@ -98,7 +98,7 @@ namespace Towers
             
             _target = Helper.Helper.GetClosetInRange(typeof(EnemyManager), transform, detectionRange);
             if (_target)
-                _targetRb = _target.GetComponent<Rigidbody>();
+                _targetRb = _target.GetComponent<Enemy>();
             
             if (_timer > attackSpeed && _target)
             {

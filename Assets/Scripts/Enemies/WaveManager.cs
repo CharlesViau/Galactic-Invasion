@@ -89,10 +89,10 @@ namespace Enemies
             int numberOfSlow = Mathf.FloorToInt((waveCost * slowPercentage) / slowCost);
             int numberOfNormal = Mathf.FloorToInt((waveCost - ((numberOfFast * fastCost) + (numberOfSlow * slowCost))) / normalCost);
             
-            Debug.Log("WaveCost: " + waveCost);
+            /*Debug.Log("WaveCost: " + waveCost);
             Debug.Log("Number of fast: " + numberOfFast);
             Debug.Log("Number of slow: " + numberOfSlow);
-            Debug.Log("Number of Normal: " + numberOfNormal);
+            Debug.Log("Number of Normal: " + numberOfNormal);*/
 
             List<EnemyTypes> enemies = new List<EnemyTypes>();
 

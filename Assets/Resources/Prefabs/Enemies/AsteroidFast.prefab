@@ -21,15 +21,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5579880205299032133, guid: 2456605474f76a5488336858eaaeb42e, type: 3}
       propertyPath: rotationSpeed.x
-      value: 4
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5579880205299032133, guid: 2456605474f76a5488336858eaaeb42e, type: 3}
       propertyPath: rotationSpeed.y
-      value: 4
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5579880205299032133, guid: 2456605474f76a5488336858eaaeb42e, type: 3}
       propertyPath: rotationSpeed.z
-      value: 4
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7150698189766456568, guid: 2456605474f76a5488336858eaaeb42e, type: 3}
       propertyPath: m_RootOrder
