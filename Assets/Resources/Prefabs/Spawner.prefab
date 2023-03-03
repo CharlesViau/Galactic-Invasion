@@ -45,8 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0bf7fd813e5230439b0e2540847308c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 5579880205299032133, guid: 2456605474f76a5488336858eaaeb42e, type: 3}
-  spawnCooldown: 2
+  spawnCooldown: 1
 --- !u!33 &6686647067354919045
 MeshFilter:
   m_ObjectHideFlags: 0
