@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: 91b54cc564f7327478dd15109d59a35a
+  - enabled: 1
     path: Assets/KevenTest/KevenProtoype1.unity
     guid: 8fdf51bb02bfd85428de4ad151f510c1
   m_configObjects: {}
