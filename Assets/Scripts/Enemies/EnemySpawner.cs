@@ -1,43 +1,42 @@
+using System.Collections.Generic;
 using Enemies;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] private Enemy enemy;
-
     [SerializeField] private float spawnCooldown;
 
-    private int numberOfEnemiesToSpawn;
+    private List<EnemyTypes> enemyQueue;
 
     private float time;
     
-    private void Start()
+    private void Awake()
     {
-        //Play animation
+        enemyQueue = new List<EnemyTypes>();
     }
 
     private void FixedUpdate()
     {
-        if (numberOfEnemiesToSpawn > 0)
+        if (enemyQueue.Count > 0)
         {
             time += Time.deltaTime;
             if (time >= spawnCooldown)
             {
                 time = 0;
-                Spawn();
-                numberOfEnemiesToSpawn -= 1;
+                Spawn(enemyQueue[0]);
+                enemyQueue.RemoveAt(0);
             }
         }
     }
 
-    public void AddEnemy()
+    public void AddEnemy(EnemyTypes type)
     {
-        numberOfEnemiesToSpawn++;
+        enemyQueue.Add(type);
     }
 
-    private void Spawn()
+    private void Spawn(EnemyTypes type)
     {
         // ReSharper disable once Unity.InefficientPropertyAccess
-        EnemyManager.Instance.Create(EnemyTypes.Asteroid, new Enemy.Args(transform.position, transform.rotation));
+        EnemyManager.Instance.Create(type, new Enemy.Args(transform.position, transform.rotation));
     }
 }

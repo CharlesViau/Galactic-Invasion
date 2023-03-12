@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Enemies;
 using UnityEngine;
 
 namespace Planets
@@ -24,7 +25,7 @@ namespace Planets
             if (collider.CompareTag("Enemy"))
             {
                 AbsorbEnemy();
-                Destroy(collider.gameObject);
+                EnemyManager.Instance.Pool(collider.gameObject.GetComponent<Enemy>());
             }
         }
     }

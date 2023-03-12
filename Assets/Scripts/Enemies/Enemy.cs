@@ -10,30 +10,31 @@ namespace Enemies
     public class Enemy : MonoBehaviour, ICreatable<Enemy.Args>, IPoolable, IHittable
     {
         public int damage;
+        [NonSerialized] public Vector3 velocity;
 
         [SerializeField] private Vector3 rotationSpeed;
         [SerializeField] private float gravityStrength = 3f;
         [SerializeField] private int hp;
 
         private Vector3 baseGravityCenter;
-        private Rigidbody rb;
         private bool isAffected;
         private Gravity gravity;
 
+
         void Awake()
         {
-            rb = GetComponent<Rigidbody>();
             baseGravityCenter = GameObject.Find("MotherBase").transform.position;
         }
 
         void Start()
         {
-            rb.angularVelocity = rotationSpeed;
+            velocity = Vector3.zero;
             isAffected = false;
         }
 
         private void FixedUpdate()
         {
+            transform.Rotate(rotationSpeed * Time.deltaTime);
             if (gravity != null)
             {
                 gravity.Affect(transform);
@@ -42,7 +43,7 @@ namespace Enemies
             {
                 if (isAffected)
                 {
-                    rb.velocity = Vector3.zero;
+                    velocity = Vector3.zero;
                     isAffected = false;
                 }
 
@@ -54,13 +55,13 @@ namespace Enemies
         {
             Vector3 direction = (baseGravityCenter - transform.position).normalized;
             Vector3 gravityForce = direction * gravityStrength;
-            rb.AddForce(gravityForce);
+            velocity = velocity + (gravityForce * Time.deltaTime);
+            transform.position = transform.position + (velocity * Time.deltaTime) + ((gravityForce/2) * (Mathf.Pow(Time.deltaTime, 2 )));
         }
 
         public void ChangeGravity(Gravity newGravity)
         {
             gravity = newGravity;
-            rb.velocity = Vector3.zero;
             isAffected = true;
         }
 
@@ -103,8 +104,9 @@ namespace Enemies
         public void Depool()
         {
             gameObject.SetActive(true);
-            rb.velocity = Vector3.zero;
-            rb.angularVelocity = Vector3.zero;
+            velocity = Vector3.zero;
+            gravity = null;
+            isAffected = false;
         }
     }
 }

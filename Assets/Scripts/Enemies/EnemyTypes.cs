@@ -2,6 +2,8 @@ namespace Enemies
 {
     public enum EnemyTypes
     {
-        Asteroid
+        Asteroid,
+        AsteroidFast,
+        AsteroidSlow
     }
 }
