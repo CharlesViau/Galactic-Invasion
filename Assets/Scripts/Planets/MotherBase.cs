@@ -9,8 +9,12 @@ namespace Planets
 {
     public class MotherBase : MonoBehaviour
     {
+        [SerializeField] private List<GameObject> shields;
         [SerializeField] private int hp;
-    
+        
+        //TODO replace this with actual shield reference
+        private int nextShield = 0;
+
         private void ReceiveDamage(int dmg)
         {
             hp -= dmg;
@@ -19,6 +23,15 @@ namespace Planets
             {
                 Debug.Log("Game over");
                 //Game over
+            }
+        }
+
+        public void spawnShield(Vector3 position)
+        {
+            if (nextShield < shields.Count)
+            {
+                shields[nextShield].SetActive(true);
+                nextShield++;
             }
         }
     
