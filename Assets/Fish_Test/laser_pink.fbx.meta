@@ -3,7 +3,12 @@ guid: ec9344cce8e3de843a9e36bad1d4666c
 ModelImporter:
   serializedVersion: 21100
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glow_pink
+    second: {fileID: 2100000, guid: bcafa72a824118846987e3d8b3258e55, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
