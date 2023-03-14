@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: heatDistortion
+  m_Name: heatDistortionMaterial
   m_Shader: {fileID: -6465566751694194690, guid: cb64c02305a146646aa750f342ac0a5c, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
