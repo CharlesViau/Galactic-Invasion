@@ -101,7 +101,7 @@ public class Player : MonoBehaviour
             Debug.LogError("API request failed: " + request.error);
     }
 
-    private static IEnumerator PostRequestAuth(string url, string body, string token, Action<bool> callback)
+    private static IEnumerator PostRequestAuth(string url, string body, string token, Action<string> callback)
     {
         var request = new UnityWebRequest(url, "POST");
         var bodyRaw = Encoding.UTF8.GetBytes(body);
@@ -109,12 +109,13 @@ public class Player : MonoBehaviour
         request.SetRequestHeader("Authorization", "Bearer " + token);
         request.SetRequestHeader("Content-Type", "application/json");
         request.uploadHandler = new UploadHandlerRaw(bodyRaw);
+        request.downloadHandler = new DownloadHandlerBuffer();
 
         yield return request.SendWebRequest();
 
         if (request.result != UnityWebRequest.Result.Success)
             Debug.LogError("API request failed: " + request.error);
         else
-            callback(true);
+            callback(request.downloadHandler.text);
     }
 }

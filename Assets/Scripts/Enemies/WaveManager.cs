@@ -49,8 +49,7 @@ namespace Enemies
                 spawnOrder.Add(numberOfDegreesBetweenSpawners * i);
             }
             spawnOrder = Shuffle(spawnOrder);
-            StartingSpawner();
-            NewSpawner();
+            //StartingSpawner();
             NewSpawner();
             GameStart();
         }

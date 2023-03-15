@@ -7,14 +7,16 @@ public class Controller : MonoBehaviour
     [SerializeField] private GameObject blackHole;
     [SerializeField] private GameObject tempoPlanet;
     [SerializeField] private float cooldown;
-    private Planets.MotherBase mb;
+    private Motherbase.CoreMotherBase mb;
 
     private Plane plane;
+
+    private bool isShowingPreview = false;
 
     private void Start()
     {
         plane = new Plane(Vector3.back, 0);
-        mb = FindObjectOfType<Planets.MotherBase>();
+        mb = FindObjectOfType<Motherbase.CoreMotherBase>();
     }
     void Update()
     {
@@ -36,9 +38,13 @@ public class Controller : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.W))
         {
-            if (GetWorldPosition() != Vector3.zero)
+            if (isShowingPreview)
             {
-                mb.spawnShield(GetWorldPosition());
+                mb.showShieldsPreview(false);
+            }
+            else
+            {
+                mb.showShieldsPreview(true);
             }
         }
     }
