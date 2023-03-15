@@ -932,7 +932,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectionRange: 150
-  attackSpeed: 0.5
+  attackSpeed: 0.8
   types: 0
   projectileType: 0
   projectileDamage: 1
