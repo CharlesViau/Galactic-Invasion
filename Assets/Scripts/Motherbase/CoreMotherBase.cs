@@ -12,8 +12,7 @@ namespace Motherbase
         [SerializeField] private List<Shield> shields;
         [SerializeField] private List<ShieldPreview> shields_preview;
         [SerializeField] private int hp;
-        
-        //TODO replace this with actual shield reference
+
         private List<int> spawnedShields;
 
         private void Start()
@@ -33,6 +32,14 @@ namespace Motherbase
             {
                 Debug.Log("Game over");
                 //Game over
+            }
+        }
+
+        public void DestroyShields()
+        {
+            foreach (Shield s in shields)
+            {
+                s.ringDestroyed();
             }
         }
 

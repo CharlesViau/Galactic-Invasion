@@ -87,11 +87,6 @@ namespace Enemies
             int numberOfFast = Mathf.FloorToInt((waveCost * fastPercentage) / fastCost);
             int numberOfSlow = Mathf.FloorToInt((waveCost * slowPercentage) / slowCost);
             int numberOfNormal = Mathf.FloorToInt((waveCost - ((numberOfFast * fastCost) + (numberOfSlow * slowCost))) / normalCost);
-            
-            /*Debug.Log("WaveCost: " + waveCost);
-            Debug.Log("Number of fast: " + numberOfFast);
-            Debug.Log("Number of slow: " + numberOfSlow);
-            Debug.Log("Number of Normal: " + numberOfNormal);*/
 
             List<EnemyTypes> enemies = new List<EnemyTypes>();
 
@@ -123,11 +118,6 @@ namespace Enemies
     
         private void NewSpawner()
         {
-            //After X spawner spawned, the next will be closer?
-            
-            //2, 3 hardcoded spawner?
-            
-            //Divise world in 4, lock one part when spawner is spawned in it
             if (spawnOrder.Count > 0)
             {
                 Vector3 v = Quaternion.AngleAxis(spawnOrder[0], Vector3.forward) * Vector3.up;
