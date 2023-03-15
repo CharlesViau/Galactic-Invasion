@@ -132,7 +132,6 @@ namespace Towers
             }
 
             _projectileVelocity = head.forward * projectileSpeed;
-
             ProjectileManager.Instance.Create(projectileType,
                 new Projectile.Args(head.position, target, projectileSpeed, projectileDamage,
                     _projectileVelocity, true));
