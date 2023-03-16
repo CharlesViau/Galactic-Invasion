@@ -131,4 +131,5 @@ MonoBehaviour:
   rotationSpeed: {x: 60, y: 60, z: 60}
   gravityStrength: 6
   hp: 1
+  reward: 10
   _type: 1
