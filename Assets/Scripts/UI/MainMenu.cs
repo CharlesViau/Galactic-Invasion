@@ -59,7 +59,7 @@ public class MainMenu : MonoBehaviour
     public void BackButton()
     {
         LoadSettings();
-        // Add any other actions you want to perform when the back button is clicked
+        
     }
 
     public void SetFullscreenMode()

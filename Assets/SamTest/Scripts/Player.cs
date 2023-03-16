@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public string player;
+    public string player
+    {
+        get;
+        private set;
+    }
     private int _score;
 
 
