@@ -936,7 +936,7 @@ MonoBehaviour:
   types: 0
   projectileType: 0
   projectileDamage: 1
-  projectileSpeed: 300
+  projectileSpeed: 500
   head: {fileID: 6663817558659878975}
   barrel: {fileID: 7588807890392630624}
   particlePosition: {fileID: 0}
@@ -1309,7 +1309,7 @@ Transform:
   m_GameObject: {fileID: 5606948386873727100}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 3992715594286074738}
   - {fileID: 3055558200998648045}
