@@ -32,7 +32,7 @@ public class Controller : MonoBehaviour
         {
             if (GetWorldPosition() != Vector3.zero)
             {
-                Instantiate(blackHole, GetWorldPosition(), transform.rotation);
+                Instantiate(blackHole, GetWorldPosition(), blackHole.transform.rotation);
             }
         }
 

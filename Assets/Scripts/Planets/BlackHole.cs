@@ -15,7 +15,6 @@ namespace Planets
             if (numberOfEnemies <= 0)
             {
                 //Play animation
-                
                 Destroy(gameObject.transform.parent.gameObject);
             }
         }
