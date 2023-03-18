@@ -67,9 +67,10 @@ public sealed class Scoreboard
         request.Dispose();
     }
 
-    public IEnumerator GetScores(Action<Scores> callback)
+    public IEnumerator GetScores(Action<Scores> callback, int offset = 0, int limit = 10)
     {
-        var request = UnityWebRequest.Get("http://galacticinvasion.duckdns.org:8000/scores");
+        var request = UnityWebRequest.Get("http://galacticinvasion.duckdns.org:8000/scores?skip=" + offset +
+                                          "&limit=" + limit);
 
         yield return request.SendWebRequest();
 
