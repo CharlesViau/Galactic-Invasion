@@ -15,6 +15,7 @@ namespace Enemies
         {
             Transform transform = null;
             range *= range;
+            collection.RemoveWhere(e => e == null);
             foreach (var enemy in collection)
             {
                 var newDistance = Vector3.SqrMagnitude(currentPosition.position - enemy.transform.position);

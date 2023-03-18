@@ -95,7 +95,7 @@ namespace Towers
         private void Update()
         {
             _timer += Time.deltaTime;
-            if (_target is null || !_target.gameObject.activeSelf || IsTargetOutOfRange())
+            if (_target == null || _target is null || !_target.gameObject.activeSelf || IsTargetOutOfRange())
             {
                 _target = Helper.Helper.GetClosetInRange(typeof(EnemyManager), transform, detectionRange);
                 if (_target)

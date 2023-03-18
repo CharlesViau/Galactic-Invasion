@@ -22,10 +22,13 @@ namespace Enemies
         private bool _isAffected;
         [NonSerialized] private Vector3 _velocity;
 
+        private Rigidbody rb;
 
+        [NonSerialized] public bool isPoolable = true;
         private void Awake()
         {
             _baseGravityCenter = GameObject.Find("MotherBase").transform.position;
+            rb = GetComponent<Rigidbody>();
         }
 
         private void Start()
@@ -77,6 +80,7 @@ namespace Enemies
         public void Depool()
         {
             gameObject.SetActive(true);
+            rb.velocity = Vector3.zero;
             _velocity = Vector3.zero;
             _gravity = null;
             _isAffected = false;
@@ -84,8 +88,16 @@ namespace Enemies
 
         private void Die()
         {
-            EnemyManager.OnEnemyDeathEvent(reward);
-            EnemyManager.Instance.Pool(this);
+            if (!isPoolable)
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                EnemyManager.OnEnemyDeathEvent(reward);
+                EnemyManager.Instance.Pool(this);
+            }
+            
         }
 
         private void InGravity()
@@ -93,7 +105,9 @@ namespace Enemies
             var position = transform.position;
             var direction = (_baseGravityCenter - position).normalized;
             var gravityForce = direction * gravityStrength;
+
             _velocity = _velocity + gravityForce * Time.deltaTime;
+
             position = position + _velocity * Time.deltaTime +
                        gravityForce / 2 * Mathf.Pow(Time.deltaTime, 2);
             transform.position = position;

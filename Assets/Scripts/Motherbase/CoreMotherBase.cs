@@ -39,7 +39,7 @@ namespace Motherbase
         {
             foreach (Shield s in shields)
             {
-                s.ringDestroyed();
+                s.RingDestroyed();
             }
         }
 
@@ -63,9 +63,14 @@ namespace Motherbase
 
         private void OnTriggerEnter(Collider collider)
         {
-            if (collider.CompareTag("Enemy"))
+            Enemy enemy = collider.gameObject.GetComponent<Enemy>();
+            ReceiveDamage(enemy.damage);
+            if (!enemy.isPoolable)
             {
-                ReceiveDamage(collider.gameObject.GetComponent<Enemy>().damage);
+                Destroy(enemy.gameObject);
+            }
+            else
+            {
                 EnemyManager.Instance.Pool(collider.gameObject.GetComponent<Enemy>());
             }
         }

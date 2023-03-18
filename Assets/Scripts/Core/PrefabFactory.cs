@@ -48,6 +48,7 @@ namespace Core
         public void Init()
         {
             //Get all Prefab types from the enum and put them in an Array.
+            
             var allPrefabTypes = Enum.GetValues(typeof(E)).Cast<ValueType>().ToArray();
 
 

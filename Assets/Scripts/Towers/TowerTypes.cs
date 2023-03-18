@@ -4,5 +4,5 @@ using UnityEngine;
 
 public enum TowerTypes 
 {
-   Basic
+   Tower_lvl_one
 }

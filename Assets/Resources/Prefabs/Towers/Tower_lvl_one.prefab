@@ -936,7 +936,7 @@ MonoBehaviour:
   types: 0
   projectileType: 0
   projectileDamage: 1
-  projectileSpeed: 500
+  projectileSpeed: 1000
   head: {fileID: 6663817558659878975}
   barrel: {fileID: 7588807890392630624}
   particlePosition: {fileID: 0}

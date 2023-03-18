@@ -18,7 +18,11 @@ namespace Planets
         {
             foreach (Enemy s in shards)
             {
+                s.isPoolable = false;
+                EnemyManager.Instance.Add(s);
                 s.enabled = true;
+                MeshCollider collider = s.GetComponent<MeshCollider>();
+                collider.enabled = true;
             }
         }
     }

@@ -28,8 +28,16 @@ namespace Motherbase
         {
             if (collider.CompareTag("Enemy"))
             {
-                ReceiveDamage(collider.gameObject.GetComponent<Enemy>().damage);
-                EnemyManager.Instance.Pool(collider.gameObject.GetComponent<Enemy>());
+                Enemy enemy = collider.gameObject.GetComponent<Enemy>();
+                ReceiveDamage(enemy.damage);
+                if (!enemy.isPoolable)
+                {
+                    Destroy(enemy.gameObject);
+                }
+                else
+                {
+                    EnemyManager.Instance.Pool(collider.gameObject.GetComponent<Enemy>());
+                }
             }
         }
     }
