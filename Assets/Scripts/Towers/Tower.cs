@@ -95,7 +95,7 @@ namespace Towers
         private void Update()
         {
             _timer += Time.deltaTime;
-            if (_target == null || _target is null || !_target.gameObject.activeSelf || IsTargetOutOfRange())
+            if (_target == null || _target is null || !_target.gameObject.activeSelf || IsTargetOutOfRange() || !IsTargetInView())
             {
                 _target = Helper.Helper.GetClosetInRange(typeof(EnemyManager), transform, detectionRange);
                 if (_target)
@@ -140,6 +140,22 @@ namespace Towers
 
             //ParticleSystemManager.Instance.Create(particleType,
             //new ParticleSystemScript.Args(particlePosition.position));
+        }
+
+        private bool IsTargetInView()
+        {
+            RaycastHit hit;
+            if(Physics.Raycast(transform.position, (_target.position - transform.position), out hit))
+            {
+                if(hit.transform == _target)
+                {
+                    Debug.Log("Hit the target");
+                    return true;
+                }
+                Debug.Log("Hit something else");
+                return false;
+            }
+            return false;
         }
 
         private bool IsTargetOutOfRange()
