@@ -95,14 +95,14 @@ namespace Towers
         private void Update()
         {
             _timer += Time.deltaTime;
-            if (_target == null || _target is null || !_target.gameObject.activeSelf || IsTargetOutOfRange() || !IsTargetInView())
+            if (_target == null || _target is null || !_target.gameObject.activeSelf || IsTargetOutOfRange())
             {
                 _target = Helper.Helper.GetClosetInRange(typeof(EnemyManager), transform, detectionRange);
                 if (_target)
                     _targetRb = _target.GetComponent<Rigidbody>();
             }
             
-            if (_timer > attackSpeed && _target)
+            if (_timer > attackSpeed && _target && IsTargetInView())
             {
                 OnFire?.Invoke(_target);
                 _timer = 0;
@@ -124,6 +124,7 @@ namespace Towers
 
             var dir = (position1 - position).normalized;
             var left = Vector3.Cross(dir, targetMovementDirection.normalized);
+            //barrel.LookAt(position1, left);
             head.LookAt(position1, left);
             if (!float.IsNaN(towerAngleFinalRotation))
             {
@@ -145,14 +146,12 @@ namespace Towers
         private bool IsTargetInView()
         {
             RaycastHit hit;
-            if(Physics.Raycast(transform.position, (_target.position - transform.position), out hit))
+            if(Physics.Raycast(head.position, (_target.position - head.position), out hit))
             {
                 if(hit.transform == _target)
                 {
-                    Debug.Log("Hit the target");
                     return true;
                 }
-                Debug.Log("Hit something else");
                 return false;
             }
             return false;

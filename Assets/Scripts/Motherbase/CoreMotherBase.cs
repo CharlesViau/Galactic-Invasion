@@ -63,16 +63,20 @@ namespace Motherbase
 
         private void OnTriggerEnter(Collider collider)
         {
-            Enemy enemy = collider.gameObject.GetComponent<Enemy>();
-            ReceiveDamage(enemy.damage);
-            if (!enemy.isPoolable)
+            if (collider.CompareTag("Enemy"))
             {
-                Destroy(enemy.gameObject);
+                Enemy enemy = collider.gameObject.GetComponent<Enemy>();
+                ReceiveDamage(enemy.damage);
+                if (!enemy.isPoolable)
+                {
+                    Destroy(enemy.gameObject);
+                }
+                else
+                {
+                    EnemyManager.Instance.Pool(collider.gameObject.GetComponent<Enemy>());
+                }
             }
-            else
-            {
-                EnemyManager.Instance.Pool(collider.gameObject.GetComponent<Enemy>());
-            }
+            
         }
     }
 }
