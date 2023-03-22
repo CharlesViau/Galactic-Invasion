@@ -124,7 +124,7 @@ namespace Towers
 
             var dir = (position1 - position).normalized;
             var left = Vector3.Cross(dir, targetMovementDirection.normalized);
-            //barrel.LookAt(position1, left);
+            barrel.LookAt(position1, left);
             head.LookAt(position1, left);
             if (!float.IsNaN(towerAngleFinalRotation))
             {

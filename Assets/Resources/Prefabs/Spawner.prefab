@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4305303058775706348}
   - component: {fileID: 5249147580726965409}
   - component: {fileID: 2143239239008736266}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 4868296378741865470}
   - component: {fileID: 719907085660197859}
   - component: {fileID: 2229114224171535099}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,7 +189,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6395005745904557278}
   - component: {fileID: 4876402025750149224}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -237,7 +237,7 @@ GameObject:
   - component: {fileID: 7998921009846713435}
   - component: {fileID: 1766164399537412552}
   - component: {fileID: 1278349928868645556}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Swirl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
