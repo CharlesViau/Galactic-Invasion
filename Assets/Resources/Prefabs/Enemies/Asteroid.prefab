@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 7150698189766456568}
   - component: {fileID: 1729170308047540649}
   - component: {fileID: 3398663776878099169}
-  - component: {fileID: 6171774565294510464}
   - component: {fileID: 8838477121836409051}
   - component: {fileID: 6006832666385687046}
+  - component: {fileID: 6333878178452164048}
   m_Layer: 9
   m_Name: Asteroid
   m_TagString: Enemy
@@ -85,20 +85,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6171774565294510464
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7531146350119914300}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -2925964604565384300, guid: 8d0e1fd95fab36a4bb94edb7c7d52eeb, type: 3}
 --- !u!54 &8838477121836409051
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -133,3 +119,16 @@ MonoBehaviour:
   hp: 1
   reward: 10
   _type: 0
+--- !u!135 &6333878178452164048
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7531146350119914300}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.5
+  m_Center: {x: 0.06258899, y: -0.17358989, z: -0.11581522}
