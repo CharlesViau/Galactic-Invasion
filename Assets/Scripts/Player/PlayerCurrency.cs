@@ -8,6 +8,8 @@ namespace Motherbase
     {
         public int balance;
         public int shieldCost;
+        public int blackHoleCost;
+        public int tempoPlanetCost;
         public static PlayerCurrency Instance { get; private set; }
 
         private void Awake()

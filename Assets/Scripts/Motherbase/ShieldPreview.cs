@@ -18,12 +18,12 @@ namespace Motherbase
         {
             if (!_playerCurrency.SpendMoney(_playerCurrency.shieldCost))
             {
-                MessageUI.Instance.SetText("Not enough money");
+                MessageUI.Instance.SetText("Not enough money!");
                 MessageUI.Instance.Show();
                 return;
             }
 
-            mb.spawnShield(_index);
+            mb.SpawnShield(_index);
             gameObject.SetActive(false);
             CostUI.Instance.Hide();
         }

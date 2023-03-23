@@ -10,11 +10,11 @@ namespace Motherbase
         [SerializeField] private List<ShieldPreview> shields_preview;
         [SerializeField] private int hp;
 
-        private List<int> spawnedShields;
+        private List<int> _spawnedShields;
 
         private void Start()
         {
-            spawnedShields = new List<int>();
+            _spawnedShields = new List<int>();
 
             for (var i = 0; i < shields_preview.Count; i++) shields_preview[i].SetIndex(i);
         }
@@ -45,21 +45,24 @@ namespace Motherbase
             foreach (var s in shields) s.RingDestroyed();
         }
 
-        public void showShieldsPreview(bool show)
+        public void ShowShieldsPreview(bool show)
         {
             CostUI.Instance.SetText($"Cost: {PlayerCurrency.Instance.shieldCost}");
-            CostUI.Instance.Show();
+
+            if (show) CostUI.Instance.Show();
+            else CostUI.Instance.Hide();
+
 
             for (var i = 0; i < shields_preview.Count; i++)
-                if (!spawnedShields.Contains(i))
+                if (!_spawnedShields.Contains(i))
                     shields_preview[i].gameObject.SetActive(show);
         }
 
-        public void spawnShield(int index)
+        public void SpawnShield(int index)
         {
             shields[index].gameObject.SetActive(true);
-            spawnedShields.Add(index);
-            showShieldsPreview(false);
+            _spawnedShields.Add(index);
+            ShowShieldsPreview(false);
         }
     }
 }
