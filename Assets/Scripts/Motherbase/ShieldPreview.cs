@@ -1,35 +1,36 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Motherbase
 {
     public class ShieldPreview : MonoBehaviour
     {
-        private int index;
-        
         [SerializeField] private CoreMotherBase mb;
+        private int _index;
+        private PlayerCurrency _playerCurrency;
 
-        public void SetIndex(int p_index)
+        // Start
+        private void Start()
         {
-            index = p_index;
-        }
-        private void OnMouseOver()
-        {
-            //Add feedback here
+            _playerCurrency = PlayerCurrency.Instance;
         }
 
         private void OnMouseDown()
         {
-            mb.spawnShield(index);
+            if (!_playerCurrency.SpendMoney(_playerCurrency.shieldCost))
+            {
+                MessageUI.Instance.SetText("Not enough money!");
+                MessageUI.Instance.Show();
+                return;
+            }
+
+            mb.SpawnShield(_index);
             gameObject.SetActive(false);
+            CostUI.Instance.Hide();
         }
 
-        private void OnMouseExit()
+        public void SetIndex(int pIndex)
         {
-            //Add feedback here
+            _index = pIndex;
         }
     }
 }
-

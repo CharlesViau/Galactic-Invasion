@@ -97,7 +97,7 @@ namespace Towers
             _timer += Time.deltaTime;
             if (_target == null || _target is null || !_target.gameObject.activeSelf || IsTargetOutOfRange())
             {
-                _target = Helper.Helper.GetClosetInRange(typeof(EnemyManager), transform, detectionRange);
+                _target = EnemyManager.Instance.GetClosest(transform, detectionRange);
                 if (_target)
                     _targetRb = _target.GetComponent<Rigidbody>();
             }
@@ -124,7 +124,7 @@ namespace Towers
 
             var dir = (position1 - position).normalized;
             var left = Vector3.Cross(dir, targetMovementDirection.normalized);
-            //barrel.LookAt(position1, left);
+            barrel.LookAt(position1, left);
             head.LookAt(position1, left);
             if (!float.IsNaN(towerAngleFinalRotation))
             {

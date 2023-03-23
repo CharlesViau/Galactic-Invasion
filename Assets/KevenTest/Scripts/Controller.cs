@@ -1,64 +1,71 @@
-using System.Collections;
-using System.Collections.Generic;
+using Motherbase;
 using UnityEngine;
 
 public class Controller : MonoBehaviour
 {
+    private static bool IsShowingPreview;
     [SerializeField] private GameObject blackHole;
     [SerializeField] private GameObject tempoPlanet;
     [SerializeField] private float cooldown;
-    private Motherbase.CoreMotherBase mb;
+    private CoreMotherBase _mb;
 
-    private Plane plane;
-
-    private bool isShowingPreview = false;
+    private Plane _plane;
+    private PlayerCurrency _playerCurrency;
 
     private void Start()
     {
-        plane = new Plane(Vector3.back, 0);
-        mb = FindObjectOfType<Motherbase.CoreMotherBase>();
+        _plane = new Plane(Vector3.back, 0);
+        _mb = FindObjectOfType<CoreMotherBase>();
+        _playerCurrency = PlayerCurrency.Instance;
     }
-    void Update()
+
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Q))
-        {
-            if (GetWorldPosition() != Vector3.zero)
+            if (_playerCurrency.SpendMoney(_playerCurrency.tempoPlanetCost))
             {
-                Instantiate(tempoPlanet, GetWorldPosition(), transform.rotation);
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            if (GetWorldPosition() != Vector3.zero)
-            {
-                Instantiate(blackHole, GetWorldPosition(), blackHole.transform.rotation);
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            if (isShowingPreview)
-            {
-                mb.showShieldsPreview(false);
+                if (GetWorldPosition() != Vector3.zero)
+                {
+                    Instantiate(tempoPlanet, GetWorldPosition(), transform.rotation);
+                    MessageUI.Instance.SetText("Cost: " + _playerCurrency.tempoPlanetCost);
+                    MessageUI.Instance.Show();
+                }
             }
             else
             {
-                mb.showShieldsPreview(true);
+                MessageUI.Instance.SetText("Not enough money! Costs " + _playerCurrency.tempoPlanetCost);
+                MessageUI.Instance.Show();
             }
+
+        if (Input.GetKeyDown(KeyCode.E))
+            if (_playerCurrency.SpendMoney(_playerCurrency.blackHoleCost))
+            {
+                if (GetWorldPosition() != Vector3.zero)
+                {
+                    Instantiate(blackHole, GetWorldPosition(), blackHole.transform.rotation);
+                    MessageUI.Instance.SetText("Cost: " + _playerCurrency.blackHoleCost);
+                    MessageUI.Instance.Show();
+                }
+            }
+            else
+            {
+                MessageUI.Instance.SetText("Not enough money! Costs " + _playerCurrency.blackHoleCost);
+                MessageUI.Instance.Show();
+            }
+
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            IsShowingPreview = !IsShowingPreview;
+            _mb.ShowShieldsPreview(IsShowingPreview);
         }
     }
 
+
     private Vector3 GetWorldPosition()
     {
-        float distance;
-        Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Camera.main == null) return Vector3.zero;
+        var mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        if (plane.Raycast(mouseRay, out distance))
-        {
-            return mouseRay.GetPoint(distance);
-        }
-
-        return Vector3.zero;
+        return _plane.Raycast(mouseRay, out var distance) ? mouseRay.GetPoint(distance) : Vector3.zero;
     }
 }

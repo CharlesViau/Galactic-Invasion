@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class PlayerTest : MonoBehaviour
 {
     public string player
     {
