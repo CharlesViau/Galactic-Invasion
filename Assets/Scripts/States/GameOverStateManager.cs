@@ -21,7 +21,7 @@ public class GameOverStateManager : MonoBehaviour
     {
         submitButton.interactable = false;
 
-        _score = 200;
+        _score = CurrentScore.GetScore();
         scoreText.text = $"Score: {_score}";
 
         inputField.onValueChanged.AddListener(OnUsernameChanged);
