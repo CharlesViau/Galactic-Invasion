@@ -7,9 +7,19 @@ namespace Motherbase
     public class PlayerCurrency : MonoBehaviour
     {
         public int balance;
+        public int shieldCost;
+        public static PlayerCurrency Instance { get; private set; }
 
-        private void Start()
+        private void Awake()
         {
+            if (Instance != null)
+            {
+                Destroy(gameObject);
+                return;
+            }
+
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
 
         private void OnEnable()
