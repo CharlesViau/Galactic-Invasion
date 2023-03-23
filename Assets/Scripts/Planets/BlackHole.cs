@@ -15,7 +15,6 @@ namespace Planets
             if (numberOfEnemies <= 0)
             {
                 //Play animation
-                
                 Destroy(gameObject.transform.parent.gameObject);
             }
         }
@@ -25,7 +24,15 @@ namespace Planets
             if (collider.CompareTag("Enemy"))
             {
                 AbsorbEnemy();
-                EnemyManager.Instance.Pool(collider.gameObject.GetComponent<Enemy>());
+                Enemy enemy = collider.gameObject.GetComponent<Enemy>();
+                if (!enemy.isPoolable)
+                {
+                    Destroy(enemy.gameObject);
+                }
+                else
+                {
+                    EnemyManager.Instance.Pool(collider.gameObject.GetComponent<Enemy>());
+                }
             }
         }
     }

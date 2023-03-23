@@ -39,11 +39,14 @@ namespace Projectiles
             movementSo.Refresh();
         }
 
-        private void OnCollisionEnter(Collision collision)
+        private void OnTriggerEnter(Collider collider)
         {
-            onCollisionSo.OnEnterCollision(collision.contacts[0].point,
-                collision.contacts[0].otherCollider.gameObject, _isPlayerOwner);
-            ProjectileManager.Instance.Pool(this);
+            if (collider.CompareTag("Enemy"))
+            {
+                onCollisionSo.OnEnterCollision(collider.ClosestPoint(transform.position),
+                                collider.gameObject, _isPlayerOwner);
+                ProjectileManager.Instance.Pool(this);
+            }
         }
 
         public void Pool()

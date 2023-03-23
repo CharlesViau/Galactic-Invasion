@@ -10,11 +10,12 @@ namespace Planets
         [SerializeField] private float gravityForce;
         [SerializeField] private float spiralForce;
         private Vector3 centerPosition;
-    
+
         private void Start()
         {
             centerPosition = transform.position;
         }
+
         private void OnTriggerEnter(Collider collider)
         {
             if (collider.CompareTag("Enemy"))

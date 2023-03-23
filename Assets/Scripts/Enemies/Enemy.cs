@@ -3,85 +3,56 @@ using Core;
 using Interfaces;
 using Planets;
 using UnityEngine;
-using Vector3 = UnityEngine.Vector3;
 
 namespace Enemies
 {
     public class Enemy : MonoBehaviour, ICreatable<Enemy.Args>, IPoolable, IHittable
     {
         public int damage;
-        [NonSerialized] public Vector3 velocity;
 
         [SerializeField] private Vector3 rotationSpeed;
         [SerializeField] private float gravityStrength = 3f;
         [SerializeField] private int hp;
 
-        private Vector3 baseGravityCenter;
-        private bool isAffected;
-        private Gravity gravity;
+        public int reward;
+        [SerializeField] private EnemyTypes _type;
 
+        private Vector3 _baseGravityCenter;
+        private Gravity _gravity;
+        private bool _isAffected;
+        [NonSerialized] private Vector3 _velocity;
 
-        void Awake()
+        private Rigidbody rb;
+
+        [NonSerialized] public bool isPoolable = true;
+        private void Awake()
         {
-            baseGravityCenter = GameObject.Find("MotherBase").transform.position;
+            _baseGravityCenter = GameObject.Find("MotherBase").transform.position;
+            rb = GetComponent<Rigidbody>();
         }
 
-        void Start()
+        private void Start()
         {
-            velocity = Vector3.zero;
-            isAffected = false;
+            _velocity = Vector3.zero;
+            _isAffected = false;
         }
 
         private void FixedUpdate()
         {
             transform.Rotate(rotationSpeed * Time.deltaTime);
-            if (gravity != null)
+            if (_gravity != null)
             {
-                gravity.Affect(transform);
+                _gravity.Affect(transform);
             }
             else
             {
-                if (isAffected)
+                if (_isAffected)
                 {
-                    velocity = Vector3.zero;
-                    isAffected = false;
+                    _velocity = Vector3.zero;
+                    _isAffected = false;
                 }
 
                 InGravity();
-            }
-        }
-
-        private void InGravity()
-        {
-            Vector3 direction = (baseGravityCenter - transform.position).normalized;
-            Vector3 gravityForce = direction * gravityStrength;
-            velocity = velocity + (gravityForce * Time.deltaTime);
-            transform.position = transform.position + (velocity * Time.deltaTime) + ((gravityForce/2) * (Mathf.Pow(Time.deltaTime, 2 )));
-        }
-
-        public void ChangeGravity(Gravity newGravity)
-        {
-            gravity = newGravity;
-            isAffected = true;
-        }
-
-        public void TakeDamage(int _damage)
-        {
-            hp -= _damage;
-            if (hp <= 0)
-            {
-                EnemyManager.Instance.Pool(this);
-            }
-        }
-
-        public class Args : ConstructionArgs
-        {
-            public Quaternion? spawningRotation;
-
-            public Args(Vector3 spawningPosition, Quaternion? spawningRotation = null) : base(spawningPosition)
-            {
-                this.spawningRotation = spawningRotation;
-                this.spawningRotation = spawningRotation;
             }
         }
 
@@ -89,12 +60,17 @@ namespace Enemies
         {
             transform.position = constructionArgs.spawningPosition;
 
-            if (constructionArgs.spawningRotation != null)
-                transform.rotation = (Quaternion)constructionArgs.spawningRotation;
+            if (constructionArgs.SpawningRotation != null)
+                transform.rotation = (Quaternion)constructionArgs.SpawningRotation;
+        }
+
+        public void TakeDamage(int _damage)
+        {
+            hp -= _damage;
+            if (hp <= 0) Die();
         }
 
         public ValueType ValueType => _type;
-        [SerializeField] private EnemyTypes _type;
 
         public void Pool()
         {
@@ -104,9 +80,55 @@ namespace Enemies
         public void Depool()
         {
             gameObject.SetActive(true);
-            velocity = Vector3.zero;
-            gravity = null;
-            isAffected = false;
+            rb.velocity = Vector3.zero;
+            _velocity = Vector3.zero;
+            _gravity = null;
+            _isAffected = false;
+        }
+
+        private void Die()
+        {
+            if (!isPoolable)
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                EnemyManager.OnEnemyDeathEvent(reward);
+                EnemyManager.Instance.Pool(this);
+            }
+            
+        }
+
+        private void InGravity()
+        {
+            var position = transform.position;
+            var direction = (_baseGravityCenter - position).normalized;
+            var gravityForce = direction * gravityStrength;
+
+            _velocity = _velocity + gravityForce * Time.deltaTime;
+
+            position = position + _velocity * Time.deltaTime +
+                       gravityForce / 2 * Mathf.Pow(Time.deltaTime, 2);
+            transform.position = position;
+        }
+
+        public void ChangeGravity(Gravity newGravity)
+        {
+            _gravity = newGravity;
+            _isAffected = true;
+        }
+
+
+        public class Args : ConstructionArgs
+        {
+            public Quaternion? SpawningRotation;
+
+            public Args(Vector3 spawningPosition, Quaternion? spawningRotation = null) : base(spawningPosition)
+            {
+                SpawningRotation = spawningRotation;
+                SpawningRotation = spawningRotation;
+            }
         }
     }
 }

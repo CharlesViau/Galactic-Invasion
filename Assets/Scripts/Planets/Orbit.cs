@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using Enemies;
 using UnityEngine;
 
@@ -9,9 +10,11 @@ namespace Planets
     {
         [SerializeField] private float orbitSpeed;
         [SerializeField] private float timeUntilDestroy;
+
+        [SerializeField] private Shards shards;
         
         private Vector3 centerPosition;
-    
+
         private void Start()
         {
             centerPosition = transform.position;
@@ -20,9 +23,7 @@ namespace Planets
         {
             if (timeUntilDestroy <= 0)
             {
-                //Play destruction animation
-                //Spawn 10 enemies
-                Destroy(gameObject);
+                Destruction();
             }
             timeUntilDestroy -= Time.deltaTime;
         }
@@ -37,6 +38,12 @@ namespace Planets
         public override void Affect(Transform enemyTransform)
         {
             enemyTransform.RotateAround(centerPosition, Vector3.forward, orbitSpeed * Time.deltaTime);
+        }
+
+        private void Destruction()
+        {
+            shards.ActivateShards();
+            Destroy(gameObject);
         }
     }
 }
