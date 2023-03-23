@@ -43,35 +43,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cddab38e56983140a8f2a358eea3ce0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveAction:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Move
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: d4e08011-a6e4-442c-b955-8d8686017aa1
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-    m_Reference: {fileID: -7165196542626551050, guid: b46ac0dd96455ef44bfe114d843721a2, type: 3}
-  _lookAction:
+  _leftJoystickAction:
     m_UseReference: 0
     m_Action:
-      m_Name: Look
+      m_Name: Left Joystick
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 8a943d70-e19e-4372-a90e-5436a950fd62
+      m_Id: 8efc5f8e-ddce-4283-a30b-de6023248b24
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
     m_Reference: {fileID: 0}
-  _basicAttackAction:
+  _mouseDeltaAction:
     m_UseReference: 0
     m_Action:
-      m_Name: Basic Attack
+      m_Name: Mouse Delta
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 3e33f9d0-3adf-4100-96be-e1f765045bd2
+      m_Id: 99d4c003-4e7e-4969-af09-029832bb6981
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+    m_Reference: {fileID: 0}
+  _leftMouseClickAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Left Mouse Click
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 1cf7d49f-7138-4a53-a8ce-6045185af680
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+    m_Reference: {fileID: 0}
+  _rightMouseClickAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Right Mouse Click
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 44e2f3b2-eca0-4164-992d-c67209a6ef6e
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []

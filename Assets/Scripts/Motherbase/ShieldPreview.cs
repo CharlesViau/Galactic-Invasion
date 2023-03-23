@@ -7,11 +7,13 @@ namespace Motherbase
         [SerializeField] private CoreMotherBase mb;
         private int _index;
         private PlayerCurrency _playerCurrency;
+        private Controller _controller;
 
         // Start
         private void Start()
         {
             _playerCurrency = PlayerCurrency.Instance;
+            _controller = Controller.Instance;
         }
 
         private void OnMouseDown()
@@ -25,6 +27,7 @@ namespace Motherbase
 
             mb.SpawnShield(_index);
             gameObject.SetActive(false);
+            Controller.Instance.GameStart();
             CostUI.Instance.Hide();
         }
 

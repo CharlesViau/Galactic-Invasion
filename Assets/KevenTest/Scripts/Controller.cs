@@ -1,19 +1,37 @@
+using Enemies;
 using Motherbase;
 using UnityEngine;
 
 public class Controller : MonoBehaviour
 {
+    private WaveManager _waveManager;
     private static bool IsShowingPreview;
     [SerializeField] private GameObject blackHole;
     [SerializeField] private GameObject tempoPlanet;
-    [SerializeField] private float cooldown;
     private CoreMotherBase _mb;
 
     private Plane _plane;
     private PlayerCurrency _playerCurrency;
 
+    public bool gameStarted = false;
+    
+    public static Controller Instance { get; private set; }
+    
+    private void Awake()
+    {
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
     private void Start()
     {
+        _waveManager = gameObject.GetComponent<WaveManager>();
         _plane = new Plane(Vector3.back, 0);
         _mb = FindObjectOfType<CoreMotherBase>();
         _playerCurrency = PlayerCurrency.Instance;
@@ -60,6 +78,14 @@ public class Controller : MonoBehaviour
         }
     }
 
+    public void GameStart()
+    {
+        if (!gameStarted)
+        {
+            gameStarted = true;
+            _waveManager.GameStart();
+        }
+    }
 
     private Vector3 GetWorldPosition()
     {
