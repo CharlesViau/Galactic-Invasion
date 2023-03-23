@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameOverStateManager : MonoBehaviour
 {
@@ -61,5 +62,17 @@ public class GameOverStateManager : MonoBehaviour
                     $"{score.rank}\t{score.player}\t\t{score.score}";
             }
         }, offset, limit));
+    }
+    
+    public void ReplayGame()
+    {
+        
+        SceneManager.LoadScene("MainScene");
+    }
+
+    public void ReturnToMainMenu()
+    {
+        
+        SceneManager.LoadScene("Main Menu");
     }
 }
