@@ -41,12 +41,10 @@ namespace Motherbase
             {
                 GameOver();
             }
-            
         }
 
         private void GameOver()
         {
-            Debug.Log("Game over");
             SceneManager.LoadScene("GameOverScene");
         }
 

@@ -49,23 +49,24 @@ namespace Enemies
                 spawnOrder.Add(numberOfDegreesBetweenSpawners * i);
             }
             spawnOrder = Shuffle(spawnOrder);
-            //StartingSpawner();
             NewSpawner();
-            GameStart();
         }
     
         private void FixedUpdate()
         {
-            time += Time.deltaTime;
-    
-            if (time >= timeBetweenWaves)
+            if (Controller.Instance.gameStarted)
             {
-                NextWave();
-                time = 0;
+                time += Time.deltaTime;
+                    
+                if (time >= timeBetweenWaves)
+                {
+                    NextWave();
+                    time = 0;
+                }
             }
         }
         
-        private void GameStart()
+        public void GameStart()
         {
             currentWave = 1;
             NextWave();
@@ -148,24 +149,6 @@ namespace Enemies
             }
 
             return data;
-        }
-    
-        private void StartingSpawner()
-        {
-            for (int i = 0; i < spawnOrder.Count; i++)
-            {
-                if (spawnOrder[i] == 0)
-                {
-                    int tmp = spawnOrder[0];
-                    spawnOrder[0] = 0;
-                    spawnOrder[i] = tmp;
-                } else if (spawnOrder[i] == 180)
-                {
-                    int tmp = spawnOrder[1];
-                    spawnOrder[1] = 180;
-                    spawnOrder[i] = tmp;
-                }
-            }
         }
     }
 }
