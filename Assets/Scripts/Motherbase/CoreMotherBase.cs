@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Enemies;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Motherbase
 {
@@ -36,8 +37,17 @@ namespace Motherbase
         {
             hp -= dmg;
 
-            if (hp <= 0) Debug.Log("Game over");
-            //Game over
+            if (hp <= 0)
+            {
+                GameOver();
+            }
+            
+        }
+
+        private void GameOver()
+        {
+            Debug.Log("Game over");
+            SceneManager.LoadScene("GameOverScene");
         }
 
         public void DestroyShields()

@@ -6,7 +6,6 @@ public class Controller : MonoBehaviour
     private static bool IsShowingPreview;
     [SerializeField] private GameObject blackHole;
     [SerializeField] private GameObject tempoPlanet;
-    [SerializeField] private float cooldown;
     private CoreMotherBase _mb;
 
     private Plane _plane;

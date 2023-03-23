@@ -3642,7 +3642,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orbitSpeed: 60
-  timeUntilDestroy: 5
+  timeUntilDestroy: 30
   shards: {fileID: 1634020037990592714}
 --- !u!1 &8043106580604251116
 GameObject:
