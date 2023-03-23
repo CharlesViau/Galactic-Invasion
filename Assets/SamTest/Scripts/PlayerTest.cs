@@ -12,7 +12,7 @@ public class Token
     public string token_type;
 }
 
-public class Player : MonoBehaviour
+public class PlayerTest : MonoBehaviour
 {
     public string player;
     private int score;

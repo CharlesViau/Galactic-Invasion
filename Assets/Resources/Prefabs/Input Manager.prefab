@@ -1,0 +1,133 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4114838253352072776
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8936467999090577155}
+  - component: {fileID: 6321156075497239100}
+  m_Layer: 0
+  m_Name: Input Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8936467999090577155
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4114838253352072776}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.01720512, y: 1.5146954, z: -0.55227613}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6321156075497239100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4114838253352072776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cddab38e56983140a8f2a358eea3ce0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _moveAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Move
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: d4e08011-a6e4-442c-b955-8d8686017aa1
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+    m_Reference: {fileID: -7165196542626551050, guid: b46ac0dd96455ef44bfe114d843721a2, type: 3}
+  _lookAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Look
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 8a943d70-e19e-4372-a90e-5436a950fd62
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+    m_Reference: {fileID: 0}
+  _basicAttackAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Basic Attack
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 3e33f9d0-3adf-4100-96be-e1f765045bd2
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+    m_Reference: {fileID: 0}
+  _ability1Action:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Ability 1
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: ad0b3778-8f1c-41c5-a0b3-e4d4d620ce9a
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+    m_Reference: {fileID: 0}
+  _ability2Action:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Ability 2
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: cf754883-d99b-4b5f-aced-7bd8db176744
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+    m_Reference: {fileID: 0}
+  _ability3Action:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Ability 3
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: b07067a0-a191-4305-805a-e872b62fd1df
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+    m_Reference: {fileID: 0}
+  _ability4Action:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Ability 4
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: eb59d6e5-3698-453f-ab23-5bf91cadb740
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+    m_Reference: {fileID: 0}
+  _gamePauseAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Game Pause
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 75f70da1-0f0a-4974-806c-9c761c1a52c5
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+    m_Reference: {fileID: 0}
