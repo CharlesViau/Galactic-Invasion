@@ -1,4 +1,5 @@
 ﻿using Ability;
+using Ability.AbilityUI;
 using UnityEngine;
 
 namespace ScriptableObjects.Ability

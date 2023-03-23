@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace ScriptableObjects.Ability
 {
-    public abstract class AbilitySo : MonoBehaviour, ITargetAcquirer
+    public abstract class AbilitySo : ScriptableObject, ITargetAcquirer
     {
         #region Properties and Variables
         [Header("Stats")] public AbilityStats stats;
