@@ -16,6 +16,7 @@ namespace ScriptableObjects.Ability
         
         public AbilityHandler Owner { get; private set; }
         public SpellUIType spellUIType;
+        public float range;
         
         #region State Specifics and StateMachine
         //State Machine

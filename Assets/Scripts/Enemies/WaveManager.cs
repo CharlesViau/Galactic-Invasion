@@ -38,6 +38,8 @@ namespace Enemies
         private float fastPercentage = 0.10f;
 
         private float slowPercentage = 0.10f;
+
+        private bool gameStarted = false;
         
         private void Start()
         {
@@ -54,7 +56,7 @@ namespace Enemies
     
         private void FixedUpdate()
         {
-            if (Controller.Instance.gameStarted)
+            if (gameStarted)
             {
                 time += Time.deltaTime;
                     
@@ -68,6 +70,7 @@ namespace Enemies
         
         public void GameStart()
         {
+            gameStarted = true;
             currentWave = 1;
             NextWave();
         }
