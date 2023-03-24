@@ -15,19 +15,19 @@ namespace Player
         #region InputActionProperty
         //Gameplay Action
         //WASD Composite Vector2
-        [SerializeField] private InputActionProperty _leftJoystickAction;
+        [SerializeField] private InputActionProperty leftJoystickAction;
         //Mouse stuff
-        [SerializeField] private InputActionProperty _mouseDeltaAction;
-        [SerializeField] private InputActionProperty _leftMouseClickAction;
-        [SerializeField] private InputActionProperty _rightMouseClickAction;
+        [SerializeField] private InputActionProperty mouseDeltaAction;
+        [SerializeField] private InputActionProperty leftMouseClickAction;
+        [SerializeField] private InputActionProperty rightMouseClickAction;
         //Button
-        [SerializeField] private InputActionProperty _ability1Action;
-        [SerializeField] private InputActionProperty _ability2Action;
-        [SerializeField] private InputActionProperty _ability3Action;
-        [SerializeField] private InputActionProperty _ability4Action;
+        [SerializeField] private InputActionProperty ability1Action;
+        [SerializeField] private InputActionProperty ability2Action;
+        [SerializeField] private InputActionProperty ability3Action;
+        [SerializeField] private InputActionProperty ability4Action;
 
         //Other Action
-        [SerializeField] private InputActionProperty _gamePauseAction;
+        [SerializeField] private InputActionProperty gamePauseAction;
         #endregion
 
         #region Public Events
@@ -57,9 +57,9 @@ namespace Player
         {
             EnableAllInputAction();
 
-            _leftJoystickAction.reference.action.performed += OnMovePerfo;
-            _leftJoystickAction.reference.action.canceled += OnMoveStop;
-            //_lookAction.reference.action.performed += OnLookPerfo;
+            leftJoystickAction.reference.action.performed += OnMovePerfo;
+            leftJoystickAction.reference.action.canceled += OnMoveStop;
+            //mouseDeltaAction.reference.action.performed += OnLookPerfo;
             //_basicAttackAction.reference.action.performed += OnAttackPerfo;
             /*_ability1Action.reference.action.performed += OnAbility1Perfo;
         _ability2Action.reference.action.performed += OnAbility2Perfo;
@@ -74,9 +74,9 @@ namespace Player
         {
             DisableAllInputAction();
 
-            _leftJoystickAction.reference.action.performed -= OnMovePerfo;
-            _leftJoystickAction.reference.action.canceled -= OnMoveStop;
-            //_lookAction.action.performed -= OnLookPerfo;
+            leftJoystickAction.reference.action.performed -= OnMovePerfo;
+            leftJoystickAction.reference.action.canceled -= OnMoveStop;
+            //mouseDeltaAction.action.performed -= OnLookPerfo;
             //_basicAttackAction.action.performed -= OnAttackPerfo;
             /*_ability1Action.reference.action.performed -= OnAbility1Perfo;
         _ability2Action.reference.action.performed -= OnAbility2Perfo;

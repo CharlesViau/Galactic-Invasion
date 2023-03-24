@@ -9,7 +9,7 @@ namespace Player
     {
         #region Property and Variables
 
-        private const int NumberOfAbility = 5;
+        private const int NumberOfAbility = 3;
         [SerializeField] private AbilitySo[] abilities = new AbilitySo[NumberOfAbility];
 
         public AbilitySo SelectedAbility { get; private set; }
@@ -27,9 +27,11 @@ namespace Player
 
         #region Various needed get to be implemented
 
-        public Transform ShootingPosition { get; }
+        private PlayerReferencing _referencing;
+
+        public Transform ShootingPosition => _referencing.referenceTransform;
         public Vector3 AimingDirection { get; }
-        public Vector3 TargetPosition { get; }
+        public Vector3 TargetPosition => _referencing.referenceTransform.position;
 
         public Transform TargetTransform { get; set; }
         public int Gold { get; }
@@ -39,6 +41,8 @@ namespace Player
         private void Awake()
         {
             InitAbilities();
+
+            _referencing = GetComponent<PlayerReferencing>();
         }
 
         private void Update()
