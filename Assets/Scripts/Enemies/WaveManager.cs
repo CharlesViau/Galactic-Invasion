@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,17 +5,16 @@ namespace Enemies
 {
     public class WaveManager : MonoBehaviour
     {
-        
         [SerializeField] private EnemySpawner spawnerPrefab;
-    
+
         [SerializeField] private short numberOfSpawner;
-    
+
         [SerializeField] private float portalDistanceFromOrigin;
-    
+
         [SerializeField] private float scaling;
-    
+
         [SerializeField] private int waveCost;
-        
+
         [SerializeField] private int normalCost;
 
         [SerializeField] private int fastCost;
@@ -24,18 +22,20 @@ namespace Enemies
         [SerializeField] private int slowCost;
 
         [SerializeField] private float timeBetweenWaves;
-    
-        private float time;
-    
-        private int numberOfDegreesBetweenSpawners;
-    
-        private List<int> spawnOrder;
-    
-        private int currentWave;
-    
-        private List<EnemySpawner> spawnerList;
 
-        private float fastPercentage = 0.10f;
+        private int _currentWave;
+
+        private float _fastPercentage = 0.10f;
+
+        private int _numberOfDegreesBetweenSpawners;
+
+        private float _slowPercentage = 0.10f;
+
+        private List<EnemySpawner> _spawnerList;
+
+        private List<int> _spawnOrder;
+
+        private float _time;
 
         private float slowPercentage = 0.10f;
 
@@ -43,116 +43,114 @@ namespace Enemies
         
         private void Start()
         {
-            spawnerList = new List<EnemySpawner>();
-            spawnOrder = new List<int>();
-            numberOfDegreesBetweenSpawners = 360 / numberOfSpawner;
-            for (int i = 0; i < numberOfSpawner; i++)
-            {
-                spawnOrder.Add(numberOfDegreesBetweenSpawners * i);
-            }
-            spawnOrder = Shuffle(spawnOrder);
+            _spawnerList = new List<EnemySpawner>();
+            _spawnOrder = new List<int>();
+            _numberOfDegreesBetweenSpawners = 360 / numberOfSpawner;
+            for (var i = 0; i < numberOfSpawner; i++) _spawnOrder.Add(_numberOfDegreesBetweenSpawners * i);
+            _spawnOrder = Shuffle(_spawnOrder);
             NewSpawner();
         }
-    
+
         private void FixedUpdate()
         {
             if (gameStarted)
             {
-                time += Time.deltaTime;
+                _time += Time.deltaTime;
                     
-                if (time >= timeBetweenWaves)
+                if (_time >= timeBetweenWaves)
                 {
                     NextWave();
-                    time = 0;
+                    _time = 0;
                 }
             }
+            if (!Controller.Instance.gameStarted) return;
+            _time += Time.deltaTime;
+
+            if (!(_time >= timeBetweenWaves)) return;
+            NextWave();
+            _time = 0;
         }
-        
+
         public void GameStart()
         {
             gameStarted = true;
-            currentWave = 1;
+            _currentWave = 1;
             NextWave();
         }
-    
+
         private void NextWave()
         {
-            if (currentWave % 5 == 0)
+            switch (_currentWave % 5)
             {
-                NewSpawner();
+                case 0:
+                    NewSpawner();
+                    break;
+                case 4:
+                    MessageUI.Instance.SetText("New Spawner Incoming!");
+                    MessageUI.Instance.Show();
+                    break;
             }
-            currentWave++;
+
+            _currentWave++;
             PickEnemies();
             waveCost = Mathf.FloorToInt(waveCost * scaling);
         }
-    
+
         private void PickEnemies()
         {
-            int numberOfFast = Mathf.FloorToInt((waveCost * fastPercentage) / fastCost);
-            int numberOfSlow = Mathf.FloorToInt((waveCost * slowPercentage) / slowCost);
-            int numberOfNormal = Mathf.FloorToInt((waveCost - ((numberOfFast * fastCost) + (numberOfSlow * slowCost))) / normalCost);
+            var numberOfFast = Mathf.FloorToInt(waveCost * _fastPercentage / fastCost);
+            var numberOfSlow = Mathf.FloorToInt(waveCost * _slowPercentage / slowCost);
+            var numberOfNormal =
+                Mathf.FloorToInt((waveCost - (numberOfFast * fastCost + numberOfSlow * slowCost)) / normalCost);
 
-            List<EnemyTypes> enemies = new List<EnemyTypes>();
+            var enemies = new List<EnemyTypes>();
 
-            for (int i = 0; i < numberOfNormal; i++)
-            {
-                enemies.Add(EnemyTypes.Asteroid);
-            }
+            for (var i = 0; i < numberOfNormal; i++) enemies.Add(EnemyTypes.Asteroid);
 
-            for (int i = 0; i < numberOfFast; i++)
-            {
-                enemies.Add(EnemyTypes.AsteroidFast);
-            }
+            for (var i = 0; i < numberOfFast; i++) enemies.Add(EnemyTypes.AsteroidFast);
 
-            for (int i = 0; i < numberOfSlow; i++)
-            {
-                enemies.Add(EnemyTypes.AsteroidSlow);
-            }
+            for (var i = 0; i < numberOfSlow; i++) enemies.Add(EnemyTypes.AsteroidSlow);
 
             enemies = Shuffle(enemies);
 
-            fastPercentage += 0.01f;
-            slowPercentage += 0.01f;
+            _fastPercentage += 0.01f;
+            _slowPercentage += 0.01f;
 
-            for (int i = 0; i < enemies.Count; i++)
-            {
-                GetRandomSpawner().AddEnemy(enemies[i]);
-            }
+            foreach (var t in enemies)
+                GetRandomSpawner().AddEnemy(t);
         }
-    
+
         private void NewSpawner()
         {
-            if (spawnOrder.Count > 0)
+            if (_spawnOrder.Count > 0)
             {
-                Vector3 v = Quaternion.AngleAxis(spawnOrder[0], Vector3.forward) * Vector3.up;
-                Ray ray = new Ray(Vector3.zero, v);
-    
-                EnemySpawner spawner = Instantiate(spawnerPrefab, ray.GetPoint(portalDistanceFromOrigin), Quaternion.identity);
-                spawnerList.Add(spawner);
-                
-                spawnOrder.RemoveAt(0);
+                var v = Quaternion.AngleAxis(_spawnOrder[0], Vector3.forward) * Vector3.up;
+                var ray = new Ray(Vector3.zero, v);
+
+                var spawner = Instantiate(spawnerPrefab, ray.GetPoint(portalDistanceFromOrigin), Quaternion.identity);
+                _spawnerList.Add(spawner);
+
+                _spawnOrder.RemoveAt(0);
             }
         }
-    
+
         private EnemySpawner GetRandomSpawner()
         {
-            return spawnerList[Random.Range(0, spawnerList.Count)];
+            return _spawnerList[Random.Range(0, _spawnerList.Count)];
         }
-        
+
         private List<T> Shuffle<T>(List<T> data)
         {
-            System.Random rng = new System.Random();
-            int n = data.Count;  
-            while (n > 1) {  
-                n--;  
-                int k = rng.Next(n + 1);  
-                var value = data[k];
-                data[k] = data[n];
-                data[n] = value;
+            var rng = new System.Random();
+            var n = data.Count;
+            while (n > 1)
+            {
+                n--;
+                var k = rng.Next(n + 1);
+                (data[k], data[n]) = (data[n], data[k]);
             }
 
             return data;
         }
     }
 }
-
