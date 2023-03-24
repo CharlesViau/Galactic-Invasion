@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace ScriptableObjects.Ability
 { 
@@ -6,7 +7,7 @@ namespace ScriptableObjects.Ability
     // ReSharper disable once RequiredBaseTypesIsNotInherited
     public class SpawnAbility : AbilitySo
     {
-        //public AbilityType Type;
+        [SerializeField] private GameObject abilityPrefab;
 
         protected override void ReadyStateRefresh()
         {
@@ -15,7 +16,9 @@ namespace ScriptableObjects.Ability
 
         protected override void OnCast()
         {
-            //AbilityManager.Instance.Create(AbilityType, new Ability.Args(TargetTransform.position));
+            Instantiate(abilityPrefab, Owner.TargetTransform.position,TargetTransform.rotation);
+            MessageUI.Instance.SetText("Cost: " + stats.goldCost);
+            MessageUI.Instance.Show();
         }
 
         protected override void OnActiveCast()

@@ -10,7 +10,7 @@ namespace ScriptableObjects.Ability
         [SerializeField]private TargetingSo targetingSo;
         protected TargetingSo TargetingSoClone;
         protected AbilitySo AbilitySo;
-        [HideInInspector] public SpellUIType SpellUIType;
+        [HideInInspector] public SpellUIType spellUIType;
 
         public Action OnFirePress;
         public Action OnFireRelease;
@@ -20,7 +20,7 @@ namespace ScriptableObjects.Ability
             AbilitySo = abilitySo;
             OnFirePress = OnFirePressEvent;
             OnFireRelease = OnFireReleaseEvent;
-            SpellUIType = abilitySo.spellUIType;
+            spellUIType = abilitySo.spellUIType;
 
             TargetingSoClone = Instantiate(targetingSo);
             TargetingSoClone.Init(abilitySo);

@@ -1,5 +1,6 @@
 ﻿using Ability;
 using Ability.AbilityUI;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace ScriptableObjects.Ability
@@ -30,7 +31,7 @@ namespace ScriptableObjects.Ability
 
         public override void OnExit()
         {
-            if (SpellUIType == SpellUIType.None) return;
+            if (spellUIType == SpellUIType.None) return;
             //SpellUIManager.Instance.Pool(SpellUIType, _spellUI);
             
         }
@@ -38,6 +39,9 @@ namespace ScriptableObjects.Ability
         protected override void OnFirePressEvent()
         {
             AbilitySo.TargetTransform = TargetingSoClone.TargetTransform;
+            if (AbilitySo.Owner.Gold >= AbilitySo.stats.goldCost) return;
+            MessageUI.Instance.SetText("Not enough money! Costs " + AbilitySo.stats.goldCost);
+            MessageUI.Instance.Show();
         }
 
         protected override void OnFireReleaseEvent()
