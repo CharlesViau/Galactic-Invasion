@@ -14,11 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats:
     manaCost: 0
-    goldCost: 0
+    goldCost: 100
     baseChannelTime: 0
     baseCooldown: 0
     art: {fileID: 0}
-  spellUIType: 0
+  spellUIType: 1
+  range: 0
   activeTime: 0
   recastCharges: 0
   targetingStateSo: {fileID: 0}

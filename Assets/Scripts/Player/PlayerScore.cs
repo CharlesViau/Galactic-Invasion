@@ -5,18 +5,20 @@ namespace Motherbase
     public class PlayerScore : MonoBehaviour
     {
         private float _score;
-        
 
         private void Start()
         {
             _score = 0;
-            CurrentScore.SetScore((int) _score);
+            CurrentScore.SetScore((int)_score);
         }
 
         private void Update()
         {
-            _score += Time.deltaTime;
-            CurrentScore.SetScore((int) _score);
+            if (Controller.Instance.gameStarted)
+            {
+                _score += Time.deltaTime;
+                CurrentScore.SetScore((int)_score);
+            }
         }
 
         public int GetScore()

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.22664595, g: 0.22968304, b: 0.26535705, a: 1}
+  m_IndirectSpecularColor: {r: 0.17091203, g: 0.17802086, b: 0.20764858, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -597,7 +597,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 225705986}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
@@ -902,7 +902,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1195867175}
   m_HandleRect: {fileID: 1195867174}
   m_Direction: 0
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -979,7 +979,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -116.5}
   m_SizeDelta: {x: -20, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &375062671
@@ -1366,7 +1366,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "dsf\u200B"
+  m_text: "\u200B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1568,7 +1568,7 @@ MonoBehaviour:
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 1, g: 1, b: 1, a: 0.7529412}
-  m_Text: dsf
+  m_Text: 
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0
@@ -1656,6 +1656,7 @@ MonoBehaviour:
   content: {fileID: 932088827}
   replayButton: {fileID: 2061616218}
   mainMenuButton: {fileID: 966551118}
+  buttonsPanel: {fileID: 2115040949}
 --- !u!4 &928431615
 Transform:
   m_ObjectHideFlags: 0
@@ -1767,10 +1768,10 @@ RectTransform:
   m_Father: {fileID: 2115040950}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 178.13, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 493.07672, y: -37.06005}
+  m_SizeDelta: {x: 178.13, y: 74.1201}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &966551118
 MonoBehaviour:
@@ -2038,6 +2039,7 @@ MonoBehaviour:
   content: {fileID: 0}
   replayButton: {fileID: 2061616218}
   mainMenuButton: {fileID: 966551118}
+  buttonsPanel: {fileID: 0}
 --- !u!4 &1165418973
 Transform:
   m_ObjectHideFlags: 0
@@ -2328,7 +2330,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 204, y: 0}
   m_SizeDelta: {x: -20, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1496346788
@@ -2413,8 +2415,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 24747500}
   m_HandleRect: {fileID: 24747499}
   m_Direction: 2
-  m_Value: 1.0000005
-  m_Size: 0.77666676
+  m_Value: 1
+  m_Size: 0.77666664
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3274,10 +3276,10 @@ RectTransform:
   m_Father: {fileID: 2115040950}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 178.1535, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 306.93497, y: -37.06005}
+  m_SizeDelta: {x: 178.1535, y: 74.1201}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2061616218
 MonoBehaviour:
@@ -3391,7 +3393,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2115040950
 RectTransform:
   m_ObjectHideFlags: 0

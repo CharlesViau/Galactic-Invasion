@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameOverStateManager : MonoBehaviour
 {
@@ -14,6 +14,7 @@ public class GameOverStateManager : MonoBehaviour
     public Transform content;
     public Button replayButton;
     public Button mainMenuButton;
+    public GameObject buttonsPanel;
     private int _score;
     private string _username;
 
@@ -40,7 +41,7 @@ public class GameOverStateManager : MonoBehaviour
         submitButton.interactable = false;
         StartCoroutine(Scoreboard.Instance.SetScore(_username, _score, score =>
         {
-            RefreshScoreboard(score.rank - 5, 9);
+            RefreshScoreboard(score);
             ShowScoreboardPanel();
         }));
     }
@@ -49,9 +50,10 @@ public class GameOverStateManager : MonoBehaviour
     {
         gameOverPanel.SetActive(false);
         scoreboardPanel.SetActive(true);
+        buttonsPanel.SetActive(true);
     }
 
-    private void RefreshScoreboard(int offset, int limit)
+    private void RefreshScoreboard(Scoreboard.Score newScore)
     {
         StartCoroutine(Scoreboard.Instance.GetScores(scores =>
         {
@@ -61,18 +63,20 @@ public class GameOverStateManager : MonoBehaviour
                 scoreRow.GetComponent<TextMeshProUGUI>().text =
                     $"{score.rank}\t{score.player}\t\t{score.score}";
             }
-        }, offset, limit));
+
+            var newScoreRow = Instantiate(scoreRowPrefab, content);
+            newScoreRow.GetComponent<TextMeshProUGUI>().text =
+                $"{newScore.rank}\t{newScore.player}\t\t{newScore.score}";
+        }));
     }
-    
+
     public void ReplayGame()
     {
-        
         SceneManager.LoadScene("MainScene");
     }
 
     public void ReturnToMainMenu()
     {
-        
         SceneManager.LoadScene("Main Menu");
     }
 }
