@@ -89,7 +89,7 @@ namespace ScriptableObjects.Ability
 
         private bool OwnerHasResources()
         {
-            return Owner.Gold >= stats.goldCost;
+            return AbilityHandler.Gold >= stats.goldCost;
         }
         
         #region Abstract Methods

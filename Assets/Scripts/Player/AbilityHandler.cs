@@ -1,7 +1,9 @@
 using System;
 using Interfaces;
+using Motherbase;
 using ScriptableObjects.Ability;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Player
 {
@@ -16,15 +18,6 @@ namespace Player
 
         #endregion
 
-        #region Events
-
-        public Action<int> OnAbilityPress;
-        public Action<int> OnAbilityPressRelease;
-        public Action OnLeftMousePress;
-        public Action OnLeftMousePressRelease;
-
-        #endregion
-
         #region Various needed get to be implemented
 
         private PlayerReferencing _referencing;
@@ -34,9 +27,25 @@ namespace Player
         public Vector3 TargetPosition => _referencing.referenceTransform.position;
 
         public Transform TargetTransform { get; set; }
-        public int Gold { get; }
+        public static int Gold => PlayerCurrency.Instance.Balance;
+
+        private bool _isInDesigningDefenseMode;
 
         #endregion
+
+        private void OnEnable()
+        {
+            PlayerInputEventHandler.Instance.OnAbilityPerform += OnAbilityPressEvent;
+            PlayerInputEventHandler.Instance.OnLeftClickPerform += OnLeftMousePress;
+            PlayerInputEventHandler.Instance.OnLeftClickCancel += OnLeftMousePressRelease;
+        }
+
+        private void OnDisable()
+        {
+            PlayerInputEventHandler.Instance.OnAbilityPerform -= OnAbilityPressEvent;
+            PlayerInputEventHandler.Instance.OnLeftClickPerform -= OnLeftMousePress;
+            PlayerInputEventHandler.Instance.OnLeftClickCancel -= OnLeftMousePressRelease;
+        }
 
         private void Awake()
         {
@@ -61,6 +70,8 @@ namespace Player
                 abilities[i] = Instantiate(abilities[i]);
                 abilities[i].Init(this);
             }
+
+            SelectedAbility = abilities[0];
         }
 
         private void CheckDefaultAbilityAutoSelection()
@@ -76,13 +87,13 @@ namespace Player
                     ability.Refresh();
         }
 
-        private void OnLeftMousePressEvent()
+        private void OnLeftMousePress()
         {
             if (SelectedAbility)
                 SelectedAbility.OnFirePress?.Invoke();
         }
 
-        private void OnLeftMousePressReleaseEvent()
+        private void OnLeftMousePressRelease()
         {
             if (SelectedAbility)
                 SelectedAbility.OnFireRelease?.Invoke();
@@ -90,6 +101,7 @@ namespace Player
 
         private void OnAbilityPressEvent(int i)
         {
+            if (i > abilities.Length - 1) return;
             if (abilities[i] is null || SelectedAbility && SelectedAbility.IsChanneling) return;
 
             //Cancel Spell

@@ -16,10 +16,12 @@ MonoBehaviour:
     manaCost: 0
     goldCost: 150
     baseChannelTime: 0
-    baseCooldown: 0
+    baseCooldown: 1
     art: {fileID: 0}
   spellUIType: 2
   range: 0
   activeTime: 0
   recastCharges: 0
-  targetingStateSo: {fileID: 0}
+  targetingStateSo: {fileID: 11400000, guid: 08609d28e3345be408c01a13484f7e07, type: 2}
+  abilityPrefab: {fileID: 6573137632762128771, guid: ed746cb0201050b4b905767affceba7a, type: 3}
+  zOffest: 3

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4114838253352072776
+--- !u!1 &2331246970387458593
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8936467999090577155}
-  - component: {fileID: 6321156075497239100}
+  - component: {fileID: 7296993715806786410}
+  - component: {fileID: 5690815613137317461}
   m_Layer: 0
   m_Name: Input Manager
   m_TagString: Untagged
@@ -17,13 +17,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8936467999090577155
+--- !u!4 &7296993715806786410
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4114838253352072776}
+  m_GameObject: {fileID: 2331246970387458593}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.01720512, y: 1.5146954, z: -0.55227613}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,114 +31,114 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6321156075497239100
+--- !u!114 &5690815613137317461
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4114838253352072776}
+  m_GameObject: {fileID: 2331246970387458593}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8cddab38e56983140a8f2a358eea3ce0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _leftJoystickAction:
-    m_UseReference: 0
+  leftJoystickAction:
+    m_UseReference: 1
     m_Action:
       m_Name: Left Joystick
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 8efc5f8e-ddce-4283-a30b-de6023248b24
+      m_Id: 321084d0-33ac-4bd9-a981-9e7a75bf1db5
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
-    m_Reference: {fileID: 0}
-  _mouseDeltaAction:
+    m_Reference: {fileID: -7165196542626551050, guid: b46ac0dd96455ef44bfe114d843721a2, type: 3}
+  mouseDeltaAction:
     m_UseReference: 0
     m_Action:
       m_Name: Mouse Delta
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 99d4c003-4e7e-4969-af09-029832bb6981
+      m_Id: 037a3e5c-88cc-4d6f-8cd1-051b6ab63ed4
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
     m_Reference: {fileID: 0}
-  _leftMouseClickAction:
-    m_UseReference: 0
+  leftMouseClickAction:
+    m_UseReference: 1
     m_Action:
       m_Name: Left Mouse Click
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 1cf7d49f-7138-4a53-a8ce-6045185af680
+      m_Id: 71ddc46a-d026-468a-a8f9-6dc782dc2f07
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
-    m_Reference: {fileID: 0}
-  _rightMouseClickAction:
+    m_Reference: {fileID: 1120369429361536294, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  rightMouseClickAction:
     m_UseReference: 0
     m_Action:
       m_Name: Right Mouse Click
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 44e2f3b2-eca0-4164-992d-c67209a6ef6e
+      m_Id: 3355de96-54ff-40f6-865d-e8fcc1360427
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
     m_Reference: {fileID: 0}
-  _ability1Action:
-    m_UseReference: 0
+  ability1Action:
+    m_UseReference: 1
     m_Action:
       m_Name: Ability 1
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: ad0b3778-8f1c-41c5-a0b3-e4d4d620ce9a
+      m_Id: dd323b8c-e60e-4ba9-92ec-14f862c8cc38
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
-    m_Reference: {fileID: 0}
-  _ability2Action:
-    m_UseReference: 0
+    m_Reference: {fileID: -8661900260728852398, guid: b46ac0dd96455ef44bfe114d843721a2, type: 3}
+  ability2Action:
+    m_UseReference: 1
     m_Action:
       m_Name: Ability 2
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: cf754883-d99b-4b5f-aced-7bd8db176744
+      m_Id: 27a3748c-839e-4626-9adf-51bdc731cc14
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
-    m_Reference: {fileID: 0}
-  _ability3Action:
-    m_UseReference: 0
+    m_Reference: {fileID: 4763089898367717361, guid: b46ac0dd96455ef44bfe114d843721a2, type: 3}
+  ability3Action:
+    m_UseReference: 1
     m_Action:
       m_Name: Ability 3
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: b07067a0-a191-4305-805a-e872b62fd1df
+      m_Id: 4a076614-7c25-4b35-9328-eb1aa508ca60
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
-    m_Reference: {fileID: 0}
-  _ability4Action:
+    m_Reference: {fileID: -5567770075877015624, guid: b46ac0dd96455ef44bfe114d843721a2, type: 3}
+  ability4Action:
     m_UseReference: 0
     m_Action:
       m_Name: Ability 4
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: eb59d6e5-3698-453f-ab23-5bf91cadb740
+      m_Id: 90f1ff11-9e69-483c-97f2-2645929d45da
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
     m_Reference: {fileID: 0}
-  _gamePauseAction:
-    m_UseReference: 0
+  gamePauseAction:
+    m_UseReference: 1
     m_Action:
       m_Name: Game Pause
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 75f70da1-0f0a-4974-806c-9c761c1a52c5
+      m_Id: 4b873560-7141-4188-9ce1-a419d6b3d196
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
-    m_Reference: {fileID: 0}
+    m_Reference: {fileID: -6339820178569544921, guid: b46ac0dd96455ef44bfe114d843721a2, type: 3}

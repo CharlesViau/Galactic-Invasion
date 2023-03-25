@@ -1,5 +1,6 @@
 using Enemies;
 using Motherbase;
+using Player;
 using UnityEngine;
 
 public class Controller : MonoBehaviour
@@ -27,6 +28,8 @@ public class Controller : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
+
+        PlayerInputEventHandler.Instance.OnAbilityPerform += MotherBaseAbility;
     }
 
     private void Start()
@@ -39,7 +42,7 @@ public class Controller : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+       /* if (Input.GetKeyDown(KeyCode.Q))
             if (_playerCurrency.SpendMoney(_playerCurrency.tempoPlanetCost))
             {
                 if (GetWorldPosition() != Vector3.zero)
@@ -75,7 +78,7 @@ public class Controller : MonoBehaviour
         {
             IsShowingPreview = !IsShowingPreview;
             _mb.ShowShieldsPreview(IsShowingPreview);
-        }
+        }*/
     }
 
     public void GameStart()
@@ -93,5 +96,12 @@ public class Controller : MonoBehaviour
         var mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         return _plane.Raycast(mouseRay, out var distance) ? mouseRay.GetPoint(distance) : Vector3.zero;
+    }
+
+    private void MotherBaseAbility(int ability)
+    {
+        if (ability != 3) return;
+        IsShowingPreview = !IsShowingPreview;
+        _mb.ShowShieldsPreview(IsShowingPreview);
     }
 }

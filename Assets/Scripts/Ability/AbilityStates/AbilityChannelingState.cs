@@ -1,4 +1,5 @@
-﻿using ScriptableObjects.Ability;
+﻿using Motherbase;
+using ScriptableObjects.Ability;
 using UnityEngine;
 
 namespace Ability.AbilityStates
@@ -21,7 +22,7 @@ namespace Ability.AbilityStates
         {
             _channelTime = 0;
             HasBeenInterrupt = false;
-            //AbilitySo.Owner.RemoveGold(AbilitySo.stats.goldCost);
+            PlayerCurrency.Instance.SpendMoney(AbilitySo.stats.goldCost);
         }
 
         public override void OnExit()

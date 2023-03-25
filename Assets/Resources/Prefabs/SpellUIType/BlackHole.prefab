@@ -205,7 +205,7 @@ GameObject:
   - component: {fileID: 1453720025346302677}
   - component: {fileID: -924243596349645039}
   m_Layer: 0
-  m_Name: BlackHolePreview
+  m_Name: BlackHole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -252,6 +252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50e44726d9324df4588eabb863fefa77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 2
 --- !u!1 &6673898324755753849
 GameObject:
   m_ObjectHideFlags: 0

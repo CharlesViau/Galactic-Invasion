@@ -6,7 +6,8 @@ namespace Motherbase
 {
     public class PlayerCurrency : MonoBehaviour
     {
-        public int balance;
+        [SerializeField]private int balance;
+        public int Balance => balance;
         public int shieldCost;
         public int blackHoleCost;
         public int tempoPlanetCost;

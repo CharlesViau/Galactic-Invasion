@@ -35,11 +35,15 @@ namespace Player
         public event Action<Vector2> OnLeftJoystickPerform;
         public event Action OnLeftJoystick1Cancel;
         public event Action<InputAction.CallbackContext> OnRightClickPerform;
-        public event Action<InputAction.CallbackContext> OnLeftClickPerform;
+        public event Action OnLeftClickPerform;
+        public event Action OnLeftClickCancel;
+
+        public event Action<int> OnAbilityPerform;
+        public event Action<int> OnAbilityCancel;
         
 
         //Other
-        public event Action<InputAction.CallbackContext> OnGamePausePerform;
+        public event Action OnGamePausePerform;
         #endregion
 
         #region Singleton Stuff
@@ -59,14 +63,14 @@ namespace Player
 
             leftJoystickAction.reference.action.performed += OnMovePerfo;
             leftJoystickAction.reference.action.canceled += OnMoveStop;
-            //mouseDeltaAction.reference.action.performed += OnLookPerfo;
-            //_basicAttackAction.reference.action.performed += OnAttackPerfo;
-            /*_ability1Action.reference.action.performed += OnAbility1Perfo;
-        _ability2Action.reference.action.performed += OnAbility2Perfo;
-        _ability3Action.reference.action.performed += OnAbility3Perfo;
-        _ability4Action.reference.action.performed += OnAbility4Perfo;
-        */
-            //_gamePauseAction.reference.action.performed += OnGamePausePerfo;
+            leftMouseClickAction.reference.action.performed += OnLeftClickPerfo;
+            leftMouseClickAction.reference.action.canceled += OnLeftClickStop;
+            ability1Action.reference.action.performed += OnAbility1Perfo;
+            ability2Action.reference.action.performed += OnAbility2Perfo;
+            ability3Action.reference.action.performed += OnAbility3Perfo;
+            //ability4Action.reference.action.performed += OnAbility4Perfo;
+            
+            gamePauseAction.reference.action.performed += OnGamePausePerfo;
         
 
         }
@@ -76,13 +80,13 @@ namespace Player
 
             leftJoystickAction.reference.action.performed -= OnMovePerfo;
             leftJoystickAction.reference.action.canceled -= OnMoveStop;
-            //mouseDeltaAction.action.performed -= OnLookPerfo;
-            //_basicAttackAction.action.performed -= OnAttackPerfo;
-            /*_ability1Action.reference.action.performed -= OnAbility1Perfo;
-        _ability2Action.reference.action.performed -= OnAbility2Perfo;
-        _ability3Action.reference.action.performed -= OnAbility3Perfo;
-        _ability4Action.reference.action.performed -= OnAbility4Perfo;*/
-            //_gamePauseAction.reference.action.performed -= OnGamePausePerfo;
+            leftMouseClickAction.reference.action.performed -= OnLeftClickPerfo;
+            leftMouseClickAction.reference.action.canceled -= OnLeftClickStop;
+            ability1Action.reference.action.performed -= OnAbility1Perfo;
+            ability2Action.reference.action.performed -= OnAbility2Perfo;
+            ability3Action.reference.action.performed -= OnAbility3Perfo;
+            //ability4Action.reference.action.performed -= OnAbility4Perfo;
+            gamePauseAction.reference.action.performed -= OnGamePausePerfo;
         }
 
         #region Hidden Complexity (Private Methods)
@@ -132,34 +136,39 @@ namespace Player
         }
         #endregion
         #region Attack
-        private void OnAttackPerfo(InputAction.CallbackContext context)
+        private void OnLeftClickPerfo(InputAction.CallbackContext context)
         {
-            OnLeftClickPerform?.Invoke(context);
+            OnLeftClickPerform?.Invoke();
+        }
+
+        private void OnLeftClickStop(InputAction.CallbackContext context)
+        {
+            OnLeftClickCancel?.Invoke();
         }
         #endregion
         #region Abilities
         #region Ability1
         private void OnAbility1Perfo(InputAction.CallbackContext context)
         {
-            //OnAbility1Perform?.Invoke(context);
+            OnAbilityPerform?.Invoke(1);
         }
         #endregion
         #region Ability2
         private void OnAbility2Perfo(InputAction.CallbackContext context)
         {
-            //OnAbility2Perform?.Invoke(context);
+            OnAbilityPerform?.Invoke(2);
         }
         #endregion
         #region Ability3
         private void OnAbility3Perfo(InputAction.CallbackContext context)
         {
-            //OnAbility3Perform?.Invoke(context);
+            OnAbilityPerform?.Invoke(3);
         }
         #endregion
         #region Ability4
         private void OnAbility4Perfo(InputAction.CallbackContext context)
         {
-            //OnAbility4Perform?.Invoke(context);
+            OnAbilityPerform?.Invoke(4);
         }
         #endregion
         #endregion
@@ -167,7 +176,7 @@ namespace Player
         #region GamePause
         private void OnGamePausePerfo(InputAction.CallbackContext context)
         {
-            OnGamePausePerform?.Invoke(context);
+            OnGamePausePerform?.Invoke();
         }
         #endregion
 

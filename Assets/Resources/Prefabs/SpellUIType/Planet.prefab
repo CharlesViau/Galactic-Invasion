@@ -483,9 +483,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6205908951063167636}
   - component: {fileID: 7926191486063042310}
-  - component: {fileID: 5072250595239913139}
+  - component: {fileID: -1254223127533817574}
   m_Layer: 0
-  m_Name: TempoPlanetPreview
+  m_Name: Planet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -520,7 +520,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 2.75
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5072250595239913139
+--- !u!114 &-1254223127533817574
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -532,6 +532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50e44726d9324df4588eabb863fefa77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 1
 --- !u!1 &2386613579356990325
 GameObject:
   m_ObjectHideFlags: 0

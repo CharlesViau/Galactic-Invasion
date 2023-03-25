@@ -13,16 +13,16 @@ public class PlayerBalanceUI : MonoBehaviour
         _playerCurrency = player.GetComponent<PlayerCurrency>();
         _balanceText = GetComponent<TextMeshProUGUI>();
 
-        _playerCurrency.OnBalanceChanged += UpdateBalaceText;
-        UpdateBalaceText(_playerCurrency.balance);
+        _playerCurrency.OnBalanceChanged += UpdateBalanceText;
+        UpdateBalanceText(_playerCurrency.Balance);
     }
 
     private void OnDestroy()
     {
-        _playerCurrency.OnBalanceChanged -= UpdateBalaceText;
+        _playerCurrency.OnBalanceChanged -= UpdateBalanceText;
     }
 
-    private void UpdateBalaceText(int newBalance)
+    private void UpdateBalanceText(int newBalance)
     {
         _balanceText.text = $"Balance: {newBalance}";
     }
