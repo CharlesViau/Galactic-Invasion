@@ -13,7 +13,6 @@ public class ScoreBoardController : MonoBehaviour
 
     private void Awake()
     {
-        refreshButton.onClick.AddListener(Refresh);
         Refresh();
     }
     
