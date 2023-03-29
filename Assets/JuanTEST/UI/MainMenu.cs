@@ -11,9 +11,17 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private TMP_Text volumeTextValue = null;
     [SerializeField] private Slider volumeSlider = null;
     [SerializeField] private float defaultVolume = 0.5f;
+    
+    [Header("Fullscreen Setting")]
+    [SerializeField] private Toggle fullscreenToggle = null;
+    [SerializeField] private bool defaultFullscreen = true;
 
     [Header("Confirmation")]
     [SerializeField] private GameObject confirmationPrompt = null;
+    
+    [Header("Panels")]
+    [SerializeField] private GameObject warningPanel = null;
+    [SerializeField] private GameObject mainMenuPanel = null;
 
     public void PlayGame()
     {
@@ -35,6 +43,7 @@ public class MainMenu : MonoBehaviour
     public void ApplySettings()
     {
         PlayerPrefs.SetFloat("masterVolume", AudioListener.volume);
+        PlayerPrefs.SetInt("isFullscreen", Screen.fullScreen ? 1 : 0);
         StartCoroutine(ConfirmationBox());
     }
 
@@ -45,19 +54,34 @@ public class MainMenu : MonoBehaviour
         if (volumeSlider != null) {
             volumeSlider.value = defaultVolume;
         }
+        
+        fullscreenToggle.isOn = defaultFullscreen;
+        OnFullscreenToggleValueChanged(defaultFullscreen);
 
         PlayerPrefs.SetFloat("masterVolume", defaultVolume);
+        PlayerPrefs.SetInt("isFullscreen", defaultFullscreen ? 1 : 0);
     }
 
     public void LoadSettings()
     {
         float savedVolume = PlayerPrefs.GetFloat("masterVolume", defaultVolume);
         SetVolume(savedVolume);
+        bool savedFullscreen = PlayerPrefs.GetInt("isFullscreen", 1) == 1;
+        fullscreenToggle.isOn = savedFullscreen;
+        OnFullscreenToggleValueChanged(savedFullscreen);
     }
 
     public void BackButton()
     {
-        LoadSettings();
+        float savedVolume = PlayerPrefs.GetFloat("masterVolume", defaultVolume);
+        if (Mathf.Abs(AudioListener.volume - savedVolume) > 0.01f)
+        {
+            ShowWarningPanel(true);
+        }
+        else
+        {
+            mainMenuPanel.SetActive(true);
+        }
         
     }
 
@@ -82,6 +106,26 @@ public class MainMenu : MonoBehaviour
             SetWindowedMode();
         }
     }
+    
+    public void ConfirmBack()
+    {
+        ShowWarningPanel(false);
+        ApplySettings();
+        mainMenuPanel.SetActive(true);
+    }
+
+    public void CancelBack()
+    {
+        ShowWarningPanel(false);
+        LoadSettings();
+        
+    }
+    
+    private void ShowWarningPanel(bool show)
+    {
+        warningPanel.SetActive(show);
+        mainMenuPanel.SetActive(!show);
+    }
 
     public IEnumerator ConfirmationBox()
     {
@@ -89,5 +133,6 @@ public class MainMenu : MonoBehaviour
         yield return new WaitForSeconds(1);
         confirmationPrompt.SetActive(false);
     }
+    
 }
 
