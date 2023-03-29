@@ -42,7 +42,7 @@ public class Controller : MonoBehaviour
 
     private void Update()
     {
-       /* if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q))
             if (_playerCurrency.SpendMoney(_playerCurrency.tempoPlanetCost))
             {
                 if (GetWorldPosition() != Vector3.zero)
@@ -78,7 +78,7 @@ public class Controller : MonoBehaviour
         {
             IsShowingPreview = !IsShowingPreview;
             _mb.ShowShieldsPreview(IsShowingPreview);
-        }*/
+        }
     }
 
     public void GameStart()

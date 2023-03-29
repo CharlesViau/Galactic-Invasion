@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.22633842, g: 0.22937483, b: 0.26500946, a: 1}
+  m_IndirectSpecularColor: {r: 0.1365096, g: 0.14252096, b: 0.16776893, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -501,6 +501,10 @@ PrefabInstance:
     - target: {fileID: 2331246970387458593, guid: 52baad38207ae524e818383a83a7573e, type: 3}
       propertyPath: m_Name
       value: Input Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 2331246970387458593, guid: 52baad38207ae524e818383a83a7573e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5690815613137317461, guid: 52baad38207ae524e818383a83a7573e, type: 3}
       propertyPath: ability3Action.m_UseReference
@@ -3448,8 +3452,6 @@ GameObject:
   - component: {fileID: 1214293400}
   - component: {fileID: 1214293399}
   - component: {fileID: 1214293401}
-  - component: {fileID: 1214293402}
-  - component: {fileID: 1214293403}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -3471,8 +3473,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   balance: 250
   shieldCost: 250
-  blackHoleCost: 150
-  tempoPlanetCost: 150
+  blackHoleCost: 75
+  tempoPlanetCost: 75
 --- !u!4 &1214293400
 Transform:
   m_ObjectHideFlags: 0
@@ -3499,42 +3501,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25be533f4e274661b21603b559695c17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1214293402
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1214293398}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31d989905c8b5fd4dbc9dd0eaab6d806, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blackHole: {fileID: 6573137632762128771, guid: ed746cb0201050b4b905767affceba7a, type: 3}
-  tempoPlanet: {fileID: 2209175263278119338, guid: 2bf41d87a8d06ba43942396e233c8a89, type: 3}
-  gameStarted: 0
---- !u!114 &1214293403
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1214293398}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 958a830ce5b87694e87ebbb9527521f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnerPrefab: {fileID: 4876402025750149224, guid: 0420dec797fb09f4b9075d8aec0c3e42, type: 3}
-  numberOfSpawner: 8
-  portalDistanceFromOrigin: 300
-  scaling: 1.25
-  waveCost: 10
-  normalCost: 1
-  fastCost: 2
-  slowCost: 10
-  timeBetweenWaves: 10
 --- !u!1 &1218248886
 GameObject:
   m_ObjectHideFlags: 0
@@ -3565,6 +3531,74 @@ Transform:
   - {fileID: 1290365608}
   m_Father: {fileID: 0}
   m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1228645855
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1228645858}
+  - component: {fileID: 1228645857}
+  - component: {fileID: 1228645856}
+  m_Layer: 0
+  m_Name: Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1228645856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1228645855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 958a830ce5b87694e87ebbb9527521f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnerPrefab: {fileID: 4876402025750149224, guid: 0420dec797fb09f4b9075d8aec0c3e42, type: 3}
+  numberOfSpawner: 8
+  portalDistanceFromOrigin: 300
+  scaling: 1.25
+  waveCost: 10
+  normalCost: 1
+  fastCost: 2
+  slowCost: 10
+  timeBetweenWaves: 10
+--- !u!114 &1228645857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1228645855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31d989905c8b5fd4dbc9dd0eaab6d806, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blackHole: {fileID: 6573137632762128771, guid: ed746cb0201050b4b905767affceba7a, type: 3}
+  tempoPlanet: {fileID: 2209175263278119338, guid: 2bf41d87a8d06ba43942396e233c8a89, type: 3}
+  gameStarted: 0
+--- !u!4 &1228645858
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1228645855}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 70.303444, y: 88.557045, z: -65.7315}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1265218528
 GameObject:
@@ -3991,6 +4025,10 @@ PrefabInstance:
     - target: {fileID: 298352738702080485, guid: 0bc9309bd6432bf48854dd415e590d2f, type: 3}
       propertyPath: m_Name
       value: Hand
+      objectReference: {fileID: 0}
+    - target: {fileID: 298352738702080485, guid: 0bc9309bd6432bf48854dd415e590d2f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 298352738702080506, guid: 0bc9309bd6432bf48854dd415e590d2f, type: 3}
       propertyPath: m_RootOrder

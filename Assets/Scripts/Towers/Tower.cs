@@ -40,6 +40,8 @@ namespace Towers
         [Header("Tower Parts and Positions")] [SerializeField]
         private Transform head;
 
+        private Vector3 headOgPosition;
+
         [SerializeField] private Transform barrel;
         [SerializeField] private Transform particlePosition;
 
@@ -88,6 +90,8 @@ namespace Towers
         {
             _animator = GetComponent<Animator>();
             _detectionRangePow2 = detectionRange * detectionRange;
+
+            headOgPosition = head.position;
 
             OnFire += AimAndFire;
         }
@@ -146,13 +150,12 @@ namespace Towers
         private bool IsTargetInView()
         {
             RaycastHit hit;
-            if(Physics.Raycast(head.position, (_target.position - head.position), out hit))
+            if(Physics.Raycast(headOgPosition, (_target.position - headOgPosition), out hit))
             {
                 if(hit.transform == _target)
                 {
                     return true;
                 }
-                return false;
             }
             return false;
         }
