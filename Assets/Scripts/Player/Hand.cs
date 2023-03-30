@@ -19,12 +19,19 @@ public class Hand : MonoBehaviour
     [SerializeField] private GameObject blackHole;
     [SerializeField] private GameObject tempoPreview;
     [SerializeField] private GameObject tempo;
+    private CoreMotherBase _mb;
 
     private GameObject previewRef;
 
     private bool isPlacingAbilty = false;
+    private bool isShowingPreview = false;
 
     private CurrentAbility _currentAbility;
+
+    private void Start()
+    {
+        _mb = FindObjectOfType<CoreMotherBase>();
+    }
     private void Update()
     {
         var currentPos = Input.mousePosition;
@@ -52,9 +59,18 @@ public class Hand : MonoBehaviour
             }
         }
     }
+
+    public void OnRepairShieldAbilityClick()
+    {
+        isShowingPreview = !isShowingPreview;
+        _mb.ShowShieldsPreview(isShowingPreview);
+    }
     
     public void OnTempoPlanetAbilityClick()
     {
+        isShowingPreview = false;
+        _mb.ShowShieldsPreview(isShowingPreview);
+        
         if (isPlacingAbilty) return;
         if (PlayerCurrency.Instance.SpendMoney(PlayerCurrency.Instance.tempoPlanetCost))
         {
@@ -74,6 +90,9 @@ public class Hand : MonoBehaviour
 
     public void OnBlackHoleAbilityClick()
     {
+        isShowingPreview = false;
+        _mb.ShowShieldsPreview(isShowingPreview);
+        
         if (isPlacingAbilty) return;
         if (PlayerCurrency.Instance.SpendMoney(PlayerCurrency.Instance.blackHoleCost))
         {
