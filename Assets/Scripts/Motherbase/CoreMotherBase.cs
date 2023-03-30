@@ -46,6 +46,7 @@ namespace Motherbase
         private void GameOver()
         {
             SceneManager.LoadScene("GameOverScene");
+            Cursor.visible = true;
         }
 
         public void DestroyShields()

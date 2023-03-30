@@ -17,12 +17,14 @@ public class Menu_ingame : MonoBehaviour
                 Time.timeScale = 0f; // Pause the game
                 menuPanel.SetActive(true);
                 isPaused = true;
+                Cursor.visible = true;
             }
             else
             {
                 Time.timeScale = 1f; // Resume the game
                 menuPanel.SetActive(false);
                 isPaused = false;
+                Cursor.visible = false;
             }
         }
     }
@@ -32,6 +34,7 @@ public class Menu_ingame : MonoBehaviour
         Time.timeScale = 1f;
         menuPanel.SetActive(false);
         isPaused = false;
+        Cursor.visible = false;
     }
     
     public void RestartGame()
@@ -39,6 +42,7 @@ public class Menu_ingame : MonoBehaviour
         Time.timeScale = 1f;
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex); // Reload the current scene
+        Cursor.visible = false;
     }
     
     public void QuitGame()

@@ -35,6 +35,7 @@ public class Controller : MonoBehaviour
         _plane = new Plane(Vector3.back, 0);
         _mb = FindObjectOfType<CoreMotherBase>();
         _playerCurrency = PlayerCurrency.Instance;
+        Cursor.visible = false;
     }
 
     private void Update()
