@@ -20,8 +20,7 @@ namespace Motherbase
         {
             if (!_playerCurrency.SpendMoney(_playerCurrency.shieldCost))
             {
-                MessageUI.Instance.SetText("Not enough money!");
-                MessageUI.Instance.Show();
+                MessageUI.Instance.Show("Not enough money!");
                 return;
             }
 

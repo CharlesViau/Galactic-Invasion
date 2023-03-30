@@ -48,14 +48,12 @@ public class Controller : MonoBehaviour
                 if (GetWorldPosition() != Vector3.zero)
                 {
                     Instantiate(tempoPlanet, GetWorldPosition(), transform.rotation);
-                    MessageUI.Instance.SetText("Cost: " + _playerCurrency.tempoPlanetCost);
-                    MessageUI.Instance.Show();
+                    MessageUI.Instance.Show("Cost: " + _playerCurrency.tempoPlanetCost);
                 }
             }
             else
             {
-                MessageUI.Instance.SetText("Not enough money! Costs " + _playerCurrency.tempoPlanetCost);
-                MessageUI.Instance.Show();
+                MessageUI.Instance.Show("Not enough money! Costs " + _playerCurrency.tempoPlanetCost);
             }
 
         if (Input.GetKeyDown(KeyCode.E))
@@ -64,14 +62,12 @@ public class Controller : MonoBehaviour
                 if (GetWorldPosition() != Vector3.zero)
                 {
                     Instantiate(blackHole, GetWorldPosition(), blackHole.transform.rotation);
-                    MessageUI.Instance.SetText("Cost: " + _playerCurrency.blackHoleCost);
-                    MessageUI.Instance.Show();
+                    MessageUI.Instance.Show("Cost: " + _playerCurrency.blackHoleCost);
                 }
             }
             else
             {
-                MessageUI.Instance.SetText("Not enough money! Costs " + _playerCurrency.blackHoleCost);
-                MessageUI.Instance.Show();
+                MessageUI.Instance.Show("Not enough money! Costs " + _playerCurrency.blackHoleCost);
             }
 
         if (Input.GetKeyDown(KeyCode.W))

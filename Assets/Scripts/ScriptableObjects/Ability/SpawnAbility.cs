@@ -19,8 +19,7 @@ namespace ScriptableObjects.Ability
             var obj = Instantiate(abilityPrefab,
                 new Vector3(Owner.TargetPosition.x, Owner.TargetPosition.y, Owner.TargetPosition.z - zOffest),
                 Quaternion.Euler(90, 0, 0));
-            MessageUI.Instance.SetText("Cost: " + stats.goldCost);
-            MessageUI.Instance.Show();
+            MessageUI.Instance.Show("Cost: " + stats.goldCost);
         }
 
         protected override void OnActiveCast()

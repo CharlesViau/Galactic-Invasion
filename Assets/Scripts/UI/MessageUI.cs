@@ -27,10 +27,11 @@ public class MessageUI : MonoBehaviour
         messageText.gameObject.SetActive(false);
     }
 
-    public void Show()
+    public void Show(string message, int duration = 3)
     {
         if (_coroutine != null) StopCoroutine(_coroutine);
 
+        messageText.text = message;
         messageText.gameObject.SetActive(true);
         _coroutine = StartCoroutine(Hide());
     }

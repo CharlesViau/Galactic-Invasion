@@ -41,8 +41,7 @@ namespace ScriptableObjects.Ability
         {
             AbilitySo.TargetTransform = TargetingSoClone.TargetTransform;
             if (AbilityHandler.Gold >= AbilitySo.stats.goldCost) return;
-            MessageUI.Instance.SetText("Not enough money! Costs " + AbilitySo.stats.goldCost);
-            MessageUI.Instance.Show();
+            MessageUI.Instance.Show("Not enough money! Costs " + AbilitySo.stats.goldCost);
         }
 
         protected override void OnFireReleaseEvent()

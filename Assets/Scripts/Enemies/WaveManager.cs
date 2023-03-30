@@ -81,8 +81,7 @@ namespace Enemies
                     NewSpawner();
                     break;
                 case 4:
-                    MessageUI.Instance.SetText("New Spawner Incoming!");
-                    MessageUI.Instance.Show();
+                    MessageUI.Instance.Show("New Spawner Incoming!");
                     break;
             }
 
