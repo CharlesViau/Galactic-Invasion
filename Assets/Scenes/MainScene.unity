@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.21866038, g: 0.22184527, b: 0.25651002, a: 1}
+  m_IndirectSpecularColor: {r: 0.13861495, g: 0.14473972, b: 0.17033306, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -433,7 +433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e66ae66f433014b4aaf20a00a24e5cdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1214293398}
+  player: {fileID: 1228645855}
 --- !u!1 &136163674
 GameObject:
   m_ObjectHideFlags: 0
@@ -527,7 +527,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 298352738702080506, guid: 0bc9309bd6432bf48854dd415e590d2f, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 298352738702080506, guid: 0bc9309bd6432bf48854dd415e590d2f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4181,7 +4181,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1214293400}
-  - component: {fileID: 1214293399}
   - component: {fileID: 1214293401}
   m_Layer: 0
   m_Name: Player
@@ -4190,22 +4189,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1214293399
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1214293398}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10c1d76eb5674a1681beb7f5e2b2765f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  balance: 250
-  shieldCost: 250
-  blackHoleCost: 75
-  tempoPlanetCost: 75
 --- !u!4 &1214293400
 Transform:
   m_ObjectHideFlags: 0
@@ -4340,6 +4323,7 @@ GameObject:
   - component: {fileID: 1228645858}
   - component: {fileID: 1228645857}
   - component: {fileID: 1228645856}
+  - component: {fileID: 1228645859}
   m_Layer: 0
   m_Name: Controller
   m_TagString: Untagged
@@ -4394,13 +4378,29 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1228645855}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 70.303444, y: 88.557045, z: -65.7315}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 605.9119, y: -226.47345, z: 2683.9875}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_Father: {fileID: 2129519046}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1228645859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1228645855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10c1d76eb5674a1681beb7f5e2b2765f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  balance: 250
+  shieldCost: 250
+  blackHoleCost: 75
+  tempoPlanetCost: 75
 --- !u!1 &1265218528
 GameObject:
   m_ObjectHideFlags: 0
@@ -5099,7 +5099,7 @@ Transform:
   - {fileID: 426938044}
   - {fileID: 1498794880}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1832049917
 GameObject:
@@ -5624,3 +5624,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0bf7fd813e5230439b0e2540847308c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2129519045
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2129519046}
+  m_Layer: 0
+  m_Name: Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2129519046
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129519045}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -535.60846, y: 315.0305, z: -2749.719}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1228645858}
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

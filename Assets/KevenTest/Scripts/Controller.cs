@@ -34,15 +34,6 @@ public class Controller : MonoBehaviour
         Cursor.visible = false;
     }
 
-    private void Update()
-    {
-        /*if (Input.GetKeyDown(KeyCode.W))
-        {
-            IsShowingPreview = !IsShowingPreview;
-            _mb.ShowShieldsPreview(IsShowingPreview);
-        }*/
-    }
-
     public void GameStart()
     {
         if (!gameStarted)
@@ -52,7 +43,7 @@ public class Controller : MonoBehaviour
         }
     }
 
-    private Vector3 GetWorldPosition()
+    /*private Vector3 GetWorldPosition()
     {
         if (Camera.main == null) return Vector3.zero;
         var mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -65,5 +56,5 @@ public class Controller : MonoBehaviour
         if (ability != 3) return;
         IsShowingPreview = !IsShowingPreview;
         _mb.ShowShieldsPreview(IsShowingPreview);
-    }
+    }*/
 }
