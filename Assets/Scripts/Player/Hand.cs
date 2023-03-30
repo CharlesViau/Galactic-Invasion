@@ -1,16 +1,13 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using Motherbase;
-using Planets;
 using UnityEngine;
 
-enum CurrentAbility
+internal enum CurrentAbility
 {
     None,
     BlackHole,
     TempoPlanet
 }
+
 public class Hand : MonoBehaviour
 {
     [SerializeField] private Transform playerTransform;
@@ -19,19 +16,20 @@ public class Hand : MonoBehaviour
     [SerializeField] private GameObject blackHole;
     [SerializeField] private GameObject tempoPreview;
     [SerializeField] private GameObject tempo;
-    private CoreMotherBase _mb;
-
-    private GameObject previewRef;
-
-    private bool isPlacingAbilty = false;
-    private bool isShowingPreview = false;
 
     private CurrentAbility _currentAbility;
+    private CoreMotherBase _mb;
+
+    private bool isPlacingAbilty;
+    private bool isShowingPreview;
+
+    private GameObject previewRef;
 
     private void Start()
     {
         _mb = FindObjectOfType<CoreMotherBase>();
     }
+
     private void Update()
     {
         var currentPos = Input.mousePosition;
@@ -42,7 +40,8 @@ public class Hand : MonoBehaviour
 
         if (isPlacingAbilty)
         {
-            previewRef.transform.position = referenceTransform.position;
+            previewRef.transform.position =
+                new Vector3(referenceTransform.position.x, referenceTransform.position.y - 10);
             if (Input.GetMouseButtonDown(0))
             {
                 switch (_currentAbility)
@@ -65,12 +64,12 @@ public class Hand : MonoBehaviour
         isShowingPreview = !isShowingPreview;
         _mb.ShowShieldsPreview(isShowingPreview);
     }
-    
+
     public void OnTempoPlanetAbilityClick()
     {
         isShowingPreview = false;
         _mb.ShowShieldsPreview(isShowingPreview);
-        
+
         if (isPlacingAbilty) return;
         if (PlayerCurrency.Instance.SpendMoney(PlayerCurrency.Instance.tempoPlanetCost))
         {
@@ -80,7 +79,7 @@ public class Hand : MonoBehaviour
                 referenceTransform.position, tempoPreview.transform.rotation);
         }
     }
-    
+
     private void SpawnTempoPlanet()
     {
         isPlacingAbilty = false;
@@ -92,7 +91,7 @@ public class Hand : MonoBehaviour
     {
         isShowingPreview = false;
         _mb.ShowShieldsPreview(isShowingPreview);
-        
+
         if (isPlacingAbilty) return;
         if (PlayerCurrency.Instance.SpendMoney(PlayerCurrency.Instance.blackHoleCost))
         {
