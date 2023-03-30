@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.22369769, g: 0.22671893, b: 0.2619928, a: 1}
+  m_IndirectSpecularColor: {r: 0.16195557, g: 0.16838366, b: 0.19694439, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -205,7 +205,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 11234688}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2058083896}
+        m_TargetAssemblyTypeName: Hand, Assembly-CSharp
+        m_MethodName: OnRepairShieldAbilityClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &11234688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4206,8 +4218,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31d989905c8b5fd4dbc9dd0eaab6d806, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blackHole: {fileID: 6573137632762128771, guid: ed746cb0201050b4b905767affceba7a, type: 3}
-  tempoPlanet: {fileID: 2209175263278119338, guid: 2bf41d87a8d06ba43942396e233c8a89, type: 3}
   gameStarted: 0
 --- !u!4 &1228645858
 Transform:
