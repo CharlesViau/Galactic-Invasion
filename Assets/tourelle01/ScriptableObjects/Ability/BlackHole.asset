@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1425a8f396400464f8d8f15b6e2af487, type: 3}
+  m_Name: BlackHole
+  m_EditorClassIdentifier: 
+  stats:
+    manaCost: 0
+    goldCost: 150
+    baseChannelTime: 0
+    baseCooldown: 1
+    art: {fileID: 0}
+  spellUIType: 2
+  range: 0
+  activeTime: 0
+  recastCharges: 0
+  targetingStateSo: {fileID: 11400000, guid: 08609d28e3345be408c01a13484f7e07, type: 2}
+  abilityPrefab: {fileID: 6573137632762128771, guid: ed746cb0201050b4b905767affceba7a, type: 3}
+  zOffest: 3
