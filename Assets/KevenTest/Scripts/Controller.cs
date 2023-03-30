@@ -6,12 +6,9 @@ public class Controller : MonoBehaviour
 {
     private WaveManager _waveManager;
     private static bool IsShowingPreview;
-    [SerializeField] private GameObject blackHole;
-    [SerializeField] private GameObject tempoPlanet;
     private CoreMotherBase _mb;
 
     private Plane _plane;
-    private PlayerCurrency _playerCurrency;
 
     public bool gameStarted = false;
     
@@ -34,45 +31,16 @@ public class Controller : MonoBehaviour
         _waveManager = gameObject.GetComponent<WaveManager>();
         _plane = new Plane(Vector3.back, 0);
         _mb = FindObjectOfType<CoreMotherBase>();
-        _playerCurrency = PlayerCurrency.Instance;
         Cursor.visible = false;
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
-            if (_playerCurrency.SpendMoney(_playerCurrency.tempoPlanetCost))
-            {
-                if (GetWorldPosition() != Vector3.zero)
-                {
-                    Instantiate(tempoPlanet, GetWorldPosition(), transform.rotation);
-                    MessageUI.Instance.Show("Cost: " + _playerCurrency.tempoPlanetCost);
-                }
-            }
-            else
-            {
-                MessageUI.Instance.Show("Not enough money! Costs " + _playerCurrency.tempoPlanetCost);
-            }
-
-        if (Input.GetKeyDown(KeyCode.E))
-            if (_playerCurrency.SpendMoney(_playerCurrency.blackHoleCost))
-            {
-                if (GetWorldPosition() != Vector3.zero)
-                {
-                    Instantiate(blackHole, GetWorldPosition(), blackHole.transform.rotation);
-                    MessageUI.Instance.Show("Cost: " + _playerCurrency.blackHoleCost);
-                }
-            }
-            else
-            {
-                MessageUI.Instance.Show("Not enough money! Costs " + _playerCurrency.blackHoleCost);
-            }
-
-        if (Input.GetKeyDown(KeyCode.W))
+        /*if (Input.GetKeyDown(KeyCode.W))
         {
             IsShowingPreview = !IsShowingPreview;
             _mb.ShowShieldsPreview(IsShowingPreview);
-        }
+        }*/
     }
 
     public void GameStart()
