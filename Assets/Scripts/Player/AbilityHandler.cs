@@ -1,46 +1,14 @@
+using System;
 using Interfaces;
 using Motherbase;
 using ScriptableObjects.Ability;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Player
 {
     public class AbilityHandler : MonoBehaviour, ITargetAcquirer
     {
-        public static AbilityHandler Instance { get; private set; }
-
-        private void Awake()
-        {
-            if (Instance != null && Instance != this)
-                Destroy(gameObject);
-            else
-                Instance = this;
-
-            InitAbilities();
-
-            _referencing = GetComponent<PlayerReferencing>();
-        }
-
-        private void Update()
-        {
-            CheckDefaultAbilityAutoSelection();
-            RefreshAbilities();
-        }
-
-        private void OnEnable()
-        {
-            PlayerInputEventHandler.Instance.OnAbilityPerform += OnAbilityPressEvent;
-            PlayerInputEventHandler.Instance.OnLeftClickPerform += OnLeftMousePress;
-            PlayerInputEventHandler.Instance.OnLeftClickCancel += OnLeftMousePressRelease;
-        }
-
-        private void OnDisable()
-        {
-            PlayerInputEventHandler.Instance.OnAbilityPerform -= OnAbilityPressEvent;
-            PlayerInputEventHandler.Instance.OnLeftClickPerform -= OnLeftMousePress;
-            PlayerInputEventHandler.Instance.OnLeftClickCancel -= OnLeftMousePressRelease;
-        }
-
         #region Property and Variables
 
         private const int NumberOfAbility = 3;
@@ -64,6 +32,33 @@ namespace Player
         private bool _isInDesigningDefenseMode;
 
         #endregion
+
+        private void OnEnable()
+        {
+            PlayerInputEventHandler.Instance.OnAbilityPerform += OnAbilityPressEvent;
+            PlayerInputEventHandler.Instance.OnLeftClickPerform += OnLeftMousePress;
+            PlayerInputEventHandler.Instance.OnLeftClickCancel += OnLeftMousePressRelease;
+        }
+
+        private void OnDisable()
+        {
+            PlayerInputEventHandler.Instance.OnAbilityPerform -= OnAbilityPressEvent;
+            PlayerInputEventHandler.Instance.OnLeftClickPerform -= OnLeftMousePress;
+            PlayerInputEventHandler.Instance.OnLeftClickCancel -= OnLeftMousePressRelease;
+        }
+
+        private void Awake()
+        {
+            InitAbilities();
+
+            _referencing = GetComponent<PlayerReferencing>();
+        }
+
+        private void Update()
+        {
+            CheckDefaultAbilityAutoSelection();
+            RefreshAbilities();
+        }
 
         #region Privat Methods (Hidden Complexity)
 
@@ -104,10 +99,10 @@ namespace Player
                 SelectedAbility.OnFireRelease?.Invoke();
         }
 
-        public void OnAbilityPressEvent(int i)
+        private void OnAbilityPressEvent(int i)
         {
             if (i > abilities.Length - 1) return;
-            if (abilities[i] is null || (SelectedAbility && SelectedAbility.IsChanneling)) return;
+            if (abilities[i] is null || SelectedAbility && SelectedAbility.IsChanneling) return;
 
             //Cancel Spell
             if (abilities[i] == SelectedAbility)
