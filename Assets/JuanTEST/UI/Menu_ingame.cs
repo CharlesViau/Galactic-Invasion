@@ -34,6 +34,13 @@ public class Menu_ingame : MonoBehaviour
         isPaused = false;
     }
     
+    public void RestartGame()
+    {
+        Time.timeScale = 1f;
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex); // Reload the current scene
+    }
+    
     public void QuitGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
