@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Motherbase;
 using UnityEngine;
 
 public class Hand : MonoBehaviour
@@ -36,11 +37,12 @@ public class Hand : MonoBehaviour
     public void OnBlackHoleAbilityClick()
     {
         if (isPlacingAbilty) return;
-        isPlacingAbilty = true;
-        //Check currency
-        blackHolePreviewRef = Instantiate(blackHolePreview,
-            referenceTransform.position,
-            blackHolePreview.transform.rotation);
+        if (PlayerCurrency.Instance.SpendMoney(PlayerCurrency.Instance.blackHoleCost))
+        {
+            isPlacingAbilty = true;
+            blackHolePreviewRef = Instantiate(blackHolePreview,
+                referenceTransform.position, blackHolePreview.transform.rotation);
+        }
     }
 
     private void SpawnBlackHole()
