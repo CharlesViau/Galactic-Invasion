@@ -5,12 +5,6 @@ namespace Enemies
 {
     public class WaveManager : MonoBehaviour
     {
-        [SerializeField] private EnemySpawner spawnerPrefab;
-
-        [SerializeField] private short numberOfSpawner;
-
-        [SerializeField] private float portalDistanceFromOrigin;
-
         [SerializeField] private float scaling;
 
         [SerializeField] private int waveCost;
@@ -31,7 +25,9 @@ namespace Enemies
 
         private float _slowPercentage = 0.10f;
 
-        private List<EnemySpawner> _spawnerList;
+        [SerializeField] private List<EnemySpawner> _spawnerList;
+
+        private List<EnemySpawner> _activeSpawners;
 
         private List<int> _spawnOrder;
 
@@ -43,10 +39,9 @@ namespace Enemies
         
         private void Start()
         {
-            _spawnerList = new List<EnemySpawner>();
+            _activeSpawners = new List<EnemySpawner>();
             _spawnOrder = new List<int>();
-            _numberOfDegreesBetweenSpawners = 360 / numberOfSpawner;
-            for (var i = 0; i < numberOfSpawner; i++) _spawnOrder.Add(_numberOfDegreesBetweenSpawners * i);
+            for (var i = 0; i < _spawnerList.Count; i++) _spawnOrder.Add(i);
             _spawnOrder = Shuffle(_spawnOrder);
             NewSpawner();
         }
@@ -124,19 +119,15 @@ namespace Enemies
         {
             if (_spawnOrder.Count > 0)
             {
-                var v = Quaternion.AngleAxis(_spawnOrder[0], Vector3.forward) * Vector3.up;
-                var ray = new Ray(Vector3.zero, v);
-
-                var spawner = Instantiate(spawnerPrefab, ray.GetPoint(portalDistanceFromOrigin), Quaternion.identity);
-                _spawnerList.Add(spawner);
-
+                _spawnerList[_spawnOrder[0]].gameObject.SetActive(true);
+                _activeSpawners.Add(_spawnerList[_spawnOrder[0]]);
                 _spawnOrder.RemoveAt(0);
             }
         }
 
         private EnemySpawner GetRandomSpawner()
         {
-            return _spawnerList[Random.Range(0, _spawnerList.Count)];
+            return _activeSpawners[Random.Range(0, _activeSpawners.Count)];
         }
 
         private List<T> Shuffle<T>(List<T> data)
