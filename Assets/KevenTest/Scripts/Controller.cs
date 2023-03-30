@@ -31,6 +31,7 @@ public class Controller : MonoBehaviour
         _waveManager = gameObject.GetComponent<WaveManager>();
         _plane = new Plane(Vector3.back, 0);
         _mb = FindObjectOfType<CoreMotherBase>();
+        Cursor.visible = false;
     }
 
     public void GameStart()
