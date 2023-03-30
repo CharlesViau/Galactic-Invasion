@@ -1,6 +1,5 @@
 using Enemies;
 using Motherbase;
-using Player;
 using UnityEngine;
 
 public class Controller : MonoBehaviour
@@ -28,8 +27,6 @@ public class Controller : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
-
-        PlayerInputEventHandler.Instance.OnAbilityPerform += MotherBaseAbility;
     }
 
     private void Start()
