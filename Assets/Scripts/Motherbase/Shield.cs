@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Numerics;
 using Enemies;
 using UnityEngine;
+using UnityEngine.UI;
+using Motherbase;
 using Vector3 = UnityEngine.Vector3;
 
 namespace Motherbase 
@@ -11,6 +13,8 @@ namespace Motherbase
     {
         [SerializeField] private int hp;
         [SerializeField] private Transform t;
+        private int maxHP;
+        [SerializeField] private Image healthBar;
 
         private bool isRingDestroyed = false;
         private Vector3 direction;
@@ -22,6 +26,7 @@ namespace Motherbase
         {
             velocity = Vector3.zero;
             //rotationSpeed = new Vector3(10,0,0);
+            maxHP = hp;
         }
 
         private void FixedUpdate()
@@ -40,16 +45,25 @@ namespace Motherbase
             isRingDestroyed = true;
             direction = (t.position - Vector3.zero).normalized;
             gravityStrength = Random.Range(6f, 8f);
+            Destroy(healthBar.gameObject);
         }
         private void ReceiveDamage(int dmg)
         {
             hp -= dmg;
+            UpdateHealthBar(hp, maxHP);
         
             if (hp <= 0)
             {
                 //Destruction animation
                 gameObject.SetActive(false);
+                Destroy(healthBar.gameObject);
             }
+        }
+        
+        private void UpdateHealthBar(int currentHP, int maxHP)
+        {
+            float healthPercentage = (float)currentHP / maxHP;
+            healthBar.fillAmount = healthPercentage;
         }
 
         private void OnTriggerEnter(Collider collider)
