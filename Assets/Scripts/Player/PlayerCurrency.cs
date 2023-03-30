@@ -22,7 +22,6 @@ namespace Motherbase
             }
 
             Instance = this;
-            DontDestroyOnLoad(gameObject);
         }
 
         private void OnEnable()

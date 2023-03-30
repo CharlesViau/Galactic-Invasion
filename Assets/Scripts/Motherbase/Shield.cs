@@ -17,6 +17,7 @@ namespace Motherbase
         [SerializeField] private Image healthBar;
 
         private bool isRingDestroyed = false;
+        private bool imageDestroyed = false;
         private Vector3 direction;
         private float gravityStrength;
         private Vector3 velocity;
@@ -45,18 +46,31 @@ namespace Motherbase
             isRingDestroyed = true;
             direction = (t.position - Vector3.zero).normalized;
             gravityStrength = Random.Range(6f, 8f);
-            Destroy(healthBar.gameObject);
+            if (!imageDestroyed)
+            {
+                Destroy(healthBar.gameObject);
+            }
         }
         private void ReceiveDamage(int dmg)
         {
             hp -= dmg;
-            UpdateHealthBar(hp, maxHP);
-        
+
             if (hp <= 0)
             {
                 //Destruction animation
                 gameObject.SetActive(false);
-                Destroy(healthBar.gameObject);
+                if (!imageDestroyed)
+                {
+                    Destroy(healthBar.gameObject);
+                }
+                imageDestroyed = true;
+            }
+            else
+            {
+                if (!isRingDestroyed)
+                {
+                    UpdateHealthBar(hp, maxHP);
+                }
             }
         }
         
