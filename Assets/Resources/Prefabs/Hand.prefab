@@ -71,7 +71,6 @@ GameObject:
   m_Component:
   - component: {fileID: 298352738702080506}
   - component: {fileID: 298352738702080507}
-  - component: {fileID: 298352738702080484}
   m_Layer: 0
   m_Name: Hand
   m_TagString: Untagged
@@ -111,19 +110,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &298352738702080484
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 298352738702080485}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d9cdbbb2fc5a844a9f26514bc4d926c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
 --- !u!1 &343798310859563694
 GameObject:
   m_ObjectHideFlags: 0
@@ -1587,8 +1573,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7944005203774815724}
-  - component: {fileID: 7616853442835208731}
-  - component: {fileID: 298352738478791057}
+  - component: {fileID: 2666751826236216307}
   m_Layer: 0
   m_Name: Hand
   m_TagString: Untagged
@@ -1613,7 +1598,7 @@ Transform:
   m_Father: {fileID: 298352738702080506}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 49.54, y: -56.2, z: 0}
---- !u!114 &7616853442835208731
+--- !u!114 &2666751826236216307
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1622,28 +1607,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 7310773795104122710}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d4a11e1c903de64793c3dd069947cac, type: 3}
+  m_Script: {fileID: 11500000, guid: aa398e4f15895e0408d13b38031cf0d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 298352738702080506}
-  referenceTransform: {fileID: 298352738283443316}
-  testObject: {fileID: 0}
---- !u!114 &298352738478791057
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7310773795104122710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75fc00c0bc474b64289dfec2ad4c9d13, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  abilities:
-  - {fileID: 11400000, guid: 0e8a104374523e14188ce2b6a9549d15, type: 2}
-  - {fileID: 11400000, guid: 9b6a6eeb994553a49b9949cd3cb519b4, type: 2}
-  - {fileID: 11400000, guid: 0e8a104374523e14188ce2b6a9549d15, type: 2}
+  referenceTransform: {fileID: 4174064326120357779}
+  blackHolePreview: {fileID: 6573137632762128771, guid: 84617339a3579d44186562f97878450e, type: 3}
+  blackHole: {fileID: 6573137632762128771, guid: ed746cb0201050b4b905767affceba7a, type: 3}
+  tempoPreview: {fileID: 2209175263278119338, guid: f71b46f30936c2747986d9cc1b4e8517, type: 3}
+  tempo: {fileID: 2209175263278119338, guid: 2bf41d87a8d06ba43942396e233c8a89, type: 3}
 --- !u!1 &7328229214747619438
 GameObject:
   m_ObjectHideFlags: 0
