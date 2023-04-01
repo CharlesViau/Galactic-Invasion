@@ -851,7 +851,7 @@ MonoBehaviour:
   - {fileID: 6023527618509193604}
   - {fileID: 3997642759281399299}
   - {fileID: 5830010552148513485}
-  hp: 100
+  hp: 5
 --- !u!135 &7346361526038670814
 SphereCollider:
   m_ObjectHideFlags: 0

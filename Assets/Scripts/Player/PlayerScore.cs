@@ -20,6 +20,8 @@ namespace Motherbase
                 CurrentScore.SetScore((int)_score);
             }
         }
+        
+        
 
         public int GetScore()
         {

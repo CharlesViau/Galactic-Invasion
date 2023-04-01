@@ -4916,7 +4916,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e0c642f560607649b7d0a6f62274d81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfEnemies: 10
+  numberOfEnemies: 20
 --- !u!1 &4906092814652633917
 GameObject:
   m_ObjectHideFlags: 0

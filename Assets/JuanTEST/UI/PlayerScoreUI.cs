@@ -18,7 +18,7 @@ namespace UI
 
         private void Update()
         {
-            _scoreText.text = $"Score: {_playerScore.GetScore()}";
+            _scoreText.text = $"Time survived: {_playerScore.GetScore()}";
         }
     }
 }
