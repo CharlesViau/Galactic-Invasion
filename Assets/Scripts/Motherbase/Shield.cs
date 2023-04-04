@@ -11,6 +11,9 @@ namespace Motherbase
 {
     public class Shield : MonoBehaviour
     {
+        public delegate void DeathEvent();
+        public event DeathEvent deathEvent;
+        
         [SerializeField] private int hp;
         [SerializeField] private Transform t;
         private int maxHP;
@@ -58,6 +61,10 @@ namespace Motherbase
             if (hp <= 0)
             {
                 //Destruction animation
+                if (deathEvent != null)
+                {
+                    deathEvent();
+                }
                 gameObject.SetActive(false);
                 if (!imageDestroyed)
                 {

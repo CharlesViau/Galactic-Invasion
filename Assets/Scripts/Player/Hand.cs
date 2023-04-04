@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Motherbase;
 using UnityEngine;
 
@@ -26,10 +27,18 @@ public class Hand : MonoBehaviour
 
     private GameObject previewRef;
 
+    private List<Shield> shields;
+
     private void Start()
     {
         _mb = FindObjectOfType<CoreMotherBase>();
         _animator = GetComponent<Animator>();
+        shields = _mb.GetShieldList();
+        
+        foreach (Shield s in shields)
+        {
+            s.deathEvent += OnShieldDestroy;
+        }
     }
 
     private void Update()
@@ -149,5 +158,21 @@ public class Hand : MonoBehaviour
         isPlacingAbilty = false;
         Destroy(previewRef.gameObject);
         Instantiate(blackHole, referenceTransform.position, blackHole.transform.rotation);
+    }
+
+    private void OnShieldDestroy()
+    {
+        if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
+        {
+            _animator.SetTrigger("Thumbs down");
+        }
+    }
+    
+    private void OnDestroy()
+    {
+        foreach (Shield s in shields)
+        {
+            s.deathEvent -= OnShieldDestroy;
+        }
     }
 }

@@ -13,7 +13,7 @@ namespace Motherbase
 
         private List<int> _spawnedShields;
 
-        private void Start()
+        private void Awake()
         {
             _spawnedShields = new List<int>();
 
@@ -72,6 +72,11 @@ namespace Motherbase
             shields[index].gameObject.SetActive(true);
             _spawnedShields.Add(index);
             ShowShieldsPreview(false);
+        }
+
+        public List<Shield> GetShieldList()
+        {
+            return shields;
         }
     }
 }
