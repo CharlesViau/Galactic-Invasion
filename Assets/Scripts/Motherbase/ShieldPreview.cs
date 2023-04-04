@@ -5,6 +5,8 @@ namespace Motherbase
     public class ShieldPreview : MonoBehaviour
     {
         [SerializeField] private CoreMotherBase mb;
+
+        [SerializeField] private Hand _hand;
         private int _index;
         private PlayerCurrency _playerCurrency;
         private Controller _controller;
@@ -20,12 +22,11 @@ namespace Motherbase
         {
             if (!_playerCurrency.SpendMoney(_playerCurrency.shieldCost))
             {
-                MessageUI.Instance.Show("Not enough money!");
                 return;
             }
-
             mb.SpawnShield(_index);
             gameObject.SetActive(false);
+            _hand.OnRepairShield();
             Controller.Instance.GameStart();
             CostUI.Instance.Hide();
         }

@@ -16,7 +16,8 @@ public class Hand : MonoBehaviour
     [SerializeField] private GameObject blackHole;
     [SerializeField] private GameObject tempoPreview;
     [SerializeField] private GameObject tempo;
-
+    
+    private Animator _animator;
     private CurrentAbility _currentAbility;
     private CoreMotherBase _mb;
 
@@ -28,6 +29,7 @@ public class Hand : MonoBehaviour
     private void Start()
     {
         _mb = FindObjectOfType<CoreMotherBase>();
+        _animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -53,16 +55,52 @@ public class Hand : MonoBehaviour
                         SpawnTempoPlanet();
                         break;
                 }
-
                 _currentAbility = CurrentAbility.None;
+            }
+
+            if (Input.GetMouseButtonDown(1))
+            {
+                switch (_currentAbility)
+                {
+                    case CurrentAbility.BlackHole:
+                        PlayerCurrency.Instance.AddMoney(PlayerCurrency.Instance.blackHoleCost);
+                        break;
+                    case CurrentAbility.TempoPlanet:
+                        PlayerCurrency.Instance.AddMoney(PlayerCurrency.Instance.tempoPlanetCost);
+                        break;
+                }
+                _currentAbility = CurrentAbility.None;
+                _animator.SetTrigger("Cancel");
+                isPlacingAbilty = false;
+                Destroy(previewRef.gameObject);
+            }
+        } else if (isShowingPreview)
+        {
+            if (Input.GetMouseButtonDown(1))
+            {
+                isShowingPreview = false;
+                _mb.ShowShieldsPreview(isShowingPreview);
+                _animator.SetTrigger("Cancel");
             }
         }
     }
 
     public void OnRepairShieldAbilityClick()
     {
-        isShowingPreview = !isShowingPreview;
+        if (PlayerCurrency.Instance.Balance < PlayerCurrency.Instance.shieldCost)
+        {
+            MessageUI.Instance.Show("Not enough money!");
+            return;
+        }
+        isShowingPreview = true;
         _mb.ShowShieldsPreview(isShowingPreview);
+        _animator.SetTrigger("Shoot");
+    }
+
+    public void OnRepairShield()
+    {
+        _animator.SetTrigger("Punch");
+        isShowingPreview = false;
     }
 
     public void OnTempoPlanetAbilityClick()
@@ -73,6 +111,7 @@ public class Hand : MonoBehaviour
         if (isPlacingAbilty) return;
         if (PlayerCurrency.Instance.SpendMoney(PlayerCurrency.Instance.tempoPlanetCost))
         {
+            _animator.SetTrigger("Grab");
             _currentAbility = CurrentAbility.TempoPlanet;
             isPlacingAbilty = true;
             previewRef = Instantiate(tempoPreview,
@@ -82,6 +121,7 @@ public class Hand : MonoBehaviour
 
     private void SpawnTempoPlanet()
     {
+        _animator.SetTrigger("Drop");
         isPlacingAbilty = false;
         Destroy(previewRef.gameObject);
         Instantiate(tempo, referenceTransform.position, tempo.transform.rotation);
@@ -95,6 +135,7 @@ public class Hand : MonoBehaviour
         if (isPlacingAbilty) return;
         if (PlayerCurrency.Instance.SpendMoney(PlayerCurrency.Instance.blackHoleCost))
         {
+            _animator.SetTrigger("Grab");
             _currentAbility = CurrentAbility.BlackHole;
             isPlacingAbilty = true;
             previewRef = Instantiate(blackHolePreview,
@@ -104,6 +145,7 @@ public class Hand : MonoBehaviour
 
     private void SpawnBlackHole()
     {
+        _animator.SetTrigger("Drop");
         isPlacingAbilty = false;
         Destroy(previewRef.gameObject);
         Instantiate(blackHole, referenceTransform.position, blackHole.transform.rotation);

@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mb: {fileID: 2346044282579672232}
+  _hand: {fileID: 0}
 --- !u!64 &6540297610757621723
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -323,6 +324,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mb: {fileID: 2346044282579672232}
+  _hand: {fileID: 0}
 --- !u!64 &1574978809826045523
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -434,6 +436,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mb: {fileID: 2346044282579672232}
+  _hand: {fileID: 0}
 --- !u!64 &745361871146657187
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -545,6 +548,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mb: {fileID: 2346044282579672232}
+  _hand: {fileID: 0}
 --- !u!64 &5474454160637193467
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -962,6 +966,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mb: {fileID: 2346044282579672232}
+  _hand: {fileID: 0}
 --- !u!64 &743389792348815126
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1335,6 +1340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mb: {fileID: 2346044282579672232}
+  _hand: {fileID: 0}
 --- !u!64 &377389864281780011
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1446,6 +1452,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mb: {fileID: 2346044282579672232}
+  _hand: {fileID: 0}
 --- !u!64 &379443066088409729
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1851,6 +1858,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mb: {fileID: 2346044282579672232}
+  _hand: {fileID: 0}
 --- !u!64 &1772178844468866675
 MeshCollider:
   m_ObjectHideFlags: 0

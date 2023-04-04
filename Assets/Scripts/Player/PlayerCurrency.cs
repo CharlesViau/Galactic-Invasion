@@ -41,7 +41,7 @@ namespace Motherbase
             AddMoney(reward);
         }
 
-        private void AddMoney(int amount)
+        public void AddMoney(int amount)
         {
             balance += amount;
             OnBalanceChanged?.Invoke(balance);
