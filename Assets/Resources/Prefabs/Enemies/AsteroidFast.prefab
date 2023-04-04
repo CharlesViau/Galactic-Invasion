@@ -115,7 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   rotationSpeed: {x: 60, y: 60, z: 60}
-  gravityStrength: 6
+  gravityStrength: 8
   hp: 1
   reward: 10
   _type: 1
