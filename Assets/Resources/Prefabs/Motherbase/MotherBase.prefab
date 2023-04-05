@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 1168658943443502420}
   m_Layer: 11
   m_Name: anneauNO_geo
-  m_TagString: Untagged
+  m_TagString: Shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -641,7 +641,7 @@ GameObject:
   - component: {fileID: 5935530815176137751}
   m_Layer: 11
   m_Name: anneauO_geo
-  m_TagString: Untagged
+  m_TagString: Shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -856,6 +856,7 @@ MonoBehaviour:
   - {fileID: 3997642759281399299}
   - {fileID: 5830010552148513485}
   hp: 5
+  maxLVL: 3
 --- !u!135 &7346361526038670814
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -996,7 +997,7 @@ GameObject:
   - component: {fileID: 6690829705508708418}
   m_Layer: 11
   m_Name: anneauSE_geo
-  m_TagString: Untagged
+  m_TagString: Shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1143,7 +1144,7 @@ GameObject:
   - component: {fileID: 3987598774056954969}
   m_Layer: 11
   m_Name: anneauE_geo
-  m_TagString: Untagged
+  m_TagString: Shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1482,7 +1483,7 @@ GameObject:
   - component: {fileID: 8589708435405388948}
   m_Layer: 11
   m_Name: anneauNE_geo
-  m_TagString: Untagged
+  m_TagString: Shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1661,7 +1662,7 @@ GameObject:
   - component: {fileID: 3505271581343529099}
   m_Layer: 11
   m_Name: anneauS_geo
-  m_TagString: Untagged
+  m_TagString: Shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1960,7 +1961,7 @@ GameObject:
   - component: {fileID: 3273469460467196446}
   m_Layer: 11
   m_Name: anneauN_geo
-  m_TagString: Untagged
+  m_TagString: Shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2282,7 +2283,7 @@ GameObject:
   - component: {fileID: 8073088030912488608}
   m_Layer: 11
   m_Name: anneauSO_geo
-  m_TagString: Untagged
+  m_TagString: Shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3169,6 +3170,10 @@ PrefabInstance:
     - target: {fileID: 6792030737701652662, guid: 163a4f07654b2604cbd86e90e9b85995, type: 3}
       propertyPath: m_Layer
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6792030737701652662, guid: 163a4f07654b2604cbd86e90e9b85995, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6859863224490610565, guid: 163a4f07654b2604cbd86e90e9b85995, type: 3}
       propertyPath: m_Layer

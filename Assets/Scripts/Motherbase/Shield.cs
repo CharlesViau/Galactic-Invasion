@@ -6,6 +6,8 @@ using Enemies;
 using UnityEngine;
 using UnityEngine.UI;
 using Motherbase;
+using Towers;
+using UnityEngine.PlayerLoop;
 using Random = UnityEngine.Random;
 using Vector3 = UnityEngine.Vector3;
 
@@ -15,10 +17,9 @@ namespace Motherbase
     {
         public delegate void DeathEvent();
         public event DeathEvent deathEvent;
-        
+
         [SerializeField] private int maxHP;
         [SerializeField] private Transform t;
-        private int hp;
         [SerializeField] private Image healthBar;
 
         private bool isRingDestroyed = false;
@@ -26,12 +27,15 @@ namespace Motherbase
         private Vector3 direction;
         private float gravityStrength;
         private Vector3 velocity;
+        private int hp;
+        private Transform rocket;
+        private Transform sniper;
+        private Tower tower;
         //private Vector3 rotationSpeed;
 
         private void Start()
         {
             velocity = Vector3.zero;
-            //rotationSpeed = new Vector3(10,0,0);
         }
 
         private void OnEnable()
@@ -39,6 +43,13 @@ namespace Motherbase
             healthBar.gameObject.transform.parent.gameObject.SetActive(true);
             hp = maxHP;
             UpdateHealthBar(hp, maxHP);
+        }
+
+        public void GetTowerReferences()
+        {
+            tower = transform.Find("Tower_lvl_one").GetComponent<Tower>();
+            rocket = transform.Find("Tower_lvl_one/tourelle01_v03/tourelleRotation_grp/arme_grp/rocket_grp");
+            sniper = transform.Find("Tower_lvl_one/tourelle01_v03/tourelleRotation_grp/arme_grp/sniper_grp");
         }
 
         private void FixedUpdate()
@@ -50,6 +61,24 @@ namespace Motherbase
                 transform.position = transform.position + (velocity * Time.deltaTime) + ((gravityForce/2) * (Mathf.Pow(Time.deltaTime, 2 )));
                 //transform.Rotate(rotationSpeed, Space.World);
             }
+        }
+
+        public void Upgrade(int lvl)
+        {
+            if (lvl == 2)
+            {
+                rocket.gameObject.SetActive(true);
+            } else if (lvl == 3)
+            {
+                sniper.gameObject.SetActive(true);
+            }
+            tower.Upgrade(lvl);
+        }
+
+        public void Repair()
+        {
+            hp = maxHP;
+            UpdateHealthBar(hp, maxHP);
         }
 
         public void RingDestroyed()
@@ -78,7 +107,7 @@ namespace Motherbase
                 UpdateHealthBar(hp, maxHP);
             }
         }
-        
+
         private void UpdateHealthBar(int currentHP, int maxHP)
         {
             float healthPercentage = (float)currentHP / maxHP;

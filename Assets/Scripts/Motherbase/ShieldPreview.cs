@@ -26,7 +26,7 @@ namespace Motherbase
             }
             mb.SpawnShield(_index);
             gameObject.SetActive(false);
-            _hand.OnRepairShield();
+            _hand.OnPlaceShield();
             Controller.Instance.GameStart();
             /*CostUI.Instance.Hide();*/
         }
