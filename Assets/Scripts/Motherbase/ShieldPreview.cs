@@ -28,7 +28,7 @@ namespace Motherbase
             gameObject.SetActive(false);
             _hand.OnRepairShield();
             Controller.Instance.GameStart();
-            CostUI.Instance.Hide();
+            /*CostUI.Instance.Hide();*/
         }
 
         public void SetIndex(int pIndex)

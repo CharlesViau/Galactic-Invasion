@@ -56,10 +56,10 @@ namespace Motherbase
 
         public void ShowShieldsPreview(bool show)
         {
-            CostUI.Instance.SetText($"Cost: {PlayerCurrency.Instance.shieldCost}");
+            /*CostUI.Instance.SetText($"Cost: {PlayerCurrency.Instance.shieldCost}");
 
             if (show) CostUI.Instance.Show();
-            else CostUI.Instance.Hide();
+            else CostUI.Instance.Hide();*/
 
 
             for (var i = 0; i < shields_preview.Count; i++)
