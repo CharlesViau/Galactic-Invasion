@@ -12,7 +12,9 @@ namespace Motherbase
         [SerializeField] private List<Shield> shields;
         [SerializeField] private List<ShieldPreview> shields_preview;
         [SerializeField] private int hp;
+        [SerializeField] private int maxLVL;
 
+        private int currentLVL = 1;
         private List<int> _spawnedShields;
 
         private void Awake()
@@ -23,6 +25,7 @@ namespace Motherbase
             
             foreach (Shield s in shields)
             {
+                s.GetTowerReferences();
                 s.deathEvent += OnShieldDestroy;
             }
         }
@@ -82,6 +85,22 @@ namespace Motherbase
             return shields;
         }
 
+        public void UpgradeShields()
+        {
+            currentLVL++;
+            foreach (Shield s in shields)
+            {
+                s.Upgrade(currentLVL);
+            }
+        }
+
+        public bool IsMaxLVL()
+        {
+            if (currentLVL >= maxLVL) return true;
+
+            return false;
+        }
+
         private void OnShieldDestroy()
         {
             for (var i = 0; i < shields.Count; i++)
@@ -92,7 +111,7 @@ namespace Motherbase
                 }
             }
         }
-        
+
         private void OnDestroy()
         {
             foreach (Shield s in shields)

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.22653139, g: 0.22956476, b: 0.26522687, a: 1}
+  m_IndirectSpecularColor: {r: 0.22443572, g: 0.22747129, b: 0.2628497, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -783,6 +783,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   balance: 500
   shieldCost: 250
+  repairCost: 200
+  upgradeCost: 400
   blackHoleCost: 100
   tempoPlanetCost: 100
 --- !u!114 &759237337
@@ -1043,7 +1045,7 @@ PrefabInstance:
       objectReference: {fileID: 2135197469}
     - target: {fileID: 310610770591368547, guid: 16591cb407e76564e8050d31c477041b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnRepairShieldAbilityClick
+      value: OnPlaceShieldAbilityClick
       objectReference: {fileID: 0}
     - target: {fileID: 310610770591368550, guid: 16591cb407e76564e8050d31c477041b, type: 3}
       propertyPath: costTextMeshPro
@@ -1101,9 +1103,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 310610771494328512, guid: 16591cb407e76564e8050d31c477041b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2135197469}
+    - target: {fileID: 310610771494328512, guid: 16591cb407e76564e8050d31c477041b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnRepairClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 310610771494328515, guid: 16591cb407e76564e8050d31c477041b, type: 3}
+      propertyPath: cost
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 310610771958433256, guid: 16591cb407e76564e8050d31c477041b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2135197469}
+    - target: {fileID: 310610771958433256, guid: 16591cb407e76564e8050d31c477041b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnUpgradeClick
+      objectReference: {fileID: 0}
     - target: {fileID: 310610771958433257, guid: 16591cb407e76564e8050d31c477041b, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 310610771958433259, guid: 16591cb407e76564e8050d31c477041b, type: 3}
+      propertyPath: cost
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 310610771958433259, guid: 16591cb407e76564e8050d31c477041b, type: 3}
       propertyPath: costTextMeshPro

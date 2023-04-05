@@ -8,6 +8,7 @@ TagManager:
   - Orbit
   - Base Planet
   - Enemy
+  - Shield
   layers:
   - Default
   - TransparentFX

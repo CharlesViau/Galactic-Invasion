@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3343265218972667415}
   - component: {fileID: 9119261375558623092}
   m_Layer: 10
-  m_Name: Laser
+  m_Name: PinkLaser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e7b841a9becea74e9defbfc392a08db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
+  type: 2
   movementSo: {fileID: 11400000, guid: 4d445850d654b564e87941bb640ab081, type: 2}
   onCollisionSo: {fileID: 11400000, guid: 018d1d58f05fee746b418c6f0371b891, type: 2}
   timeBeforePool: 10
@@ -139,7 +139,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 155bb8d44a98d194b852f09d83fc7e8f, type: 2}
+  - {fileID: 2100000, guid: bcafa72a824118846987e3d8b3258e55, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
