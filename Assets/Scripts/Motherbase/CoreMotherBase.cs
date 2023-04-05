@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using Enemies;
+using Projectiles;
+using Towers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -45,6 +47,8 @@ namespace Motherbase
 
         private void GameOver()
         {
+            EnemyManager.Instance.Clear();
+            ProjectileManager.Instance.Clear();
             SceneManager.LoadScene("GameOverScene");
             Cursor.visible = true;
         }

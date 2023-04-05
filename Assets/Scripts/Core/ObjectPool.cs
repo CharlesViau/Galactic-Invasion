@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace Core
 {
@@ -29,6 +30,13 @@ namespace Core
             if (_poolDict[componentType].Count <= 0) return null;
             _poolDict[componentType].Peek().Depool();
             return _poolDict[componentType].Pop();
+        }
+        
+        public void Clear()
+        {
+            Debug.Log("Clearing pool");
+            
+            _poolDict.Clear();
         }
     }
 }
