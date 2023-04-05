@@ -224,7 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 964cb25a62307b241a36f3d2e217f4f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 30
+  maxHP: 30
   t: {fileID: 4240137484236857608}
   healthBar: {fileID: 2403996109247132641}
 --- !u!1 &1249205891885982494
@@ -738,7 +738,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 964cb25a62307b241a36f3d2e217f4f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 30
+  maxHP: 30
   t: {fileID: 4670098880273021333}
   healthBar: {fileID: 5234093905671218446}
 --- !u!1 &4270653769549340854
@@ -1093,7 +1093,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 964cb25a62307b241a36f3d2e217f4f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 30
+  maxHP: 30
   t: {fileID: 2030938935389361222}
   healthBar: {fileID: 84757907879554971}
 --- !u!1 &4605223959638205544
@@ -1240,7 +1240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 964cb25a62307b241a36f3d2e217f4f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 30
+  maxHP: 30
   t: {fileID: 2790151147463811869}
   healthBar: {fileID: 5663354368024121212}
 --- !u!1 &6589689871949679755
@@ -1579,7 +1579,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 964cb25a62307b241a36f3d2e217f4f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 30
+  maxHP: 30
   t: {fileID: 8991384155095672080}
   healthBar: {fileID: 2991555815174053716}
 --- !u!1 &6989546950293280348
@@ -1758,7 +1758,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 964cb25a62307b241a36f3d2e217f4f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 30
+  maxHP: 30
   t: {fileID: 4798278553068242954}
   healthBar: {fileID: 2418465369900384103}
 --- !u!1 &7584371240119096249
@@ -2057,7 +2057,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 964cb25a62307b241a36f3d2e217f4f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 30
+  maxHP: 30
   t: {fileID: 1810398291676894661}
   healthBar: {fileID: 1102240245318566894}
 --- !u!1 &8768941875732438325
@@ -2379,7 +2379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 964cb25a62307b241a36f3d2e217f4f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 30
+  maxHP: 30
   t: {fileID: 4316039128818521346}
   healthBar: {fileID: 6179189798251157455}
 --- !u!1001 &209051172434906964
