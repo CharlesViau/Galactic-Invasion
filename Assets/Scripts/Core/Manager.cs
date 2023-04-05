@@ -572,6 +572,11 @@ namespace Core
             m_pool.Pool(toPool);
             Remove(toPool);
         }
+        
+        public void Clear() 
+        {
+            m_pool.Clear();
+        }
     }
 
     #endregion
