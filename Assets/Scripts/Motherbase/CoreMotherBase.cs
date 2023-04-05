@@ -18,6 +18,11 @@ namespace Motherbase
             _spawnedShields = new List<int>();
 
             for (var i = 0; i < shields_preview.Count; i++) shields_preview[i].SetIndex(i);
+            
+            foreach (Shield s in shields)
+            {
+                s.deathEvent += OnShieldDestroy;
+            }
         }
 
         private void OnTriggerEnter(Collider collider)
@@ -60,8 +65,7 @@ namespace Motherbase
 
             if (show) CostUI.Instance.Show();
             else CostUI.Instance.Hide();
-
-
+            
             for (var i = 0; i < shields_preview.Count; i++)
                 if (!_spawnedShields.Contains(i))
                     shields_preview[i].gameObject.SetActive(show);
@@ -77,6 +81,25 @@ namespace Motherbase
         public List<Shield> GetShieldList()
         {
             return shields;
+        }
+
+        private void OnShieldDestroy()
+        {
+            for (var i = 0; i < shields.Count; i++)
+            {
+                if (!shields[i].gameObject.activeSelf && _spawnedShields.Contains(i))
+                {
+                    _spawnedShields.Remove(i);
+                }
+            }
+        }
+        
+        private void OnDestroy()
+        {
+            foreach (Shield s in shields)
+            {
+                s.deathEvent -= OnShieldDestroy;
+            }
         }
     }
 }
