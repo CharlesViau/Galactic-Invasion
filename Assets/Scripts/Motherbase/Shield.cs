@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
@@ -5,6 +6,7 @@ using Enemies;
 using UnityEngine;
 using UnityEngine.UI;
 using Motherbase;
+using Random = UnityEngine.Random;
 using Vector3 = UnityEngine.Vector3;
 
 namespace Motherbase 
@@ -14,9 +16,9 @@ namespace Motherbase
         public delegate void DeathEvent();
         public event DeathEvent deathEvent;
         
-        [SerializeField] private int hp;
+        [SerializeField] private int maxHP;
         [SerializeField] private Transform t;
-        private int maxHP;
+        private int hp;
         [SerializeField] private Image healthBar;
 
         private bool isRingDestroyed = false;
@@ -30,7 +32,13 @@ namespace Motherbase
         {
             velocity = Vector3.zero;
             //rotationSpeed = new Vector3(10,0,0);
-            maxHP = hp;
+        }
+
+        private void OnEnable()
+        {
+            healthBar.gameObject.transform.parent.gameObject.SetActive(true);
+            hp = maxHP;
+            UpdateHealthBar(hp, maxHP);
         }
 
         private void FixedUpdate()
@@ -49,10 +57,7 @@ namespace Motherbase
             isRingDestroyed = true;
             direction = (t.position - Vector3.zero).normalized;
             gravityStrength = Random.Range(6f, 8f);
-            if (!imageDestroyed)
-            {
-                Destroy(healthBar.gameObject);
-            }
+            healthBar.gameObject.transform.parent.gameObject.SetActive(false);
         }
         private void ReceiveDamage(int dmg)
         {
@@ -60,24 +65,17 @@ namespace Motherbase
 
             if (hp <= 0)
             {
+                gameObject.SetActive(false);
                 //Destruction animation
                 if (deathEvent != null)
                 {
                     deathEvent();
                 }
-                gameObject.SetActive(false);
-                if (!imageDestroyed)
-                {
-                    Destroy(healthBar.gameObject);
-                }
-                imageDestroyed = true;
+                healthBar.gameObject.transform.parent.gameObject.SetActive(false);
             }
             else
             {
-                if (!isRingDestroyed)
-                {
-                    UpdateHealthBar(hp, maxHP);
-                }
+                UpdateHealthBar(hp, maxHP);
             }
         }
         
