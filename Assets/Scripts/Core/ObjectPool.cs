@@ -34,6 +34,8 @@ namespace Core
         
         public void Clear()
         {
+            Debug.Log("Clearing pool");
+            
             _poolDict.Clear();
         }
     }
