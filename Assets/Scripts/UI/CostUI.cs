@@ -4,7 +4,6 @@ using UnityEngine;
 public class CostUI : MonoBehaviour
 {
     public TextMeshProUGUI costText;
-
     public static CostUI Instance { get; private set; }
 
     private void Awake()
@@ -31,7 +30,9 @@ public class CostUI : MonoBehaviour
 
     public void Show()
     {
+        /*
         costText.gameObject.SetActive(true);
+    */
     }
 
     public void Hide()
