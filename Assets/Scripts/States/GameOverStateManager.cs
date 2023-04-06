@@ -1,3 +1,4 @@
+using System.Linq;
 using Enemies;
 using Projectiles;
 using TMPro;
@@ -66,7 +67,7 @@ public class GameOverStateManager : MonoBehaviour
                     $"{score.rank}\t\t{score.player}\t\t{score.score}";
             }
 
-            if (scores.scores.Count <= 10) return;
+            if (newScore.rank <= scores.scores.Last().rank) return;
             var newScoreRow = Instantiate(scoreRowPrefab, content);
             newScoreRow.GetComponent<TextMeshProUGUI>().text =
                 $"{newScore.rank}\t\t{newScore.player}\t\t{newScore.score}";
