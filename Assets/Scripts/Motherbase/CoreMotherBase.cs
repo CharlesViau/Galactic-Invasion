@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using Enemies;
 using Projectiles;
-using Towers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,7 +12,6 @@ namespace Motherbase
         [SerializeField] private List<ShieldPreview> shields_preview;
         [SerializeField] private int hp;
         [SerializeField] private int maxLVL;
-
         private int currentLVL = 1;
         private List<int> _spawnedShields;
 
@@ -22,7 +20,7 @@ namespace Motherbase
             _spawnedShields = new List<int>();
 
             for (var i = 0; i < shields_preview.Count; i++) shields_preview[i].SetIndex(i);
-            
+
             foreach (Shield s in shields)
             {
                 s.GetTowerReferences();
@@ -47,16 +45,14 @@ namespace Motherbase
         {
             hp -= dmg;
 
-            if (hp <= 0)
-            {
-                GameOver();
-            }
+            if (hp <= 0) GameOver();
         }
 
         private void GameOver()
         {
             EnemyManager.Instance.Clear();
             ProjectileManager.Instance.Clear();
+            Controller.Instance.Reset();
             SceneManager.LoadScene("GameOverScene");
             Cursor.visible = true;
         }
@@ -104,12 +100,8 @@ namespace Motherbase
         private void OnShieldDestroy()
         {
             for (var i = 0; i < shields.Count; i++)
-            {
                 if (!shields[i].gameObject.activeSelf && _spawnedShields.Contains(i))
-                {
                     _spawnedShields.Remove(i);
-                }
-            }
         }
 
         private void OnDestroy()

@@ -9,6 +9,7 @@ TagManager:
   - Base Planet
   - Enemy
   - Shield
+  - Core
   layers:
   - Default
   - TransparentFX

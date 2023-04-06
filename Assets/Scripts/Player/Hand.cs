@@ -46,7 +46,7 @@ public class Hand : MonoBehaviour
     {
         var currentPos = Input.mousePosition;
         var worldPos =
-            Camera.main.ScreenToWorldPoint(new Vector3(currentPos.x, currentPos.y, -Camera.main.transform.position.z));
+            Camera.main.ScreenToWorldPoint(new Vector3(currentPos.x - 70, currentPos.y + 15, -Camera.main.transform.position.z));
         worldPos.z = 0;
         playerTransform.position = worldPos;
 
@@ -56,16 +56,19 @@ public class Hand : MonoBehaviour
                 new Vector3(referenceTransform.position.x, referenceTransform.position.y - 10);
             if (Input.GetMouseButtonDown(0))
             {
-                switch (_currentAbility)
+                if (previewRef.GetComponent<SpellUI>().CanBePlaced())
                 {
-                    case CurrentAbility.BlackHole:
-                        SpawnBlackHole();
-                        break;
-                    case CurrentAbility.TempoPlanet:
-                        SpawnTempoPlanet();
-                        break;
+                    switch (_currentAbility)
+                    { 
+                        case CurrentAbility.BlackHole:
+                            SpawnBlackHole();
+                            break;
+                        case CurrentAbility.TempoPlanet:
+                            SpawnTempoPlanet();
+                            break;
+                    }
+                    _currentAbility = CurrentAbility.None;
                 }
-                _currentAbility = CurrentAbility.None;
             }
 
             if (Input.GetMouseButtonDown(1))
