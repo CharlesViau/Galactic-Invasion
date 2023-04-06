@@ -1,3 +1,5 @@
+using Enemies;
+using Projectiles;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -73,6 +75,9 @@ public class GameOverStateManager : MonoBehaviour
 
     public void ReplayGame()
     {
+        EnemyManager.Instance.Clear();
+        ProjectileManager.Instance.Clear();
+        Controller.Instance.Reset();
         SceneManager.LoadScene("MainScene");
     }
 

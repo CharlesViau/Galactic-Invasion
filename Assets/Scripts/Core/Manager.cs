@@ -575,6 +575,7 @@ namespace Core
         
         public void Clear() 
         {
+            collection.Clear();
             m_pool.Clear();
         }
     }
