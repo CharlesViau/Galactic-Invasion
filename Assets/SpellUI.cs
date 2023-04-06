@@ -25,7 +25,7 @@ public class SpellUI : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
-        if (collider.CompareTag("Shield") || collider.CompareTag("Core"))
+        if (collider.CompareTag("AbilityZone"))
         {
             _material.SetColor("_Color", new Color(204, 0, 0,100));
             canBePlaced = false;
@@ -34,7 +34,7 @@ public class SpellUI : MonoBehaviour
 
     private void OnTriggerExit(Collider collider)
     {
-        if (collider.CompareTag("Shield") || collider.CompareTag("Core"))
+        if (collider.CompareTag("AbilityZone"))
         {
             _material.SetColor("_Color", new Color(0, 204, 0,100));
             canBePlaced = true;

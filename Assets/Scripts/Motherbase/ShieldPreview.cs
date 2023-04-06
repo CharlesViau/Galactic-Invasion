@@ -28,7 +28,6 @@ namespace Motherbase
             gameObject.SetActive(false);
             _hand.OnPlaceShield();
             Controller.Instance.GameStart();
-            /*CostUI.Instance.Hide();*/
         }
 
         public void SetIndex(int pIndex)
