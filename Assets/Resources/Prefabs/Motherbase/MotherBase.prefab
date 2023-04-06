@@ -756,7 +756,7 @@ GameObject:
   - component: {fileID: 7346361526038670814}
   m_Layer: 10
   m_Name: noyau_geo
-  m_TagString: Untagged
+  m_TagString: Core
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2076,7 +2076,7 @@ GameObject:
   - component: {fileID: 503570722415818986}
   m_Layer: 11
   m_Name: anneauInt_geo
-  m_TagString: Untagged
+  m_TagString: Core
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

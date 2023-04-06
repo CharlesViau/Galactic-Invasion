@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.22443572, g: 0.22747129, b: 0.2628497, a: 1}
+  m_IndirectSpecularColor: {r: 0.21386513, g: 0.21742561, b: 0.25156048, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1115,6 +1115,10 @@ PrefabInstance:
       propertyPath: cost
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 310610771494328515, guid: 16591cb407e76564e8050d31c477041b, type: 3}
+      propertyPath: costTextMeshPro
+      value: 
+      objectReference: {fileID: 806815446}
     - target: {fileID: 310610771958433256, guid: 16591cb407e76564e8050d31c477041b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -3908,6 +3912,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 985222095}
+    - target: {fileID: 6129910981259503201, guid: 88bf51d38e754534db6640538fa05a45, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 300.4
+      objectReference: {fileID: 0}
     - target: {fileID: 6129910981690511301, guid: 88bf51d38e754534db6640538fa05a45, type: 3}
       propertyPath: m_Pivot.x
       value: 0
