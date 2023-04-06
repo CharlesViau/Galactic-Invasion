@@ -4,16 +4,13 @@ using UnityEngine;
 
 public class Controller : MonoBehaviour
 {
-    private WaveManager _waveManager;
-    private static bool IsShowingPreview;
+    private static bool _isShowingPreview;
+    public bool gameStarted;
     private CoreMotherBase _mb;
-
     private Plane _plane;
-
-    public bool gameStarted = false;
-    
+    private WaveManager _waveManager;
     public static Controller Instance { get; private set; }
-    
+
     private void Awake()
     {
         if (Instance != null)
@@ -26,6 +23,11 @@ public class Controller : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    public void Reset()
+    {
+        _waveManager.ClearQueue();
+    }
+
     private void Start()
     {
         _waveManager = gameObject.GetComponent<WaveManager>();
@@ -36,25 +38,8 @@ public class Controller : MonoBehaviour
 
     public void GameStart()
     {
-        if (!gameStarted)
-        {
-            gameStarted = true;
-            _waveManager.GameStart();
-        }
+        if (gameStarted) return;
+        gameStarted = true;
+        _waveManager.GameStart();
     }
-
-    /*private Vector3 GetWorldPosition()
-    {
-        if (Camera.main == null) return Vector3.zero;
-        var mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-        return _plane.Raycast(mouseRay, out var distance) ? mouseRay.GetPoint(distance) : Vector3.zero;
-    }
-
-    private void MotherBaseAbility(int ability)
-    {
-        if (ability != 3) return;
-        IsShowingPreview = !IsShowingPreview;
-        _mb.ShowShieldsPreview(IsShowingPreview);
-    }*/
 }

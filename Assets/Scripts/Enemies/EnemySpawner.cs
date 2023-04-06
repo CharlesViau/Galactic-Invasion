@@ -5,38 +5,41 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private float spawnCooldown;
+    private List<EnemyTypes> _enemyQueue;
+    private float _time;
 
-    private List<EnemyTypes> enemyQueue;
-
-    private float time;
-    
     private void Awake()
     {
-        enemyQueue = new List<EnemyTypes>();
+        _enemyQueue = new List<EnemyTypes>();
     }
 
     private void FixedUpdate()
     {
-        if (enemyQueue.Count > 0)
+        if (_enemyQueue.Count > 0)
         {
-            time += Time.deltaTime;
-            if (time >= spawnCooldown)
+            _time += Time.deltaTime;
+            if (_time >= spawnCooldown)
             {
-                time = 0;
-                Spawn(enemyQueue[0]);
-                enemyQueue.RemoveAt(0);
+                _time = 0;
+                Spawn(_enemyQueue[0]);
+                _enemyQueue.RemoveAt(0);
             }
         }
     }
 
     public void AddEnemy(EnemyTypes type)
     {
-        enemyQueue.Add(type);
+        _enemyQueue.Add(type);
     }
 
     private void Spawn(EnemyTypes type)
     {
         // ReSharper disable once Unity.InefficientPropertyAccess
         EnemyManager.Instance.Create(type, new Enemy.Args(transform.position, transform.rotation));
+    }
+
+    public void ClearQueue()
+    {
+        _enemyQueue.Clear();
     }
 }

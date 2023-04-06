@@ -6,37 +6,22 @@ namespace Enemies
     public class WaveManager : MonoBehaviour
     {
         [SerializeField] private float scaling;
-
         [SerializeField] private int waveCost;
-
         [SerializeField] private int normalCost;
-
         [SerializeField] private int fastCost;
-
         [SerializeField] private int slowCost;
-
         [SerializeField] private float timeBetweenWaves;
-
-        private int _currentWave;
-
-        private float _fastPercentage = 0.10f;
-
-        private int _numberOfDegreesBetweenSpawners;
-
-        private float _slowPercentage = 0.10f;
-
         [SerializeField] private List<EnemySpawner> _spawnerList;
-
         private List<EnemySpawner> _activeSpawners;
-
+        private int _currentWave;
+        private float _fastPercentage = 0.10f;
+        private bool _gameStarted;
+        private int _numberOfDegreesBetweenSpawners;
+        private float _slowPercentage = 0.10f;
         private List<int> _spawnOrder;
-
         private float _time;
-
         private float slowPercentage = 0.10f;
 
-        private bool gameStarted = false;
-        
         private void Start()
         {
             _activeSpawners = new List<EnemySpawner>();
@@ -48,16 +33,17 @@ namespace Enemies
 
         private void FixedUpdate()
         {
-            if (gameStarted)
+            if (_gameStarted)
             {
                 _time += Time.deltaTime;
-                    
+
                 if (_time >= timeBetweenWaves)
                 {
                     NextWave();
                     _time = 0;
                 }
             }
+
             if (!Controller.Instance.gameStarted) return;
             _time += Time.deltaTime;
 
@@ -68,7 +54,7 @@ namespace Enemies
 
         public void GameStart()
         {
-            gameStarted = true;
+            _gameStarted = true;
             _currentWave = 1;
             NextWave();
         }
@@ -116,12 +102,10 @@ namespace Enemies
 
         private void NewSpawner()
         {
-            if (_spawnOrder.Count > 0)
-            {
-                _spawnerList[_spawnOrder[0]].gameObject.SetActive(true);
-                _activeSpawners.Add(_spawnerList[_spawnOrder[0]]);
-                _spawnOrder.RemoveAt(0);
-            }
+            if (_spawnOrder.Count <= 0) return;
+            _spawnerList[_spawnOrder[0]].gameObject.SetActive(true);
+            _activeSpawners.Add(_spawnerList[_spawnOrder[0]]);
+            _spawnOrder.RemoveAt(0);
         }
 
         private EnemySpawner GetRandomSpawner()
@@ -129,7 +113,7 @@ namespace Enemies
             return _activeSpawners[Random.Range(0, _activeSpawners.Count)];
         }
 
-        private List<T> Shuffle<T>(List<T> data)
+        private static List<T> Shuffle<T>(List<T> data)
         {
             var rng = new System.Random();
             var n = data.Count;
@@ -141,6 +125,11 @@ namespace Enemies
             }
 
             return data;
+        }
+
+        public void ClearQueue()
+        {
+            foreach (var spawner in _activeSpawners) spawner.ClearQueue();
         }
     }
 }
