@@ -61,13 +61,13 @@ public class GameOverStateManager : MonoBehaviour
             {
                 var scoreRow = Instantiate(scoreRowPrefab, content);
                 scoreRow.GetComponent<TextMeshProUGUI>().text =
-                    $"{score.rank}\t{score.player}\t\t{score.score}";
+                    $"{score.rank}\t\t{score.player}\t\t{score.score}";
             }
 
             if (scores.scores.Count <= 10) return;
             var newScoreRow = Instantiate(scoreRowPrefab, content);
             newScoreRow.GetComponent<TextMeshProUGUI>().text =
-                $"{newScore.rank}\t{newScore.player}\t\t{newScore.score}";
+                $"{newScore.rank}\t\t{newScore.player}\t\t{newScore.score}";
         }));
     }
 

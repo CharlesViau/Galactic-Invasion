@@ -4,5 +4,7 @@ using UnityEngine;
 
 public enum ProjectileTypes 
 {
-   Laser
+   BlueLaser,
+   GreenLaser,
+   PinkLaser
 }

@@ -24,6 +24,7 @@ public class Hand : MonoBehaviour
 
     private bool isPlacingAbilty;
     private bool isShowingPreview;
+    private bool isRepairing;
 
     private GameObject previewRef;
 
@@ -45,7 +46,7 @@ public class Hand : MonoBehaviour
     {
         var currentPos = Input.mousePosition;
         var worldPos =
-            Camera.main.ScreenToWorldPoint(new Vector3(currentPos.x, currentPos.y, -Camera.main.transform.position.z));
+            Camera.main.ScreenToWorldPoint(new Vector3(currentPos.x - 70, currentPos.y + 15, -Camera.main.transform.position.z));
         worldPos.z = 0;
         playerTransform.position = worldPos;
 
@@ -87,14 +88,27 @@ public class Hand : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(1))
             {
+                isRepairing = false;
                 isShowingPreview = false;
                 _mb.ShowShieldsPreview(isShowingPreview);
                 _animator.SetTrigger("Cancel");
             }
+        } else if (isRepairing)
+        {
+            if (Input.GetMouseButtonDown(1))
+            {
+                isRepairing = false;
+                _animator.SetTrigger("Cancel");
+            }
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                OnRepair();
+            }
         }
     }
 
-    public void OnRepairShieldAbilityClick()
+    public void OnPlaceShieldAbilityClick()
     {
         if (PlayerCurrency.Instance.Balance < PlayerCurrency.Instance.shieldCost)
         {
@@ -106,10 +120,44 @@ public class Hand : MonoBehaviour
         _animator.SetTrigger("Shoot");
     }
 
-    public void OnRepairShield()
+    public void OnRepairClick()
+    {
+        if (PlayerCurrency.Instance.Balance < PlayerCurrency.Instance.repairCost)
+        {
+            MessageUI.Instance.Show("Not enough money!");
+            return;
+        }
+        _animator.SetTrigger("Click");
+        isRepairing = true;
+    }
+
+    private void OnRepair()
+    {
+        Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
+        RaycastHit hit;
+        if (Physics.Raycast (ray, out hit, Mathf.Infinity)) {
+            if (hit.transform.CompareTag("Shield"))
+            {
+                hit.transform.gameObject.GetComponent<Shield>().Repair();
+                isRepairing = false;
+                _animator.SetTrigger("Punch");
+            }
+        }
+    }
+
+    public void OnPlaceShield()
     {
         _animator.SetTrigger("Punch");
         isShowingPreview = false;
+    }
+
+    public void OnUpgradeClick()
+    {
+        if (!_mb.IsMaxLVL() && PlayerCurrency.Instance.SpendMoney(PlayerCurrency.Instance.upgradeCost))
+        {
+            _mb.UpgradeShields();
+            _animator.SetTrigger("Thumbs up");
+        }
     }
 
     public void OnTempoPlanetAbilityClick()

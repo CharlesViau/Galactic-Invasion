@@ -9,6 +9,8 @@ namespace Motherbase
         [SerializeField]private int balance;
         public int Balance => balance;
         public int shieldCost;
+        public int repairCost;
+        public int upgradeCost;
         public int blackHoleCost;
         public int tempoPlanetCost;
         public static PlayerCurrency Instance { get; private set; }

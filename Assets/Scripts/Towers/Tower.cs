@@ -174,5 +174,18 @@ namespace Towers
         {
             gameObject.SetActive(true);
         }
+
+        public void Upgrade(int lvl)
+        {
+            if (lvl == 2)
+            {
+                projectileType = ProjectileTypes.PinkLaser;
+            } else if (lvl == 3)
+            {
+                projectileType = ProjectileTypes.BlueLaser;
+            }
+            detectionRange = (int)(detectionRange * 1.2);
+            attackSpeed = (float)(attackSpeed * 0.8);
+        }
     }
 }
