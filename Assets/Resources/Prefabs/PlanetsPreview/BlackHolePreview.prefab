@@ -11,8 +11,7 @@ GameObject:
   - component: {fileID: 7048744678488746156}
   - component: {fileID: 7764383802557015399}
   - component: {fileID: 2542292272527618007}
-  - component: {fileID: 5015801139493322566}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,19 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &5015801139493322566
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1202842182212971701}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5658884468921940077
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,7 +94,7 @@ GameObject:
   - component: {fileID: 4597123535045546748}
   - component: {fileID: 5213697632667752721}
   - component: {fileID: 751661077862966804}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -191,7 +177,7 @@ GameObject:
   - component: {fileID: 1453720025346302677}
   - component: {fileID: 6368544851751845192}
   - component: {fileID: 7678747076860113323}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: BlackHolePreview
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -265,7 +251,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4216438519704633831}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
