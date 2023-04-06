@@ -117,7 +117,7 @@ MonoBehaviour:
   rotationSpeed: {x: 30, y: 30, z: 30}
   gravityStrength: 2
   hp: 7
-  reward: 10
+  reward: 20
   _type: 2
 --- !u!135 &5437492431170657481
 SphereCollider:
