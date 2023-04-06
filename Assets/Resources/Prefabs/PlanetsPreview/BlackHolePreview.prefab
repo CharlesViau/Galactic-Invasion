@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7764383802557015399}
   - component: {fileID: 2542292272527618007}
   - component: {fileID: 5015801139493322566}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 4597123535045546748}
   - component: {fileID: 5213697632667752721}
   - component: {fileID: 751661077862966804}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -191,7 +191,7 @@ GameObject:
   - component: {fileID: 1453720025346302677}
   - component: {fileID: 6368544851751845192}
   - component: {fileID: 7678747076860113323}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BlackHolePreview
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -206,7 +206,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6573137632762128771}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -40.22995, y: 396.0606, z: -1.6992507}
+  m_LocalPosition: {x: -40.22995, y: 396.0606, z: 0}
   m_LocalScale: {x: 15, y: 15, z: 15}
   m_Children:
   - {fileID: 7048744678488746156}
@@ -265,7 +265,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4216438519704633831}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
