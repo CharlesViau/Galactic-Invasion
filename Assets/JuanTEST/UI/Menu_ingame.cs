@@ -10,8 +10,15 @@ public class Menu_ingame : MonoBehaviour
     private bool isPaused = false;
     public GameObject menuPanel;
     
+    private void Start()
+    {
+        ConfineCursor();
+    }
+    
     void Update()
     {
+        Debug.Log(Cursor.lockState);
+        
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (!isPaused)
@@ -19,14 +26,14 @@ public class Menu_ingame : MonoBehaviour
                 Time.timeScale = 0f; // Pause the game
                 menuPanel.SetActive(true);
                 isPaused = true;
-                Cursor.visible = true;
+                ToggleCursorLock();
             }
             else
             {
                 Time.timeScale = 1f; // Resume the game
                 menuPanel.SetActive(false);
                 isPaused = false;
-                Cursor.visible = false;
+                ToggleCursorLock();
             }
         }
     }
@@ -36,7 +43,7 @@ public class Menu_ingame : MonoBehaviour
         Time.timeScale = 1f;
         menuPanel.SetActive(false);
         isPaused = false;
-        Cursor.visible = false;
+        ToggleCursorLock();
     }
     
     public void RestartGame()
@@ -60,5 +67,22 @@ public class Menu_ingame : MonoBehaviour
         Application.Quit(); // Quit the application
     }
 
+    private static void ConfineCursor()
+    {
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = false;
+    }
 
+    private static void ToggleCursorLock()
+    {
+        if (Cursor.lockState == CursorLockMode.Confined)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        else
+        {
+            ConfineCursor();
+        }
+    }
 }

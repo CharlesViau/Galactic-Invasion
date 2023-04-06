@@ -54,6 +54,7 @@ namespace Motherbase
             ProjectileManager.Instance.Clear();
             Controller.Instance.Reset();
             SceneManager.LoadScene("GameOverScene");
+            Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
 
