@@ -25,6 +25,7 @@ public class Hand : MonoBehaviour
     private bool isPlacingAbilty;
     private bool isShowingPreview;
     private bool isRepairing;
+    private bool isFirstShieldPlaced;
 
     private GameObject previewRef;
 
@@ -119,7 +120,14 @@ public class Hand : MonoBehaviour
             return;
         }
         isShowingPreview = true;
-        _mb.ShowShieldsPreview(isShowingPreview);
+        if (!isFirstShieldPlaced)
+        {
+            _mb.ShowFirstShieldPreview(true);
+        }
+        else
+        {
+            _mb.ShowShieldsPreview(isShowingPreview);
+        }
         _animator.SetTrigger("Shoot");
     }
 
@@ -150,6 +158,7 @@ public class Hand : MonoBehaviour
 
     public void OnPlaceShield()
     {
+        isFirstShieldPlaced = true;
         _animator.SetTrigger("Punch");
         isShowingPreview = false;
     }

@@ -70,6 +70,11 @@ namespace Motherbase
                     shields_preview[i].gameObject.SetActive(show);
         }
 
+        public void ShowFirstShieldPreview(bool show)
+        {
+            shields_preview[0].gameObject.SetActive(show);
+        }
+
         public void SpawnShield(int index)
         {
             shields[index].gameObject.SetActive(true);
