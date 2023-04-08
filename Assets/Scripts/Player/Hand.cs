@@ -147,7 +147,7 @@ public class Hand : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
         RaycastHit hit;
         if (Physics.Raycast (ray, out hit, Mathf.Infinity)) {
-            if (hit.transform.CompareTag("Shield"))
+            if (hit.transform.CompareTag("Shield") && PlayerCurrency.Instance.SpendMoney(PlayerCurrency.Instance.repairCost))
             {
                 hit.transform.gameObject.GetComponent<Shield>().Repair();
                 isRepairing = false;
