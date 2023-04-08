@@ -17,8 +17,6 @@ public class Menu_ingame : MonoBehaviour
     
     void Update()
     {
-        Debug.Log(Cursor.lockState);
-        
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (!isPaused)

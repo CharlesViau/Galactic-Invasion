@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] private float spawnCooldown;
+    //[SerializeField] private float spawnCooldown;
+    public float spawnCooldown;
     private List<EnemyTypes> _enemyQueue;
     private float _time;
+    
+    public delegate void NoMoreEnemyEvent();
+    public event NoMoreEnemyEvent noMoreEnemyEvent;
 
     private void Awake()
     {
@@ -23,9 +27,18 @@ public class EnemySpawner : MonoBehaviour
                 _time = 0;
                 Spawn(_enemyQueue[0]);
                 _enemyQueue.RemoveAt(0);
+                if (_enemyQueue.Count <= 0)
+                {
+                    if (noMoreEnemyEvent != null)
+                    {
+                        noMoreEnemyEvent();
+                    }
+                }
             }
         }
     }
+    
+    
 
     public void AddEnemy(EnemyTypes type)
     {

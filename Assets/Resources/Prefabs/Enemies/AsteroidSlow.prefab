@@ -113,11 +113,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 071dd330d4946104db32e287f7db552d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
+  damage: 3
   rotationSpeed: {x: 30, y: 30, z: 30}
   gravityStrength: 2
   hp: 7
-  reward: 20
+  reward: 10
   _type: 2
 --- !u!135 &5437492431170657481
 SphereCollider:

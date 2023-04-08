@@ -1,135 +1,187 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Enemies
 {
     public class WaveManager : MonoBehaviour
     {
-        [SerializeField] private float scaling;
-        [SerializeField] private int waveCost;
-        [SerializeField] private int normalCost;
-        [SerializeField] private int fastCost;
-        [SerializeField] private int slowCost;
+        [SerializeField] private float _scaling;
+        
         [SerializeField] private float timeBetweenWaves;
         [SerializeField] private List<EnemySpawner> _spawnerList;
+        [SerializeField] private List<EnemySpawner> _slowSpawnerList;
+        [SerializeField] private List<EnemySpawner> _fastSpawnerList;
+        [SerializeField] private List<WaveScriptableObject> _wavesData;
         private List<EnemySpawner> _activeSpawners;
+        private List<EnemySpawner> _activeSlowSpawners;
+        private List<EnemySpawner> _activeFastSpawners;
         private int _currentWave;
-        private float _fastPercentage = 0.10f;
+
+        private int emptySpawners;
         private bool _gameStarted;
-        private int _numberOfDegreesBetweenSpawners;
-        private float _slowPercentage = 0.10f;
         private List<int> _spawnOrder;
         private float _time;
-        private float slowPercentage = 0.10f;
 
         private void Start()
         {
             _activeSpawners = new List<EnemySpawner>();
-            _spawnOrder = new List<int>();
-            for (var i = 0; i < _spawnerList.Count; i++) _spawnOrder.Add(i);
-            _spawnOrder = Shuffle(_spawnOrder);
-            NewSpawner();
-        }
-
-        private void FixedUpdate()
-        {
-            if (_gameStarted)
-            {
-                _time += Time.deltaTime;
-
-                if (_time >= timeBetweenWaves)
-                {
-                    NextWave();
-                    _time = 0;
-                }
-            }
-
-            if (!Controller.Instance.gameStarted) return;
-            _time += Time.deltaTime;
-
-            if (!(_time >= timeBetweenWaves)) return;
-            NextWave();
-            _time = 0;
+            _activeSlowSpawners = new List<EnemySpawner>();
+            _activeFastSpawners = new List<EnemySpawner>();
         }
 
         public void GameStart()
         {
             _gameStarted = true;
-            _currentWave = 1;
+            _currentWave = 0;
             NextWave();
         }
 
         private void NextWave()
         {
-            switch (_currentWave % 5)
+            if (_currentWave >= _wavesData.Count)
             {
-                case 0:
-                    NewSpawner();
-                    break;
-                case 4:
-                    MessageUI.Instance.Show("New Spawner Incoming!");
-                    break;
+                Endgame();
+                return;
             }
 
-            _currentWave++;
-            PickEnemies();
-            waveCost = Mathf.FloorToInt(waveCost * scaling);
-        }
-
-        private void PickEnemies()
-        {
-            var numberOfFast = Mathf.FloorToInt(waveCost * _fastPercentage / fastCost);
-            var numberOfSlow = Mathf.FloorToInt(waveCost * _slowPercentage / slowCost);
-            var numberOfNormal =
-                Mathf.FloorToInt((waveCost - (numberOfFast * fastCost + numberOfSlow * slowCost)) / normalCost);
-
-            var enemies = new List<EnemyTypes>();
-
-            for (var i = 0; i < numberOfNormal; i++) enemies.Add(EnemyTypes.Asteroid);
-
-            for (var i = 0; i < numberOfFast; i++) enemies.Add(EnemyTypes.AsteroidFast);
-
-            for (var i = 0; i < numberOfSlow; i++) enemies.Add(EnemyTypes.AsteroidSlow);
-
-            enemies = Shuffle(enemies);
-
-            _fastPercentage += 0.01f;
-            _slowPercentage += 0.01f;
-
-            foreach (var t in enemies)
-                GetRandomSpawner().AddEnemy(t);
-        }
-
-        private void NewSpawner()
-        {
-            if (_spawnOrder.Count <= 0) return;
-            _spawnerList[_spawnOrder[0]].gameObject.SetActive(true);
-            _activeSpawners.Add(_spawnerList[_spawnOrder[0]]);
-            _spawnOrder.RemoveAt(0);
-        }
-
-        private EnemySpawner GetRandomSpawner()
-        {
-            return _activeSpawners[Random.Range(0, _activeSpawners.Count)];
-        }
-
-        private static List<T> Shuffle<T>(List<T> data)
-        {
-            var rng = new System.Random();
-            var n = data.Count;
-            while (n > 1)
+            WaveScriptableObject data = _wavesData[_currentWave];
+            if (data.normal.newSpawner)
             {
-                n--;
-                var k = rng.Next(n + 1);
-                (data[k], data[n]) = (data[n], data[k]);
+                if (_spawnerList.Count > 0)
+                {
+                    _activeSpawners.Add(_spawnerList[0]);
+                    _spawnerList[0].gameObject.SetActive(true);
+                    _spawnerList[0].noMoreEnemyEvent += SpawnerEmpty;
+                    _spawnerList.RemoveAt(0);
+                }
             }
 
-            return data;
+            if (data.fast.newSpawner)
+            {
+                if (_fastSpawnerList.Count > 0)
+                {
+                    _activeFastSpawners.Add(_fastSpawnerList[0]);
+                    _fastSpawnerList[0].gameObject.SetActive(true);
+                    _fastSpawnerList[0].noMoreEnemyEvent += SpawnerEmpty;
+                    _fastSpawnerList.RemoveAt(0);
+                }
+            }
+            
+            if (data.slow.newSpawner)
+            {
+                if (_slowSpawnerList.Count > 0)
+                {
+                    _activeSlowSpawners.Add(_slowSpawnerList[0]);
+                    _slowSpawnerList[0].gameObject.SetActive(true);
+                    _slowSpawnerList[0].noMoreEnemyEvent += SpawnerEmpty;
+                    _slowSpawnerList.RemoveAt(0);
+                }
+            }
+            StartCoroutine(TimerBetweenWaves(data));
+        }
+
+        private void DistributeEnemies(WaveScriptableObject data)
+        {
+            if (data.normal.numberOfEnemies > 0 && _activeSpawners.Count > 0)
+            {
+                int normalPerSpawner = (int) (data.normal.numberOfEnemies / _activeSpawners.Count);
+                foreach (EnemySpawner s in _activeSpawners)
+                {
+                    for (int i = 0; i < normalPerSpawner; i++)
+                    {
+                        s.AddEnemy(EnemyTypes.Asteroid);
+                    }
+                }
+            }
+
+            if (data.fast.numberOfEnemies > 0 && _activeFastSpawners.Count > 0)
+            {
+                int fastPerSpawner = (int) (data.fast.numberOfEnemies / _activeFastSpawners.Count);
+                foreach (EnemySpawner s in _activeFastSpawners)
+                {
+                    for (int i = 0; i < fastPerSpawner; i++)
+                    {
+                        s.AddEnemy(EnemyTypes.AsteroidFast);
+                    }
+                }
+            }
+
+            if (data.fast.numberOfEnemies > 0 && _activeSlowSpawners.Count > 0)
+            {
+                int slowPerSpawner = (int) (data.slow.numberOfEnemies / _activeSlowSpawners.Count);
+                foreach (EnemySpawner s in _activeSlowSpawners)
+                {
+                    for (int i = 0; i < slowPerSpawner; i++)
+                    {
+                        s.AddEnemy(EnemyTypes.AsteroidSlow);
+                    }
+                }
+            }
+        }
+
+        private void Endgame()
+        {
+            WaveScriptableObject data = _wavesData.Last();
+            float scaling = (_currentWave - _wavesData.Count - 2) * _scaling;
+            data.normal.numberOfEnemies = (int) (data.normal.numberOfEnemies * scaling);
+            data.fast.numberOfEnemies = (int) (data.fast.numberOfEnemies * scaling);
+            data.slow.numberOfEnemies = (int) (data.slow.numberOfEnemies * scaling);
+            StartCoroutine(TimerBetweenWaves(data));
+        }
+
+        private void SpawnerEmpty()
+        {
+            emptySpawners++;
+            if (emptySpawners == _activeSpawners.Count + _activeFastSpawners.Count + _activeSlowSpawners.Count)
+            {
+                emptySpawners = 0;
+                NextWave();
+            }
         }
 
         public void ClearQueue()
         {
-            foreach (var spawner in _activeSpawners) spawner.ClearQueue();
+            foreach (var spawner in _activeSpawners)
+            {
+                spawner.noMoreEnemyEvent -= SpawnerEmpty;
+                spawner.ClearQueue();
+            }
+
+            foreach (var spawner in _activeFastSpawners)
+            {
+                spawner.noMoreEnemyEvent -= SpawnerEmpty;
+                spawner.ClearQueue();
+            }
+
+            foreach (var spawner in _activeSlowSpawners)
+            {
+                spawner.noMoreEnemyEvent -= SpawnerEmpty;
+                spawner.ClearQueue();
+            }
+        }
+
+        private IEnumerator TimerBetweenWaves(WaveScriptableObject data)
+        {
+            if (_currentWave == 0)
+            {
+                yield return new WaitForSeconds(1);
+            }
+            else
+            {
+                yield return new WaitForSeconds(timeBetweenWaves);
+            }
+            
+            DistributeEnemies(data);
+            _currentWave++;
+        }
+
+        private void OnDestroy()
+        {
+            ClearQueue();
         }
     }
 }

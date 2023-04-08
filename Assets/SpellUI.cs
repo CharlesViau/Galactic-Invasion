@@ -29,7 +29,6 @@ public class SpellUI : MonoBehaviour
         {
             _material.SetColor("_Color", new Color(204, 0, 0,100));
             canBePlaced = false;
-            Debug.Log("Entered: " + collider.gameObject.name);
         }
     }
 
@@ -39,7 +38,6 @@ public class SpellUI : MonoBehaviour
         {
             _material.SetColor("_Color", new Color(0, 204, 0,100));
             canBePlaced = true;
-            Debug.Log("Exited: " + collider.gameObject.name);
         }
     }
 
