@@ -37,6 +37,8 @@ namespace Motherbase
         private Color _baseColor;
         private Color _selectedColor;
         private Material _material;
+
+        private int _currentLVL = 1;
         //private Vector3 rotationSpeed;
 
         private void Start()
@@ -72,16 +74,19 @@ namespace Motherbase
             }
         }
 
-        public void Upgrade(int lvl)
+        public void Upgrade()
         {
-            if (lvl == 2)
+            _currentLVL++;
+            if (_currentLVL == 2)
             {
                 rocket.gameObject.SetActive(true);
-            } else if (lvl == 3)
+                tower.Upgrade(_currentLVL);
+            } else if (_currentLVL == 3)
             {
                 sniper.gameObject.SetActive(true);
+                tower.Upgrade(_currentLVL);
             }
-            tower.Upgrade(lvl);
+            _material.color = _baseColor;
         }
 
         public void Repair()
@@ -139,6 +144,13 @@ namespace Motherbase
                     EnemyManager.Instance.Pool(collider.gameObject.GetComponent<Enemy>());
                 }
             }
+        }
+
+        public bool isMaxLVL()
+        {
+            if (_currentLVL >= 3)
+                return true;
+            return false;
         }
         
         private void OnMouseEnter()

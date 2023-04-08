@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.22932377, g: 0.23242027, b: 0.26847947, a: 1}
+  m_IndirectSpecularColor: {r: 0.2172538, g: 0.22051585, b: 0.25501457, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -778,9 +778,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   balance: 500
-  shieldCost: 250
+  shieldCost: 1
   repairCost: 200
-  upgradeCost: 600
+  upgradeCost: 1
   blackHoleCost: 200
   tempoPlanetCost: 100
 --- !u!114 &759237337
@@ -1225,7 +1225,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 310610771958433259, guid: 16591cb407e76564e8050d31c477041b, type: 3}
       propertyPath: cost
-      value: 600
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 310610771958433259, guid: 16591cb407e76564e8050d31c477041b, type: 3}
       propertyPath: costTextMeshPro
