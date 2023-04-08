@@ -103,6 +103,14 @@ namespace Motherbase
             return false;
         }
 
+        public void shieldsSelectable(bool selectable)
+        {
+            foreach (Shield s in shields)
+            {
+                s.isSelectable = selectable;
+            }
+        }
+
         private void OnShieldDestroy()
         {
             for (var i = 0; i < shields.Count; i++)

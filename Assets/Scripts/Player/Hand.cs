@@ -102,6 +102,7 @@ public class Hand : MonoBehaviour
             if (Input.GetMouseButtonDown(1))
             {
                 isRepairing = false;
+                _mb.shieldsSelectable(false);
                 _animator.SetTrigger("Cancel");
             }
 
@@ -138,6 +139,7 @@ public class Hand : MonoBehaviour
             MessageUI.Instance.Show("Not enough money!");
             return;
         }
+        _mb.shieldsSelectable(true);
         _animator.SetTrigger("Click");
         isRepairing = true;
     }
@@ -152,6 +154,7 @@ public class Hand : MonoBehaviour
                 hit.transform.gameObject.GetComponent<Shield>().Repair();
                 isRepairing = false;
                 _animator.SetTrigger("Punch");
+                _mb.shieldsSelectable(false);
             }
         }
     }

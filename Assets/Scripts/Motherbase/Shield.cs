@@ -18,6 +18,8 @@ namespace Motherbase
         public delegate void DeathEvent();
         public event DeathEvent deathEvent;
 
+        public bool isSelectable = false;
+
         [SerializeField] private int maxHP;
         [SerializeField] private Transform t;
         [SerializeField] private Image healthBar;
@@ -31,11 +33,18 @@ namespace Motherbase
         private Transform rocket;
         private Transform sniper;
         private Tower tower;
+        
+        private Color _baseColor;
+        private Color _selectedColor;
+        private Material _material;
         //private Vector3 rotationSpeed;
 
         private void Start()
         {
             velocity = Vector3.zero;
+            _baseColor = new Color((float)188/255, (float)173/255, (float)173/255, 1f);
+            _selectedColor = new Color((float)102/255, (float)212/255, (float)75/255, 1f);
+            _material = gameObject.GetComponent<Renderer>().material;
         }
 
         private void OnEnable()
@@ -79,6 +88,7 @@ namespace Motherbase
         {
             hp = maxHP;
             UpdateHealthBar(hp, maxHP);
+            _material.color = _baseColor;
         }
 
         public void RingDestroyed()
@@ -129,6 +139,18 @@ namespace Motherbase
                     EnemyManager.Instance.Pool(collider.gameObject.GetComponent<Enemy>());
                 }
             }
+        }
+        
+        private void OnMouseEnter()
+        {
+            if (isSelectable)
+                _material.color = _selectedColor;
+        }
+
+        private void OnMouseExit()
+        {
+            if (isSelectable)
+                _material.color = _baseColor;
         }
     }
 }
