@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.2316584, g: 0.23485243, b: 0.27125254, a: 1}
+  m_IndirectSpecularColor: {r: 0.22932377, g: 0.23242027, b: 0.26847947, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -780,8 +780,8 @@ MonoBehaviour:
   balance: 500
   shieldCost: 250
   repairCost: 200
-  upgradeCost: 400
-  blackHoleCost: 100
+  upgradeCost: 600
+  blackHoleCost: 200
   tempoPlanetCost: 100
 --- !u!114 &759237337
 MonoBehaviour:
@@ -795,7 +795,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 958a830ce5b87694e87ebbb9527521f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scaling: 0
+  _scaling: 1.2
   timeBetweenWaves: 10
   _spawnerList:
   - {fileID: 552835976}
@@ -819,6 +819,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3f976931653e601418f6c43f48ea11df, type: 2}
   - {fileID: 11400000, guid: 613f641d941833b499f68c34f9205afd, type: 2}
   - {fileID: 11400000, guid: 4cc62e1f54d07d24cbb96a6ddd1bead3, type: 2}
+  - {fileID: 11400000, guid: 4308d6e96f1cd894d89155d1009eaafb, type: 2}
+  - {fileID: 11400000, guid: 8f6b60017f9e5fb4792bdb734c37d3cb, type: 2}
+  - {fileID: 11400000, guid: b0ad72fb3cb09f8439d2aebd22e43952, type: 2}
+  - {fileID: 11400000, guid: e0fbda8af117e3d43bc794ef2d9e0e72, type: 2}
+  - {fileID: 11400000, guid: e48657ffcd656fc4189d12e295283fe7, type: 2}
+  - {fileID: 11400000, guid: 514f25f034a5a91428528186534c269d, type: 2}
 --- !u!114 &759237338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1118,6 +1124,10 @@ PrefabInstance:
       value: OnBlackHoleAbilityClick
       objectReference: {fileID: 0}
     - target: {fileID: 310610770483789414, guid: 16591cb407e76564e8050d31c477041b, type: 3}
+      propertyPath: cost
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 310610770483789414, guid: 16591cb407e76564e8050d31c477041b, type: 3}
       propertyPath: costTextMeshPro
       value: 
       objectReference: {fileID: 1377027174}
@@ -1215,7 +1225,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 310610771958433259, guid: 16591cb407e76564e8050d31c477041b, type: 3}
       propertyPath: cost
-      value: 400
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 310610771958433259, guid: 16591cb407e76564e8050d31c477041b, type: 3}
       propertyPath: costTextMeshPro

@@ -116,7 +116,7 @@ MonoBehaviour:
   damage: 3
   rotationSpeed: {x: 30, y: 30, z: 30}
   gravityStrength: 2
-  hp: 7
+  maxHP: 4
   reward: 10
   _type: 2
 --- !u!135 &5437492431170657481

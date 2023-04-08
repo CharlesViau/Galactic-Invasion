@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Wave17
   m_EditorClassIdentifier: 
   normal:
-    numberOfEnemies: 60
+    numberOfEnemies: 100
     newSpawner: 0
   fast:
-    numberOfEnemies: 20
+    numberOfEnemies: 40
     newSpawner: 0
   slow:
     numberOfEnemies: 20

@@ -81,14 +81,15 @@ namespace Enemies
                     _slowSpawnerList.RemoveAt(0);
                 }
             }
-            StartCoroutine(TimerBetweenWaves(data));
+            
+            StartCoroutine(TimerBetweenWaves(data.normal, data.fast, data.slow));
         }
 
-        private void DistributeEnemies(WaveScriptableObject data)
+        private void DistributeEnemies(EnemyData normal, EnemyData fast, EnemyData slow)
         {
-            if (data.normal.numberOfEnemies > 0 && _activeSpawners.Count > 0)
+            if (normal.numberOfEnemies > 0 && _activeSpawners.Count > 0)
             {
-                int normalPerSpawner = (int) (data.normal.numberOfEnemies / _activeSpawners.Count);
+                int normalPerSpawner = (int) (normal.numberOfEnemies / _activeSpawners.Count);
                 foreach (EnemySpawner s in _activeSpawners)
                 {
                     for (int i = 0; i < normalPerSpawner; i++)
@@ -98,9 +99,9 @@ namespace Enemies
                 }
             }
 
-            if (data.fast.numberOfEnemies > 0 && _activeFastSpawners.Count > 0)
+            if (fast.numberOfEnemies > 0 && _activeFastSpawners.Count > 0)
             {
-                int fastPerSpawner = (int) (data.fast.numberOfEnemies / _activeFastSpawners.Count);
+                int fastPerSpawner = (int) (fast.numberOfEnemies / _activeFastSpawners.Count);
                 foreach (EnemySpawner s in _activeFastSpawners)
                 {
                     for (int i = 0; i < fastPerSpawner; i++)
@@ -110,9 +111,9 @@ namespace Enemies
                 }
             }
 
-            if (data.fast.numberOfEnemies > 0 && _activeSlowSpawners.Count > 0)
+            if (fast.numberOfEnemies > 0 && _activeSlowSpawners.Count > 0)
             {
-                int slowPerSpawner = (int) (data.slow.numberOfEnemies / _activeSlowSpawners.Count);
+                int slowPerSpawner = (int) (slow.numberOfEnemies / _activeSlowSpawners.Count);
                 foreach (EnemySpawner s in _activeSlowSpawners)
                 {
                     for (int i = 0; i < slowPerSpawner; i++)
@@ -126,11 +127,14 @@ namespace Enemies
         private void Endgame()
         {
             WaveScriptableObject data = _wavesData.Last();
-            float scaling = (_currentWave - _wavesData.Count - 2) * _scaling;
-            data.normal.numberOfEnemies = (int) (data.normal.numberOfEnemies * scaling);
-            data.fast.numberOfEnemies = (int) (data.fast.numberOfEnemies * scaling);
-            data.slow.numberOfEnemies = (int) (data.slow.numberOfEnemies * scaling);
-            StartCoroutine(TimerBetweenWaves(data));
+            float scaling = (_currentWave - (_wavesData.Count - 2)) * _scaling;
+            EnemyData scaledNormal = new EnemyData();
+            EnemyData scaledFast = new EnemyData();
+            EnemyData scaledSlow = new EnemyData();
+            scaledNormal.numberOfEnemies = (int) (data.normal.numberOfEnemies * scaling);
+            scaledFast.numberOfEnemies = (int) (data.fast.numberOfEnemies * scaling);
+            scaledSlow.numberOfEnemies = (int) (data.slow.numberOfEnemies * scaling);
+            StartCoroutine(TimerBetweenWaves(scaledNormal, scaledFast, scaledSlow));
         }
 
         private void SpawnerEmpty()
@@ -164,7 +168,7 @@ namespace Enemies
             }
         }
 
-        private IEnumerator TimerBetweenWaves(WaveScriptableObject data)
+        private IEnumerator TimerBetweenWaves(EnemyData normal, EnemyData fast, EnemyData slow)
         {
             if (_currentWave == 0)
             {
@@ -175,7 +179,7 @@ namespace Enemies
                 yield return new WaitForSeconds(timeBetweenWaves);
             }
             
-            DistributeEnemies(data);
+            DistributeEnemies(normal, fast, slow);
             _currentWave++;
         }
 

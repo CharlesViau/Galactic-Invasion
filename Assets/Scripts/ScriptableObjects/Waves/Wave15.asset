@@ -13,14 +13,11 @@ MonoBehaviour:
   m_Name: Wave15
   m_EditorClassIdentifier: 
   normal:
-    spawnerFireRate: 0.5
-    numberOfEnemies: 50
+    numberOfEnemies: 90
     newSpawner: 0
   fast:
-    spawnerFireRate: 0.5
-    numberOfEnemies: 20
+    numberOfEnemies: 30
     newSpawner: 0
   slow:
-    spawnerFireRate: 2
     numberOfEnemies: 20
     newSpawner: 1

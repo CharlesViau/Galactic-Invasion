@@ -12,7 +12,8 @@ namespace Enemies
 
         [SerializeField] private Vector3 rotationSpeed;
         [SerializeField] private float gravityStrength = 3f;
-        [SerializeField] private int hp;
+        [SerializeField] private int maxHP;
+        private int hp;
 
         public int reward;
         [SerializeField] private EnemyTypes _type;
@@ -35,6 +36,7 @@ namespace Enemies
         {
             _velocity = Vector3.zero;
             _isAffected = false;
+            hp = maxHP;
         }
 
         private void FixedUpdate()
@@ -84,6 +86,7 @@ namespace Enemies
             _velocity = Vector3.zero;
             _gravity = null;
             _isAffected = false;
+            hp = maxHP;
         }
 
         private void Die()
