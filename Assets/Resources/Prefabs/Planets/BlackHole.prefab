@@ -4916,7 +4916,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e0c642f560607649b7d0a6f62274d81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfEnemies: 20
+  timer: 15
 --- !u!1 &4906092814652633917
 GameObject:
   m_ObjectHideFlags: 0
@@ -5060,7 +5060,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 6
+  m_Radius: 4
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6079681445651202916
 MonoBehaviour:

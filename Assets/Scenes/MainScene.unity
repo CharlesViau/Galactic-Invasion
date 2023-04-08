@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.2172538, g: 0.22051585, b: 0.25501457, a: 1}
+  m_IndirectSpecularColor: {r: 0.17487344, g: 0.18222153, b: 0.21227658, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -778,9 +778,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   balance: 500
-  shieldCost: 1
+  shieldCost: 250
   repairCost: 200
-  upgradeCost: 1
+  upgradeCost: 500
   blackHoleCost: 200
   tempoPlanetCost: 100
 --- !u!114 &759237337
@@ -795,7 +795,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 958a830ce5b87694e87ebbb9527521f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scaling: 1.2
+  _scaling: 1.25
   timeBetweenWaves: 10
   _spawnerList:
   - {fileID: 552835976}
