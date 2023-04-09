@@ -12,22 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0e53895588274a439cecc1cbb181423, type: 3}
   m_Name: Wave2
   m_EditorClassIdentifier: 
-  spawnerFireRate: 0.5
-  numberOfNormals: 15
-  numberOfFast: 0
-  numberOfSlow: 0
-  newNormalSpawner: 0
-  newFastSpawner: 0
-  newSlowSpawner: 0
   normal:
-    spawnerFireRate: 0.5
     numberOfEnemies: 15
     newSpawner: 0
+    spawnCooldown: 0.5
   fast:
-    spawnerFireRate: 0
     numberOfEnemies: 0
     newSpawner: 0
+    spawnCooldown: 1
   slow:
-    spawnerFireRate: 0
     numberOfEnemies: 0
     newSpawner: 0
+    spawnCooldown: 1

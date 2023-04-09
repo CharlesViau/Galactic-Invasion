@@ -92,6 +92,8 @@ namespace Enemies
                 int normalPerSpawner = (int) (normal.numberOfEnemies / _activeSpawners.Count);
                 foreach (EnemySpawner s in _activeSpawners)
                 {
+                    s.spawnCooldown = normal.spawnCooldown;
+                    
                     for (int i = 0; i < normalPerSpawner; i++)
                     {
                         s.AddEnemy(EnemyTypes.Asteroid);
@@ -104,6 +106,8 @@ namespace Enemies
                 int fastPerSpawner = (int) (fast.numberOfEnemies / _activeFastSpawners.Count);
                 foreach (EnemySpawner s in _activeFastSpawners)
                 {
+                    s.spawnCooldown = fast.spawnCooldown;
+                    
                     for (int i = 0; i < fastPerSpawner; i++)
                     {
                         s.AddEnemy(EnemyTypes.AsteroidFast);
@@ -116,6 +120,8 @@ namespace Enemies
                 int slowPerSpawner = (int) (slow.numberOfEnemies / _activeSlowSpawners.Count);
                 foreach (EnemySpawner s in _activeSlowSpawners)
                 {
+                    s.spawnCooldown = slow.spawnCooldown;
+                    
                     for (int i = 0; i < slowPerSpawner; i++)
                     {
                         s.AddEnemy(EnemyTypes.AsteroidSlow);

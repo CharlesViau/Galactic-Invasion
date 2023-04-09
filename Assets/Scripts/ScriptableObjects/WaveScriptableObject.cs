@@ -19,4 +19,5 @@ public class EnemyData
     public int numberOfEnemies;
 
     public bool newSpawner;
+    public float spawnCooldown;
 }

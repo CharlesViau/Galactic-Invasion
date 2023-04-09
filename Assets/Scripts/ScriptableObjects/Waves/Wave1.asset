@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: Wave1
   m_EditorClassIdentifier: 
   normal:
-    spawnerFireRate: 1
     numberOfEnemies: 10
     newSpawner: 1
+    spawnCooldown: 0.5
   fast:
-    spawnerFireRate: 0
     numberOfEnemies: 0
     newSpawner: 0
+    spawnCooldown: 1
   slow:
-    spawnerFireRate: 0
     numberOfEnemies: 0
     newSpawner: 0
+    spawnCooldown: 1
