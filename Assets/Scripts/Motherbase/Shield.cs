@@ -18,6 +18,8 @@ namespace Motherbase
         public delegate void DeathEvent();
         public event DeathEvent deathEvent;
 
+        public bool isSelectable = false;
+
         [SerializeField] private int maxHP;
         [SerializeField] private Transform t;
         [SerializeField] private Image healthBar;
@@ -31,11 +33,20 @@ namespace Motherbase
         private Transform rocket;
         private Transform sniper;
         private Tower tower;
+        
+        private Color _baseColor;
+        private Color _selectedColor;
+        private Material _material;
+
+        private int _currentLVL = 1;
         //private Vector3 rotationSpeed;
 
         private void Start()
         {
             velocity = Vector3.zero;
+            _baseColor = new Color((float)188/255, (float)173/255, (float)173/255, 1f);
+            _selectedColor = new Color((float)102/255, (float)212/255, (float)75/255, 1f);
+            _material = gameObject.GetComponent<Renderer>().material;
         }
 
         private void OnEnable()
@@ -63,22 +74,26 @@ namespace Motherbase
             }
         }
 
-        public void Upgrade(int lvl)
+        public void Upgrade()
         {
-            if (lvl == 2)
+            _currentLVL++;
+            if (_currentLVL == 2)
             {
                 rocket.gameObject.SetActive(true);
-            } else if (lvl == 3)
+                tower.Upgrade(_currentLVL);
+            } else if (_currentLVL == 3)
             {
                 sniper.gameObject.SetActive(true);
+                tower.Upgrade(_currentLVL);
             }
-            tower.Upgrade(lvl);
+            _material.color = _baseColor;
         }
 
         public void Repair()
         {
             hp = maxHP;
             UpdateHealthBar(hp, maxHP);
+            _material.color = _baseColor;
         }
 
         public void RingDestroyed()
@@ -129,6 +144,25 @@ namespace Motherbase
                     EnemyManager.Instance.Pool(collider.gameObject.GetComponent<Enemy>());
                 }
             }
+        }
+
+        public bool isMaxLVL()
+        {
+            if (_currentLVL >= 3)
+                return true;
+            return false;
+        }
+        
+        private void OnMouseEnter()
+        {
+            if (isSelectable)
+                _material.color = _selectedColor;
+        }
+
+        private void OnMouseExit()
+        {
+            if (isSelectable)
+                _material.color = _baseColor;
         }
     }
 }

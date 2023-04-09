@@ -87,20 +87,12 @@ namespace Motherbase
             return shields;
         }
 
-        public void UpgradeShields()
+        public void shieldsSelectable(bool selectable)
         {
-            currentLVL++;
             foreach (Shield s in shields)
             {
-                s.Upgrade(currentLVL);
+                s.isSelectable = selectable;
             }
-        }
-
-        public bool IsMaxLVL()
-        {
-            if (currentLVL >= maxLVL) return true;
-
-            return false;
         }
 
         private void OnShieldDestroy()

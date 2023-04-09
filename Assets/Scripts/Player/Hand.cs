@@ -25,6 +25,7 @@ public class Hand : MonoBehaviour
     private bool isPlacingAbilty;
     private bool isShowingPreview;
     private bool isRepairing;
+    private bool isUpgrading;
     private bool isFirstShieldPlaced;
 
     private GameObject previewRef;
@@ -47,7 +48,7 @@ public class Hand : MonoBehaviour
     {
         var currentPos = Input.mousePosition;
         var worldPos =
-            Camera.main.ScreenToWorldPoint(new Vector3(currentPos.x - 70, currentPos.y + 15, -Camera.main.transform.position.z));
+            Camera.main.ScreenToWorldPoint(new Vector3(currentPos.x - 80, currentPos.y + 20, -Camera.main.transform.position.z));
         worldPos.z = 0;
         playerTransform.position = worldPos;
 
@@ -102,12 +103,26 @@ public class Hand : MonoBehaviour
             if (Input.GetMouseButtonDown(1))
             {
                 isRepairing = false;
+                _mb.shieldsSelectable(false);
                 _animator.SetTrigger("Cancel");
             }
 
             if (Input.GetMouseButtonDown(0))
             {
                 OnRepair();
+            }
+        } else if (isUpgrading)
+        {
+            if (Input.GetMouseButtonDown(1))
+            {
+                isUpgrading = false;
+                _mb.shieldsSelectable(false);
+                _animator.SetTrigger("Cancel");
+            }
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                OnUpgrade();
             }
         }
     }
@@ -130,6 +145,13 @@ public class Hand : MonoBehaviour
         }
         _animator.SetTrigger("Shoot");
     }
+    
+    public void OnPlaceShield()
+    {
+        isFirstShieldPlaced = true;
+        _animator.SetTrigger("Punch");
+        isShowingPreview = false;
+    }
 
     public void OnRepairClick()
     {
@@ -138,6 +160,7 @@ public class Hand : MonoBehaviour
             MessageUI.Instance.Show("Not enough money!");
             return;
         }
+        _mb.shieldsSelectable(true);
         _animator.SetTrigger("Click");
         isRepairing = true;
     }
@@ -147,28 +170,42 @@ public class Hand : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
         RaycastHit hit;
         if (Physics.Raycast (ray, out hit, Mathf.Infinity)) {
-            if (hit.transform.CompareTag("Shield"))
+            if (hit.transform.CompareTag("Shield") && PlayerCurrency.Instance.SpendMoney(PlayerCurrency.Instance.repairCost))
             {
                 hit.transform.gameObject.GetComponent<Shield>().Repair();
                 isRepairing = false;
                 _animator.SetTrigger("Punch");
+                _mb.shieldsSelectable(false);
             }
         }
     }
 
-    public void OnPlaceShield()
-    {
-        isFirstShieldPlaced = true;
-        _animator.SetTrigger("Punch");
-        isShowingPreview = false;
-    }
-
     public void OnUpgradeClick()
     {
-        if (!_mb.IsMaxLVL() && PlayerCurrency.Instance.SpendMoney(PlayerCurrency.Instance.upgradeCost))
+        if (PlayerCurrency.Instance.Balance < PlayerCurrency.Instance.upgradeCost)
         {
-            _mb.UpgradeShields();
-            _animator.SetTrigger("Thumbs up");
+            MessageUI.Instance.Show("Not enough money!");
+            return;
+        }
+        _mb.shieldsSelectable(true);
+        _animator.SetTrigger("Click");
+        isUpgrading = true;
+    }
+
+    private void OnUpgrade()
+    {
+        Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
+        RaycastHit hit;
+        if (Physics.Raycast (ray, out hit, Mathf.Infinity)) {
+            if (hit.transform.CompareTag("Shield") && PlayerCurrency.Instance.SpendMoney(PlayerCurrency.Instance.upgradeCost))
+            {
+                if (hit.transform.gameObject.GetComponent<Shield>().isMaxLVL())
+                    return;
+                hit.transform.gameObject.GetComponent<Shield>().Upgrade();
+                isUpgrading = false;
+                _animator.SetTrigger("Thumbs up");
+                _mb.shieldsSelectable(false);
+            }
         }
     }
 
