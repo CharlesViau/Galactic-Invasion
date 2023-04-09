@@ -5,14 +5,12 @@ using UnityEngine.UI;
 
 public class TowerAbilityButton : MonoBehaviour
 {
-    public Button towerAbilityButton;
     public List<Button> otherAbilityButtons;
 
-    private bool towerAbilityPurchased;
+    public bool towerAbilityPurchased;
 
     private void Start()
     {
-        towerAbilityButton.onClick.AddListener(OnTowerAbilityButtonClicked);
         towerAbilityPurchased = false;
         SetOtherAbilityButtonsInteractable(false);
         StartCoroutine(InitializeButtons());
@@ -25,18 +23,19 @@ public class TowerAbilityButton : MonoBehaviour
         UpdateOtherAbilityButtons();
     }
 
-    private void OnTowerAbilityButtonClicked()
+    /*private void OnTowerAbilityButtonClicked()
     {
         if (!towerAbilityPurchased)
         {
             towerAbilityPurchased = true;
             UpdateOtherAbilityButtons();
         }
-    }
+    }*/
 
-    private void UpdateOtherAbilityButtons()
+    public void UpdateOtherAbilityButtons()
     {
         SetOtherAbilityButtonsInteractable(towerAbilityPurchased);
+        
     }
 
     private void SetOtherAbilityButtonsInteractable(bool interactable)

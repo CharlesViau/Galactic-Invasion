@@ -17,6 +17,7 @@ public class Hand : MonoBehaviour
     [SerializeField] private GameObject blackHole;
     [SerializeField] private GameObject tempoPreview;
     [SerializeField] private GameObject tempo;
+    [SerializeField] private TowerAbilityButton towerAbilityButtons;
     
     private Animator _animator;
     private CurrentAbility _currentAbility;
@@ -151,6 +152,8 @@ public class Hand : MonoBehaviour
         isFirstShieldPlaced = true;
         _animator.SetTrigger("Punch");
         isShowingPreview = false;
+        towerAbilityButtons.towerAbilityPurchased = true;
+        towerAbilityButtons.UpdateOtherAbilityButtons();
     }
 
     public void OnRepairClick()
