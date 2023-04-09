@@ -11,7 +11,6 @@ namespace Motherbase
         [SerializeField] private List<Shield> shields;
         [SerializeField] private List<ShieldPreview> shields_preview;
         [SerializeField] private int hp;
-        [SerializeField] private int maxLVL;
         private int currentLVL = 1;
         private List<int> _spawnedShields;
 

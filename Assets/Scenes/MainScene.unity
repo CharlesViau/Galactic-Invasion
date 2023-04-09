@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.22736976, g: 0.23042071, b: 0.26619586, a: 1}
+  m_IndirectSpecularColor: {r: 0.19919151, g: 0.20507339, b: 0.23780355, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -505,17 +505,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &644926024 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 310610770591368547, guid: 16591cb407e76564e8050d31c477041b, type: 3}
-  m_PrefabInstance: {fileID: 993846978}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &696328574
 GameObject:
   m_ObjectHideFlags: 0
@@ -855,12 +844,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d3992fa2c727724cb0b5647e389089d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerAbilityButton: {fileID: 644926024}
   otherAbilityButtons:
   - {fileID: 725924771}
-  - {fileID: 2107374214}
   - {fileID: 1027459993}
   - {fileID: 98924174}
+  towerAbilityPurchased: 0
 --- !u!1 &806815444 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6129910981635722220, guid: 88bf51d38e754534db6640538fa05a45, type: 3}
@@ -1672,6 +1660,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 11.727598
       objectReference: {fileID: 0}
+    - target: {fileID: 2666751826236216307, guid: 0bc9309bd6432bf48854dd415e590d2f, type: 3}
+      propertyPath: towerAbilityButtons
+      value: 
+      objectReference: {fileID: 759237339}
     - target: {fileID: 3141521676568024736, guid: 0bc9309bd6432bf48854dd415e590d2f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -1.27184
@@ -4078,17 +4070,6 @@ PrefabInstance:
     - {fileID: 1403893441502478684, guid: 88bf51d38e754534db6640538fa05a45, type: 3}
     - {fileID: 5598888659461183366, guid: 88bf51d38e754534db6640538fa05a45, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 88bf51d38e754534db6640538fa05a45, type: 3}
---- !u!114 &2107374214 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 310610771958433256, guid: 16591cb407e76564e8050d31c477041b, type: 3}
-  m_PrefabInstance: {fileID: 993846978}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2135197469 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2666751826236216307, guid: 0bc9309bd6432bf48854dd415e590d2f, type: 3}
