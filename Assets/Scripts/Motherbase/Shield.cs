@@ -1,158 +1,56 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Numerics;
 using Enemies;
+using Towers;
 using UnityEngine;
 using UnityEngine.UI;
-using Motherbase;
-using Towers;
-using UnityEngine.PlayerLoop;
-using Random = UnityEngine.Random;
-using Vector3 = UnityEngine.Vector3;
 
-namespace Motherbase 
+namespace Motherbase
 {
     public class Shield : MonoBehaviour
     {
         public delegate void DeathEvent();
-        public event DeathEvent deathEvent;
 
-        public bool isSelectable = false;
-
+        public bool isSelectable;
         [SerializeField] private int maxHP;
         [SerializeField] private Transform t;
         [SerializeField] private Image healthBar;
-
-        private bool isRingDestroyed = false;
-        private bool imageDestroyed = false;
-        private Vector3 direction;
-        private float gravityStrength;
-        private Vector3 velocity;
-        private int hp;
-        private Transform rocket;
-        private Transform sniper;
-        private Tower tower;
-        
         private Color _baseColor;
-        private Color _selectedColor;
+        private int _currentLvl = 1;
+        private Vector3 _direction;
+        private float _gravityStrength;
+        private int _hp;
+        private bool _imageDestroyed = false;
+        private bool _isRingDestroyed;
         private Material _material;
-
-        private int _currentLVL = 1;
-        //private Vector3 rotationSpeed;
+        private Transform _rocket;
+        private Color _selectedColor;
+        private Transform _sniper;
+        private Tower _tower;
+        private Vector3 _velocity;
 
         private void Start()
         {
-            velocity = Vector3.zero;
-            _baseColor = new Color((float)188/255, (float)173/255, (float)173/255, 1f);
-            _selectedColor = new Color((float)102/255, (float)212/255, (float)75/255, 1f);
+            _velocity = Vector3.zero;
+            _baseColor = new Color((float)188 / 255, (float)173 / 255, (float)173 / 255, 1f);
+            _selectedColor = new Color((float)102 / 255, (float)212 / 255, (float)75 / 255, 1f);
             _material = gameObject.GetComponent<Renderer>().material;
+        }
+
+        private void FixedUpdate()
+        {
+            if (!_isRingDestroyed) return;
+            var gravityForce = _direction * _gravityStrength;
+            _velocity = _velocity + gravityForce * Time.deltaTime;
+            transform.position = transform.position + _velocity * Time.deltaTime +
+                                 gravityForce / 2 * Mathf.Pow(Time.deltaTime, 2);
         }
 
         private void OnEnable()
         {
             healthBar.gameObject.transform.parent.gameObject.SetActive(true);
-            hp = maxHP;
-            UpdateHealthBar(hp, maxHP);
+            _hp = maxHP;
+            UpdateHealthBar(_hp, maxHP);
         }
 
-        public void GetTowerReferences()
-        {
-            tower = transform.Find("Tower_lvl_one").GetComponent<Tower>();
-            rocket = transform.Find("Tower_lvl_one/tourelle01_v03/tourelleRotation_grp/arme_grp/rocket_grp");
-            sniper = transform.Find("Tower_lvl_one/tourelle01_v03/tourelleRotation_grp/arme_grp/sniper_grp");
-        }
-
-        private void FixedUpdate()
-        {
-            if (isRingDestroyed)
-            {
-                Vector3 gravityForce = direction * gravityStrength;
-                velocity = velocity + (gravityForce * Time.deltaTime);
-                transform.position = transform.position + (velocity * Time.deltaTime) + ((gravityForce/2) * (Mathf.Pow(Time.deltaTime, 2 )));
-                //transform.Rotate(rotationSpeed, Space.World);
-            }
-        }
-
-        public void Upgrade()
-        {
-            _currentLVL++;
-            if (_currentLVL == 2)
-            {
-                rocket.gameObject.SetActive(true);
-                tower.Upgrade(_currentLVL);
-            } else if (_currentLVL == 3)
-            {
-                sniper.gameObject.SetActive(true);
-                tower.Upgrade(_currentLVL);
-            }
-            _material.color = _baseColor;
-        }
-
-        public void Repair()
-        {
-            hp = maxHP;
-            UpdateHealthBar(hp, maxHP);
-            _material.color = _baseColor;
-        }
-
-        public void RingDestroyed()
-        {
-            isRingDestroyed = true;
-            direction = (t.position - Vector3.zero).normalized;
-            gravityStrength = Random.Range(6f, 8f);
-            healthBar.gameObject.transform.parent.gameObject.SetActive(false);
-        }
-        private void ReceiveDamage(int dmg)
-        {
-            hp -= dmg;
-
-            if (hp <= 0)
-            {
-                gameObject.SetActive(false);
-                //Destruction animation
-                if (deathEvent != null)
-                {
-                    deathEvent();
-                }
-                healthBar.gameObject.transform.parent.gameObject.SetActive(false);
-            }
-            else
-            {
-                UpdateHealthBar(hp, maxHP);
-            }
-        }
-
-        private void UpdateHealthBar(int currentHP, int maxHP)
-        {
-            float healthPercentage = (float)currentHP / maxHP;
-            healthBar.fillAmount = healthPercentage;
-        }
-
-        private void OnTriggerEnter(Collider collider)
-        {
-            if (collider.CompareTag("Enemy"))
-            {
-                Enemy enemy = collider.gameObject.GetComponent<Enemy>();
-                ReceiveDamage(enemy.damage);
-                if (!enemy.isPoolable)
-                {
-                    Destroy(enemy.gameObject);
-                }
-                else
-                {
-                    EnemyManager.Instance.Pool(collider.gameObject.GetComponent<Enemy>());
-                }
-            }
-        }
-
-        public bool isMaxLVL()
-        {
-            if (_currentLVL >= 3)
-                return true;
-            return false;
-        }
-        
         private void OnMouseEnter()
         {
             if (isSelectable)
@@ -164,6 +62,91 @@ namespace Motherbase
             if (isSelectable)
                 _material.color = _baseColor;
         }
+
+        private void OnTriggerEnter(Collider collider)
+        {
+            if (!collider.CompareTag("Enemy")) return;
+            var enemy = collider.gameObject.GetComponent<Enemy>();
+            ReceiveDamage(enemy.damage);
+            if (!enemy.isPoolable)
+                Destroy(enemy.gameObject);
+            else
+                EnemyManager.Instance.Pool(collider.gameObject.GetComponent<Enemy>());
+        }
+
+        public event DeathEvent deathEvent;
+
+        public void GetTowerReferences()
+        {
+            _tower = transform.Find("Tower_lvl_one").GetComponent<Tower>();
+            _rocket = transform.Find("Tower_lvl_one/tourelle01_v03/tourelleRotation_grp/arme_grp/rocket_grp");
+            _sniper = transform.Find("Tower_lvl_one/tourelle01_v03/tourelleRotation_grp/arme_grp/sniper_grp");
+        }
+
+        public void Upgrade()
+        {
+            _currentLvl++;
+            switch (_currentLvl)
+            {
+                case 2:
+                    _rocket.gameObject.SetActive(true);
+                    _tower.Upgrade(_currentLvl);
+                    break;
+                case 3:
+                    _sniper.gameObject.SetActive(true);
+                    _tower.Upgrade(_currentLvl);
+                    break;
+            }
+
+            _material.color = _baseColor;
+        }
+
+        public void Repair()
+        {
+            _hp = maxHP;
+            UpdateHealthBar(_hp, maxHP);
+            _material.color = _baseColor;
+        }
+
+        public void RingDestroyed()
+        {
+            _isRingDestroyed = true;
+            _direction = (t.position - Vector3.zero).normalized;
+            _gravityStrength = Random.Range(6f, 8f);
+            healthBar.gameObject.transform.parent.gameObject.SetActive(false);
+        }
+
+        private void ReceiveDamage(int dmg)
+        {
+            _hp -= dmg;
+
+            if (_hp <= 0)
+            {
+                gameObject.SetActive(false);
+                //Destruction animation
+                deathEvent?.Invoke();
+                healthBar.gameObject.transform.parent.gameObject.SetActive(false);
+            }
+            else
+            {
+                UpdateHealthBar(_hp, maxHP);
+            }
+        }
+
+        private void UpdateHealthBar(int currentHp, int maxHp)
+        {
+            var healthPercentage = (float)currentHp / maxHp;
+            healthBar.fillAmount = healthPercentage;
+        }
+
+        public bool IsMaxLvl()
+        {
+            return _currentLvl >= 3;
+        }
+
+        public bool IsMaxHp()
+        {
+            return _hp >= maxHP;
+        }
     }
 }
-

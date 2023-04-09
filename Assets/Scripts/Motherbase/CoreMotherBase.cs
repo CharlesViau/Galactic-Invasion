@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Enemies;
 using Projectiles;
 using UnityEngine;
@@ -11,45 +12,47 @@ namespace Motherbase
         [SerializeField] private List<Shield> shields;
         [SerializeField] private List<ShieldPreview> shields_preview;
         [SerializeField] private int hp;
-        private int currentLVL = 1;
-        private List<int> _spawnedShields;
-        
-        private Material _material;
-        private Color lerpedColor;
-        private Color _startingColor;
-        private Color _midColor;
+        private int _currentLvl = 1;
         private Color _finalColor;
+        private Color _lerpedColor;
+        private Material _material;
+        private Color _midColor;
+        private List<int> _spawnedShields;
+        private Color _startingColor;
 
         private void Awake()
         {
             _material = gameObject.GetComponent<Renderer>().material;
-            _startingColor = new Color((float)37/255, (float)150/255, (float)29/255, 1f);
-            _midColor = new Color((float)191/255, (float)191/255, (float)191/255, 1f);
-            lerpedColor = _startingColor;
-            _finalColor = new Color((float)205/255, (float)23/255, (float)23/255, 1f);
+            _startingColor = new Color((float)37 / 255, (float)150 / 255, (float)29 / 255, 1f);
+            _midColor = new Color((float)191 / 255, (float)191 / 255, (float)191 / 255, 1f);
+            _lerpedColor = _startingColor;
+            _finalColor = new Color((float)205 / 255, (float)23 / 255, (float)23 / 255, 1f);
             UpdateColor(1);
             _spawnedShields = new List<int>();
 
             for (var i = 0; i < shields_preview.Count; i++) shields_preview[i].SetIndex(i);
 
-            foreach (Shield s in shields)
+            foreach (var s in shields)
             {
                 s.GetTowerReferences();
                 s.deathEvent += OnShieldDestroy;
             }
         }
 
+        private void OnDestroy()
+        {
+            foreach (var s in shields) s.deathEvent -= OnShieldDestroy;
+        }
+
         private void OnTriggerEnter(Collider collider)
         {
-            if (collider.CompareTag("Enemy"))
-            {
-                var enemy = collider.gameObject.GetComponent<Enemy>();
-                ReceiveDamage(enemy.damage);
-                if (!enemy.isPoolable)
-                    Destroy(enemy.gameObject);
-                else
-                    EnemyManager.Instance.Pool(collider.gameObject.GetComponent<Enemy>());
-            }
+            if (!collider.CompareTag("Enemy")) return;
+            var enemy = collider.gameObject.GetComponent<Enemy>();
+            ReceiveDamage(enemy.damage);
+            if (!enemy.isPoolable)
+                Destroy(enemy.gameObject);
+            else
+                EnemyManager.Instance.Pool(collider.gameObject.GetComponent<Enemy>());
         }
 
         private void ReceiveDamage(int dmg)
@@ -59,7 +62,7 @@ namespace Motherbase
             if (hp <= 0) GameOver();
         }
 
-        private void GameOver()
+        private static void GameOver()
         {
             EnemyManager.Instance.Clear();
             ProjectileManager.Instance.Clear();
@@ -98,12 +101,9 @@ namespace Motherbase
             return shields;
         }
 
-        public void shieldsSelectable(bool selectable)
+        public void ShieldsSelectable(bool selectable, bool isUpgrading = false)
         {
-            foreach (Shield s in shields)
-            {
-                s.isSelectable = selectable;
-            }
+            foreach (var s in shields.Where(s => !isUpgrading || !s.IsMaxLvl())) s.isSelectable = selectable;
         }
 
         private void OnShieldDestroy()
@@ -113,26 +113,14 @@ namespace Motherbase
                     _spawnedShields.Remove(i);
         }
 
-        public void UpdateColor(float ringHPPercentage)
+        public void UpdateColor(float ringHpPercentage)
         {
-            if (ringHPPercentage >= 0.5f)
-            {
-                lerpedColor = Color.Lerp(_startingColor, _midColor, (1 - ringHPPercentage)*2);
-            }
+            if (ringHpPercentage >= 0.5f)
+                _lerpedColor = Color.Lerp(_startingColor, _midColor, (1 - ringHpPercentage) * 2);
             else
-            {
-                lerpedColor = Color.Lerp(_finalColor, _midColor, ringHPPercentage * 2);
-            }
-            
-            _material.SetColor("_EmissionColor", lerpedColor * 2.5f);
-        }
+                _lerpedColor = Color.Lerp(_finalColor, _midColor, ringHpPercentage * 2);
 
-        private void OnDestroy()
-        {
-            foreach (Shield s in shields)
-            {
-                s.deathEvent -= OnShieldDestroy;
-            }
+            _material.SetColor("_EmissionColor", _lerpedColor * 2.5f);
         }
     }
 }
