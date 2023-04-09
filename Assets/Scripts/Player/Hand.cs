@@ -50,7 +50,7 @@ public class Hand : MonoBehaviour
             var worldPos =
                 Camera.main.ScreenToWorldPoint(new Vector3(currentPos.x - 80, currentPos.y + 20,
                     -Camera.main.transform.position.z));
-            worldPos.z = 0;
+            worldPos.z = -30;
             playerTransform.position = worldPos;
         }
 
@@ -58,7 +58,7 @@ public class Hand : MonoBehaviour
         {
             var position = referenceTransform.position;
             _previewRef.transform.position =
-                new Vector3(position.x, position.y - 10);
+                new Vector3(position.x, position.y - 10, 0);
             if (Input.GetMouseButtonDown(0))
                 if (_previewRef.GetComponent<SpellUI>().CanBePlaced())
                 {
@@ -234,7 +234,7 @@ public class Hand : MonoBehaviour
         _animator.SetTrigger("Drop");
         _isPlacingAbilty = false;
         Destroy(_previewRef.gameObject);
-        Instantiate(tempo, referenceTransform.position, tempo.transform.rotation);
+        Instantiate(tempo, new Vector3(referenceTransform.position.x, referenceTransform.position.y, 0), tempo.transform.rotation);
     }
 
     public void OnBlackHoleAbilityClick()
@@ -256,7 +256,7 @@ public class Hand : MonoBehaviour
         _animator.SetTrigger("Drop");
         _isPlacingAbilty = false;
         Destroy(_previewRef.gameObject);
-        Instantiate(blackHole, referenceTransform.position, blackHole.transform.rotation);
+        Instantiate(blackHole, new Vector3(referenceTransform.position.x, referenceTransform.position.y, 0), blackHole.transform.rotation);
     }
 
     private void OnShieldDestroy()
