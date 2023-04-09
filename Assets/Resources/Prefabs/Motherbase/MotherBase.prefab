@@ -224,6 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 964cb25a62307b241a36f3d2e217f4f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSelectable: 0
   maxHP: 30
   t: {fileID: 4240137484236857608}
   healthBar: {fileID: 2403996109247132641}
@@ -739,6 +740,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 964cb25a62307b241a36f3d2e217f4f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSelectable: 0
   maxHP: 30
   t: {fileID: 4670098880273021333}
   healthBar: {fileID: 5234093905671218446}
@@ -857,7 +859,6 @@ MonoBehaviour:
   - {fileID: 3997642759281399299}
   - {fileID: 5830010552148513485}
   hp: 5
-  maxLVL: 3
 --- !u!135 &7346361526038670814
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1095,6 +1096,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 964cb25a62307b241a36f3d2e217f4f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSelectable: 0
   maxHP: 30
   t: {fileID: 2030938935389361222}
   healthBar: {fileID: 84757907879554971}
@@ -1242,6 +1244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 964cb25a62307b241a36f3d2e217f4f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSelectable: 0
   maxHP: 30
   t: {fileID: 2790151147463811869}
   healthBar: {fileID: 5663354368024121212}
@@ -1625,6 +1628,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 964cb25a62307b241a36f3d2e217f4f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSelectable: 0
   maxHP: 30
   t: {fileID: 8991384155095672080}
   healthBar: {fileID: 2991555815174053716}
@@ -1804,6 +1808,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 964cb25a62307b241a36f3d2e217f4f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSelectable: 0
   maxHP: 30
   t: {fileID: 4798278553068242954}
   healthBar: {fileID: 2418465369900384103}
@@ -2103,6 +2108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 964cb25a62307b241a36f3d2e217f4f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSelectable: 0
   maxHP: 30
   t: {fileID: 1810398291676894661}
   healthBar: {fileID: 1102240245318566894}
@@ -2216,7 +2222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   core: {fileID: 2346044282579672232}
-  hp: 50
+  maxHP: 50
 --- !u!1 &8806056278309560752
 GameObject:
   m_ObjectHideFlags: 0
@@ -2425,6 +2431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 964cb25a62307b241a36f3d2e217f4f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSelectable: 0
   maxHP: 30
   t: {fileID: 4316039128818521346}
   healthBar: {fileID: 6179189798251157455}

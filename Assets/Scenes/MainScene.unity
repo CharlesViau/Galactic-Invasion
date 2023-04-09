@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.13764599, g: 0.14371574, b: 0.16909856, a: 1}
+  m_IndirectSpecularColor: {r: 0.13645461, g: 0.14245835, b: 0.16770726, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -774,7 +774,7 @@ MonoBehaviour:
   balance: 500
   shieldCost: 250
   repairCost: 200
-  upgradeCost: 600
+  upgradeCost: 400
   blackHoleCost: 200
   tempoPlanetCost: 100
 --- !u!114 &759237337
