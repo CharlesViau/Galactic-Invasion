@@ -99,12 +99,12 @@ namespace Towers
         private void Update()
         {
             _timer += Time.deltaTime;
-            if (_target == null || _target is null || !_target.gameObject.activeSelf || IsTargetOutOfRange())
-            {
+            /*if (_target == null || _target is null || !_target.gameObject.activeSelf || IsTargetOutOfRange())
+            {*/
                 _target = EnemyManager.Instance.GetClosest(transform, detectionRange);
                 if (_target)
                     _targetRb = _target.GetComponent<Rigidbody>();
-            }
+            //}
             
             if (_timer > attackSpeed && _target && IsTargetInView())
             {
