@@ -26,6 +26,7 @@ public class Hand : MonoBehaviour
     private bool _isShowingPreview;
     private bool _isUpgrading;
     private CoreMotherBase _mb;
+    private Menu_ingame _menuInGame;
     private GameObject _previewRef;
     private List<Shield> _shields;
 
@@ -34,12 +35,15 @@ public class Hand : MonoBehaviour
         _mb = FindObjectOfType<CoreMotherBase>();
         _animator = GetComponent<Animator>();
         _shields = _mb.GetShieldList();
+        _menuInGame = Menu_ingame.Instance;
 
         foreach (var s in _shields) s.deathEvent += OnShieldDestroy;
     }
 
     private void Update()
     {
+        if (_menuInGame.IsPaused) return;
+
         var currentPos = Input.mousePosition;
         if (Camera.main != null)
         {
