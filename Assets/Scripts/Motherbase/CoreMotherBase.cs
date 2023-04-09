@@ -13,9 +13,21 @@ namespace Motherbase
         [SerializeField] private int hp;
         private int currentLVL = 1;
         private List<int> _spawnedShields;
+        
+        private Material _material;
+        private Color lerpedColor;
+        private Color _startingColor;
+        private Color _midColor;
+        private Color _finalColor;
 
         private void Awake()
         {
+            _material = gameObject.GetComponent<Renderer>().material;
+            _startingColor = new Color((float)37/255, (float)150/255, (float)29/255, 1f);
+            _midColor = new Color((float)191/255, (float)191/255, (float)191/255, 1f);
+            lerpedColor = _startingColor;
+            _finalColor = new Color((float)205/255, (float)23/255, (float)23/255, 1f);
+            UpdateColor(1);
             _spawnedShields = new List<int>();
 
             for (var i = 0; i < shields_preview.Count; i++) shields_preview[i].SetIndex(i);
@@ -99,6 +111,20 @@ namespace Motherbase
             for (var i = 0; i < shields.Count; i++)
                 if (!shields[i].gameObject.activeSelf && _spawnedShields.Contains(i))
                     _spawnedShields.Remove(i);
+        }
+
+        public void UpdateColor(float ringHPPercentage)
+        {
+            if (ringHPPercentage >= 0.5f)
+            {
+                lerpedColor = Color.Lerp(_startingColor, _midColor, (1 - ringHPPercentage)*2);
+            }
+            else
+            {
+                lerpedColor = Color.Lerp(_finalColor, _midColor, ringHPPercentage * 2);
+            }
+            
+            _material.SetColor("_EmissionColor", lerpedColor * 2.5f);
         }
 
         private void OnDestroy()
