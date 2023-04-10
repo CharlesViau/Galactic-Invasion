@@ -27,6 +27,15 @@ namespace Motherbase
         private Tower _tower;
         private Vector3 _velocity;
 
+        private void Reset()
+        {
+            healthBar.gameObject.transform.parent.gameObject.SetActive(true);
+            _hp = maxHP;
+            UpdateHealthBar(_hp, maxHP);
+            _currentLvl = 0;
+            Upgrade();
+        }
+
         private void Start()
         {
             _velocity = Vector3.zero;
@@ -46,9 +55,7 @@ namespace Motherbase
 
         private void OnEnable()
         {
-            healthBar.gameObject.transform.parent.gameObject.SetActive(true);
-            _hp = maxHP;
-            UpdateHealthBar(_hp, maxHP);
+            Reset();
         }
 
         private void OnMouseEnter()
@@ -88,6 +95,11 @@ namespace Motherbase
             _currentLvl++;
             switch (_currentLvl)
             {
+                case 1:
+                    _rocket.gameObject.SetActive(false);
+                    _sniper.gameObject.SetActive(false);
+                    _tower.ResetTower();
+                    break;
                 case 2:
                     _rocket.gameObject.SetActive(true);
                     _tower.Upgrade(_currentLvl);
