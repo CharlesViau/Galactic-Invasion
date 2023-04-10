@@ -5,29 +5,28 @@ using UnityEngine.UI;
 public class AbilityButtonManager : MonoBehaviour
 {
     public Button abilityButton;
-    private ButtonCostDisplay buttonCostDisplay;
-    private PlayerCurrency playerCurrency;
+    private ButtonCostDisplay _buttonCostDisplay;
+    private PlayerCurrency _playerCurrency;
 
     private void Start()
     {
-        playerCurrency = PlayerCurrency.Instance;
-        buttonCostDisplay = GetComponent<ButtonCostDisplay>();
+        _playerCurrency = PlayerCurrency.Instance;
+        _buttonCostDisplay = GetComponent<ButtonCostDisplay>();
 
-        if (playerCurrency != null)
-        {
-            playerCurrency.OnBalanceChanged += UpdateAbilityButton;
-        }
-        
-        UpdateAbilityButton(playerCurrency.Balance);
+        if (_playerCurrency != null) _playerCurrency.OnBalanceChanged += UpdateAbilityButton;
+
+        UpdateAbilityButton(_playerCurrency.Balance);
     }
 
-    public void UpdateAbilityButton(int currentBalance)
+    private void Update()
     {
-        if (playerCurrency != null && buttonCostDisplay != null)
-        {
-            abilityButton.interactable = currentBalance >= buttonCostDisplay.cost;
-        }
+        if (!Controller.Instance.gameStarted) return;
+        UpdateAbilityButton(_playerCurrency.Balance);
+    }
+
+    private void UpdateAbilityButton(int currentBalance)
+    {
+        if (_playerCurrency != null && _buttonCostDisplay != null)
+            abilityButton.interactable = currentBalance >= _buttonCostDisplay.cost;
     }
 }
-
-
