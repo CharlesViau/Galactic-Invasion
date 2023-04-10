@@ -53,7 +53,6 @@ namespace Towers
             projectileType = ProjectileTypes.GreenLaser;
             _privateDetectionRange = detectionRange;
             _privateAttackSpeed = attackSpeed;
-            Debug.Log(_privateDetectionRange + " " + _privateAttackSpeed);
         }
 
         #region Events
