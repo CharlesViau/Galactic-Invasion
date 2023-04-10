@@ -14,6 +14,7 @@ namespace Motherbase
         [SerializeField] private int hp;
         private int _currentLvl = 1;
         private Color _finalColor;
+        private bool _isPreviewsShown;
         private Color _lerpedColor;
         private Material _material;
         private Color _midColor;
@@ -37,6 +38,12 @@ namespace Motherbase
                 s.GetTowerReferences();
                 s.deathEvent += OnShieldDestroy;
             }
+        }
+
+        private void Update()
+        {
+            if (!_isPreviewsShown) return;
+            ShowShieldsPreview(_isPreviewsShown);
         }
 
         private void OnDestroy()
@@ -79,6 +86,8 @@ namespace Motherbase
 
         public void ShowShieldsPreview(bool show)
         {
+            _isPreviewsShown = show;
+
             for (var i = 0; i < shields_preview.Count; i++)
                 if (!_spawnedShields.Contains(i))
                     shields_preview[i].gameObject.SetActive(show);
