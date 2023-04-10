@@ -36,7 +36,7 @@ namespace Motherbase
             Upgrade();
         }
 
-        private void Start()
+        private void Awake()
         {
             _velocity = Vector3.zero;
             _baseColor = new Color((float)188 / 255, (float)173 / 255, (float)173 / 255, 1f);
