@@ -464,31 +464,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0bf7fd813e5230439b0e2540847308c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &599782416 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6129910980397792730, guid: 88bf51d38e754534db6640538fa05a45, type: 3}
-  m_PrefabInstance: {fileID: 2062108763}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &599782418
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 599782416}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f990974bc38f3642b3f585a9f5a8b01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  costTextMeshPro: {fileID: 599782419}
-  cost: 600
 --- !u!114 &599782419 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6129910980397792743, guid: 88bf51d38e754534db6640538fa05a45, type: 3}
   m_PrefabInstance: {fileID: 2062108763}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 599782416}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
@@ -775,7 +756,7 @@ MonoBehaviour:
   shieldCost: 250
   repairCost: 200
   upgradeCost: 400
-  blackHoleCost: 200
+  blackHoleCost: 250
   tempoPlanetCost: 100
 --- !u!114 &759237337
 MonoBehaviour:
@@ -849,36 +830,17 @@ MonoBehaviour:
   - {fileID: 1027459993}
   - {fileID: 98924174}
   towerAbilityPurchased: 0
---- !u!1 &806815444 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6129910981635722220, guid: 88bf51d38e754534db6640538fa05a45, type: 3}
-  m_PrefabInstance: {fileID: 2062108763}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &806815446 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6129910981635722217, guid: 88bf51d38e754534db6640538fa05a45, type: 3}
   m_PrefabInstance: {fileID: 2062108763}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 806815444}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &806815448
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 806815444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f990974bc38f3642b3f585a9f5a8b01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  costTextMeshPro: {fileID: 806815446}
-  cost: 200
 --- !u!1 &855396087
 GameObject:
   m_ObjectHideFlags: 0
@@ -1136,7 +1098,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 310610770483789414, guid: 16591cb407e76564e8050d31c477041b, type: 3}
       propertyPath: cost
-      value: 200
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 310610770483789414, guid: 16591cb407e76564e8050d31c477041b, type: 3}
       propertyPath: costTextMeshPro
@@ -3905,7 +3867,7 @@ PrefabInstance:
       propertyPath: m_margin.x
       value: -0.6352282
       objectReference: {fileID: 0}
-    - target: {fileID: 6129910980221460591, guid: 88bf51d38e754534db6640538fa05a45, type: 3}
+    - target: {fileID: 0}
       propertyPath: cost
       value: 100
       objectReference: {fileID: 0}
@@ -3941,7 +3903,7 @@ PrefabInstance:
       propertyPath: m_margin.x
       value: -0.02757227
       objectReference: {fileID: 0}
-    - target: {fileID: 6129910980487478268, guid: 88bf51d38e754534db6640538fa05a45, type: 3}
+    - target: {fileID: 0}
       propertyPath: cost
       value: 200
       objectReference: {fileID: 0}
@@ -3953,7 +3915,7 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -137.85
       objectReference: {fileID: 0}
-    - target: {fileID: 6129910980985244626, guid: 88bf51d38e754534db6640538fa05a45, type: 3}
+    - target: {fileID: 0}
       propertyPath: cost
       value: 250
       objectReference: {fileID: 0}
@@ -4065,10 +4027,7 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6129910980397792740, guid: 88bf51d38e754534db6640538fa05a45, type: 3}
-    - {fileID: 1403893441502478684, guid: 88bf51d38e754534db6640538fa05a45, type: 3}
-    - {fileID: 5598888659461183366, guid: 88bf51d38e754534db6640538fa05a45, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88bf51d38e754534db6640538fa05a45, type: 3}
 --- !u!114 &2135197469 stripped
 MonoBehaviour:

@@ -161,7 +161,6 @@ GameObject:
   - component: {fileID: 6129910980221460588}
   - component: {fileID: 6129910980221460585}
   - component: {fileID: 6129910980221460590}
-  - component: {fileID: 6129910980221460591}
   m_Layer: 5
   m_Name: CostPlanet
   m_TagString: Untagged
@@ -285,20 +284,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &6129910980221460591
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6129910980221460589}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f990974bc38f3642b3f585a9f5a8b01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  costTextMeshPro: {fileID: 6129910980221460590}
-  cost: 0
 --- !u!1 &6129910980397792730
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,7 +295,6 @@ GameObject:
   - component: {fileID: 6129910980397792741}
   - component: {fileID: 6129910980397792742}
   - component: {fileID: 6129910980397792743}
-  - component: {fileID: 5598888659461183366}
   m_Layer: 5
   m_Name: CostLevelUP
   m_TagString: Untagged
@@ -434,20 +418,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &5598888659461183366
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6129910980397792730}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f990974bc38f3642b3f585a9f5a8b01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  costTextMeshPro: {fileID: 6129910980397792743}
-  cost: 0
 --- !u!1 &6129910980449508059
 GameObject:
   m_ObjectHideFlags: 0
@@ -495,7 +465,6 @@ GameObject:
   - component: {fileID: 6129910980487478256}
   - component: {fileID: 6129910980487478269}
   - component: {fileID: 6129910980487478258}
-  - component: {fileID: 6129910980487478268}
   m_Layer: 5
   m_Name: CostBlackHole
   m_TagString: Untagged
@@ -619,20 +588,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &6129910980487478268
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6129910980487478257}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f990974bc38f3642b3f585a9f5a8b01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  costTextMeshPro: {fileID: 6129910980487478258}
-  cost: 0
 --- !u!1 &6129910980917731363
 GameObject:
   m_ObjectHideFlags: 0
@@ -680,7 +635,6 @@ GameObject:
   - component: {fileID: 6129910980985244627}
   - component: {fileID: 6129910980985244636}
   - component: {fileID: 6129910980985244637}
-  - component: {fileID: 6129910980985244626}
   m_Layer: 5
   m_Name: CostTower
   m_TagString: Untagged
@@ -804,20 +758,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &6129910980985244626
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6129910980985244624}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f990974bc38f3642b3f585a9f5a8b01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  costTextMeshPro: {fileID: 6129910980985244637}
-  cost: 0
 --- !u!1 &6129910981259503206
 GameObject:
   m_ObjectHideFlags: 0
@@ -901,7 +841,6 @@ GameObject:
   - component: {fileID: 6129910981635722223}
   - component: {fileID: 6129910981635722216}
   - component: {fileID: 6129910981635722217}
-  - component: {fileID: 1403893441502478684}
   m_Layer: 5
   m_Name: CostHammer
   m_TagString: Untagged
@@ -1025,20 +964,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &1403893441502478684
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6129910981635722220}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f990974bc38f3642b3f585a9f5a8b01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  costTextMeshPro: {fileID: 6129910981635722217}
-  cost: 0
 --- !u!1 &6129910981690511417
 GameObject:
   m_ObjectHideFlags: 0
