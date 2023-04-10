@@ -15,12 +15,12 @@ MonoBehaviour:
   normal:
     numberOfEnemies: 40
     newSpawner: 1
-    spawnCooldown: 0.5
+    spawnCooldown: 0.4
   fast:
     numberOfEnemies: 20
     newSpawner: 0
-    spawnCooldown: 1
+    spawnCooldown: 0.9
   slow:
     numberOfEnemies: 10
     newSpawner: 0
-    spawnCooldown: 1
+    spawnCooldown: 0.9
