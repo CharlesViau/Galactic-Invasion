@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.13645461, g: 0.14245835, b: 0.16770726, a: 1}
+  m_IndirectSpecularColor: {r: 0.22656783, g: 0.22959891, b: 0.2652642, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1072,10 +1072,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 310610770405683972, guid: 16591cb407e76564e8050d31c477041b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -310.4485
+      objectReference: {fileID: 0}
+    - target: {fileID: 310610770405683972, guid: 16591cb407e76564e8050d31c477041b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 181.7018
+      objectReference: {fileID: 0}
+    - target: {fileID: 310610770405683972, guid: 16591cb407e76564e8050d31c477041b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -7.9000015
+      objectReference: {fileID: 0}
     - target: {fileID: 310610770405683973, guid: 16591cb407e76564e8050d31c477041b, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 759237334}
+    - target: {fileID: 310610770405683974, guid: 16591cb407e76564e8050d31c477041b, type: 3}
+      propertyPath: m_fontSize
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 310610770405683974, guid: 16591cb407e76564e8050d31c477041b, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 310610770427958966, guid: 16591cb407e76564e8050d31c477041b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 420.0394
+      objectReference: {fileID: 0}
+    - target: {fileID: 310610770427958966, guid: 16591cb407e76564e8050d31c477041b, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 183.5558
+      objectReference: {fileID: 0}
+    - target: {fileID: 310610770427958966, guid: 16591cb407e76564e8050d31c477041b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 20.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 310610770427958966, guid: 16591cb407e76564e8050d31c477041b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -9.4134
+      objectReference: {fileID: 0}
     - target: {fileID: 310610770470055539, guid: 16591cb407e76564e8050d31c477041b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1207,6 +1243,18 @@ PrefabInstance:
     - target: {fileID: 310610771958433270, guid: 16591cb407e76564e8050d31c477041b, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 310610772056533035, guid: 16591cb407e76564e8050d31c477041b, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 310610772056533035, guid: 16591cb407e76564e8050d31c477041b, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 310610772056533035, guid: 16591cb407e76564e8050d31c477041b, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 4183037491090856693, guid: 16591cb407e76564e8050d31c477041b, type: 3}
       propertyPath: requiresTowerAbility
@@ -3867,10 +3915,6 @@ PrefabInstance:
       propertyPath: m_margin.x
       value: -0.6352282
       objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: cost
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 6129910980260960621, guid: 88bf51d38e754534db6640538fa05a45, type: 3}
       propertyPath: m_SizeDelta.y
       value: -426.0713
@@ -3903,10 +3947,6 @@ PrefabInstance:
       propertyPath: m_margin.x
       value: -0.02757227
       objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: cost
-      value: 200
-      objectReference: {fileID: 0}
     - target: {fileID: 6129910980917731362, guid: 88bf51d38e754534db6640538fa05a45, type: 3}
       propertyPath: m_SizeDelta.y
       value: 40.879
@@ -3914,10 +3954,6 @@ PrefabInstance:
     - target: {fileID: 6129910980917731362, guid: 88bf51d38e754534db6640538fa05a45, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -137.85
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: cost
-      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 6129910980985244637, guid: 88bf51d38e754534db6640538fa05a45, type: 3}
       propertyPath: m_margin.x
