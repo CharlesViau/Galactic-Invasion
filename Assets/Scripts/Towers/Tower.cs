@@ -112,9 +112,17 @@ namespace Towers
         public void Upgrade(int lvl)
         {
             if (lvl == 2)
+            {
                 projectileType = ProjectileTypes.PinkLaser;
-            else if (lvl == 3) projectileType = ProjectileTypes.BlueLaser;
-            _privateDetectionRange = (int)(_privateDetectionRange * 1.2);
+                _privateDetectionRange = (int)(_privateDetectionRange * 1.2);
+            }
+            
+            else if (lvl == 3)
+            {
+                projectileType = ProjectileTypes.BlueLaser;
+                _privateDetectionRange = (int)(_privateDetectionRange * 1.1);
+            }
+            
             _privateAttackSpeed = (float)(_privateAttackSpeed * 0.8);
         }
 

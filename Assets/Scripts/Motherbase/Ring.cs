@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Enemies;
+using Motherbase;
+using TMPro;
 using UnityEngine;
 
 namespace Motherbase
@@ -12,6 +14,7 @@ namespace Motherbase
 
         [SerializeField] int maxHP;
         private int hp;
+        public TextMeshProUGUI hpText;
 
         private void Start()
         {
@@ -22,10 +25,12 @@ namespace Motherbase
         {
             hp -= dmg;
             core.UpdateColor((float)hp/maxHP);
+            hpText.text = ((int)((float)hp/maxHP * 100)).ToString();
         
             if (hp <= 0)
             {
                 //Destruction animation
+                PlayerScore.Instance.stopScore = true;
                 core.DestroyShields();
                 gameObject.SetActive(false);
             }

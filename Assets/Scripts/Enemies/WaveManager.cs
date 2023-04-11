@@ -122,7 +122,7 @@ namespace Enemies
         {
             var data = _wavesData.Last();
             var enemyScaling = (_currentWave - (_wavesData.Count - 2)) * _scaling;
-            var rateScaling = enemyScaling / 100 + 1;
+            var rateScaling = enemyScaling / 85 + 1;
             var scaledNormal = new EnemyData();
             var scaledFast = new EnemyData();
             var scaledSlow = new EnemyData();
