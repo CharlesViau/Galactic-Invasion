@@ -49,7 +49,6 @@ namespace Motherbase
 
         private void OnDestroy()
         {
-            if (Controller.Instance.gameStarted) onDeath.Post(gameObject);
             foreach (var s in shields) s.deathEvent -= OnShieldDestroy;
         }
 
@@ -71,8 +70,9 @@ namespace Motherbase
             if (hp <= 0) GameOver();
         }
 
-        private static void GameOver()
+        private void GameOver()
         {
+            onDeath.Post(gameObject);
             EnemyManager.Instance.Clear();
             ProjectileManager.Instance.Clear();
             Controller.Instance.Reset();
