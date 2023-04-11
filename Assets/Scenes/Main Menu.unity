@@ -3366,8 +3366,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 12.303997, y: -99}
-  m_SizeDelta: {x: 440.8522, y: 45.3832}
+  m_AnchoredPosition: {x: 30.439, y: -109.46}
+  m_SizeDelta: {x: 477.12, y: 94.0215}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &542372493
 MonoBehaviour:
@@ -3402,7 +3402,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Blackhole ability!
+  m_Text: Temporarily absorbs asteroids! No money earned from absorbed enemy
 --- !u!222 &542372494
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3849,11 +3849,11 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Planets can create fragments that damage the motherbase!
 
-    
 
-    
 
-    
+
+
+
 
 '
 --- !u!222 &639386764
@@ -4666,7 +4666,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &699109584
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11083,7 +11083,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Force enemies into controlled orbit with a planet!
+  m_Text: Temporarily force asteroids into controlled orbit with a planet!
 --- !u!222 &1403763043
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11612,8 +11612,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 12.304005, y: 201.99998}
-  m_SizeDelta: {x: 440.8522, y: 45.3832}
+  m_AnchoredPosition: {x: 12.304005, y: 193.06}
+  m_SizeDelta: {x: 440.8522, y: 79.0558}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1423304492
 MonoBehaviour:
@@ -11648,7 +11648,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Shields for the motherbase!
+  m_Text: Shields with turrets for the motherbase!
 --- !u!222 &1423304493
 CanvasRenderer:
   m_ObjectHideFlags: 0
