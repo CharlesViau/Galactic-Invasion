@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{7F6B9F9A-C97E-436B-BAA9-0745655A5960}" SchemaVersion="110">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{7F6B9F9A-C97E-436B-BAA9-0745655A5960}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Play_Background" ID="{D30DC232-BBB9-4CB6-8062-2914D4A39175}">
+					<ChildrenList>
+						<Action Name="" ID="{7336B7AA-CDCD-408A-898B-8F2863134A71}" ShortID="244233552">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Background" ID="{1A29A0E3-8314-47DB-AA5D-53AC1287709B}" WorkUnitID="{D94B12DD-5521-4D0D-9E53-4979A5ADCDBA}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_Background" ID="{FEF3CEED-3744-4201-BA8B-614374333E48}">
+					<ChildrenList>
+						<Action Name="" ID="{ABDBBCCC-006A-45A1-9910-E6A09FC9163B}" ShortID="510861767">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Background" ID="{1A29A0E3-8314-47DB-AA5D-53AC1287709B}" WorkUnitID="{D94B12DD-5521-4D0D-9E53-4979A5ADCDBA}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_UIHover" ID="{4A2D689B-7AA9-4927-B4A1-76598D49B5D4}">
+					<ChildrenList>
+						<Action Name="" ID="{21B33B62-D54C-40D3-89D8-DA71C2047512}" ShortID="771007270">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="sci-fi_beep_computer_ui_01" ID="{071DFF52-EA21-48A5-BA01-67F2E52AF252}" WorkUnitID="{2692E3BF-9CC0-4749-89F0-33C414D1D660}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_UIConfirm" ID="{7980FC4E-9FB7-42F6-ADBC-2960AAB0657D}">
+					<ChildrenList>
+						<Action Name="" ID="{55A46A84-7AA4-4CE1-B2CC-FA9F222BDE43}" ShortID="169237515">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="sci-fi_beep_computer_ui_05" ID="{20EFFC26-A8B6-4FE1-BD4D-F1580BA1EA01}" WorkUnitID="{2692E3BF-9CC0-4749-89F0-33C414D1D660}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_UIFail" ID="{316BB755-81F8-44DD-B8E1-6C0FDFE61A56}">
+					<ChildrenList>
+						<Action Name="" ID="{CF3CE48E-952B-4CD6-92A0-DB36C5C756CF}" ShortID="235787454">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="sci-fi_code_fail_01" ID="{B91417F1-0EDC-4F0A-9FF5-8DA0490916BB}" WorkUnitID="{2692E3BF-9CC0-4749-89F0-33C414D1D660}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_LevelUp" ID="{158125E3-479D-4084-901D-C084BF091802}">
+					<ChildrenList>
+						<Action Name="" ID="{DF77E5E9-80A0-4821-9B70-77520DFE932C}" ShortID="930407679">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="LevelUp" ID="{AD76C230-4FF5-4714-98C6-559EDE1AA558}" WorkUnitID="{D94B12DD-5521-4D0D-9E53-4979A5ADCDBA}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_TurretShoot" ID="{F27044E4-CD95-476B-928A-59D8B8075BEE}">
+					<ChildrenList>
+						<Action Name="" ID="{558C9BF7-FEDF-4B33-8C9E-74558308EDE9}" ShortID="850549646">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="TurretShot" ID="{9A24A8D0-6B36-4BCA-B55B-A63B2BB2011E}" WorkUnitID="{D94B12DD-5521-4D0D-9E53-4979A5ADCDBA}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_MeteoriteDestruction" ID="{CF14EB84-6DE8-4B23-A8C5-E891CF97D3F1}">
+					<ChildrenList>
+						<Action Name="" ID="{6678682A-CDF1-4766-8490-83758AE4187C}" ShortID="315498810">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Explosion" ID="{4B13853D-57AE-4B7F-A031-8B4DD838823B}" WorkUnitID="{D94B12DD-5521-4D0D-9E53-4979A5ADCDBA}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_TurretDestruction" ID="{E5F0CCD9-4ED7-410F-91A5-259539D2FFA5}">
+					<ChildrenList>
+						<Action Name="" ID="{AED0425F-820C-4599-A49B-8BB6C36170C0}" ShortID="181802599">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Explosion" ID="{4B13853D-57AE-4B7F-A031-8B4DD838823B}" WorkUnitID="{D94B12DD-5521-4D0D-9E53-4979A5ADCDBA}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{8DCB6FCB-DEBD-4E5A-9F37-3731ADDBA6C6}" ShortID="1029606440">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="TurretPowerDown" ID="{D0F381DA-B717-402D-8F9A-FB83BF6FEF1B}" WorkUnitID="{D94B12DD-5521-4D0D-9E53-4979A5ADCDBA}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_AlertRing" ID="{E3B98CD6-DD3D-4F99-8433-A2192F773EEB}">
+					<ChildrenList>
+						<Action Name="" ID="{C85D3AF0-7F3B-484C-BE3B-0C9724792071}" ShortID="267023630">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="AlarmRing" ID="{3637F6CB-0F75-4F1D-AAC8-997B9B4C5E2B}" WorkUnitID="{D94B12DD-5521-4D0D-9E53-4979A5ADCDBA}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="GameOver" ID="{6914E4AB-B303-416D-826D-AA8571DCDD9D}">
+					<ChildrenList>
+						<Action Name="" ID="{6489A870-5D40-42E7-A3D7-A1636A9E1759}" ShortID="709605635">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="GameOver" ID="{FDC2987B-8C2E-43CC-829D-BD3A8EF38A2F}" WorkUnitID="{D94B12DD-5521-4D0D-9E53-4979A5ADCDBA}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_WaveAlert" ID="{99E624A2-99FB-49E0-81FC-6CE7BA6F9D83}">
+					<ChildrenList>
+						<Action Name="" ID="{50E3854C-5BE3-4279-9216-AE997EC2F174}" ShortID="717473008">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="WaveAlert" ID="{17A703B5-FFB3-4E3C-A861-792CDEFB3656}" WorkUnitID="{D94B12DD-5521-4D0D-9E53-4979A5ADCDBA}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{2692E3BF-9CC0-4749-89F0-33C414D1D660}" SchemaVersion="110">
+	<AudioObjects>
+		<WorkUnit Name="UI" ID="{2692E3BF-9CC0-4749-89F0-33C414D1D660}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="sci-fi_beep_computer_ui_01" ID="{071DFF52-EA21-48A5-BA01-67F2E52AF252}" ShortID="848268850">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4DD561E6-306F-4E02-A8C6-7B7DD336E0F7}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{EFA36367-198B-4464-90DA-5E0EC365290C}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="sci-fi_beep_computer_ui_01" ID="{88A6529A-CF9A-4796-9FDB-4602C86F8D5C}">
+							<PropertyList>
+								<Property Name="FadeInDuration" Type="Real64" Value="0.0153024193548387"/>
+								<Property Name="FadeOutDuration" Type="Real64" Value="0.18975"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>sci-fi_beep_computer_ui_01.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="431351286"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="sci-fi_beep_computer_ui_01" ID="{88A6529A-CF9A-4796-9FDB-4602C86F8D5C}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="sci-fi_beep_computer_ui_05" ID="{20EFFC26-A8B6-4FE1-BD4D-F1580BA1EA01}" ShortID="1031014340">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4DD561E6-306F-4E02-A8C6-7B7DD336E0F7}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{EFA36367-198B-4464-90DA-5E0EC365290C}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="sci-fi_beep_computer_ui_05" ID="{E52FC4B1-5329-44A0-9337-A7B07BAEC87C}">
+							<Language>SFX</Language>
+							<AudioFile>sci-fi_beep_computer_ui_05.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="535845375"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="sci-fi_beep_computer_ui_05" ID="{E52FC4B1-5329-44A0-9337-A7B07BAEC87C}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="sci-fi_code_fail_01" ID="{B91417F1-0EDC-4F0A-9FF5-8DA0490916BB}" ShortID="184019361">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-10</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4DD561E6-306F-4E02-A8C6-7B7DD336E0F7}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{EFA36367-198B-4464-90DA-5E0EC365290C}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="sci-fi_code_fail_01" ID="{0859B664-AAE3-4283-A771-AB2A415983B5}">
+							<Language>SFX</Language>
+							<AudioFile>sci-fi_code_fail_01.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="595196291"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="sci-fi_code_fail_01" ID="{0859B664-AAE3-4283-A771-AB2A415983B5}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

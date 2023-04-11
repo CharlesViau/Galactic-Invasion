@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="16" SoundBankVersion="145">
+	<RootPaths>
+		<ProjectRoot>../..</ProjectRoot>
+		<SourceFilesRoot>../../.cache/Mac</SourceFilesRoot>
+		<SoundBanksRoot>.</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>.</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{F56A610C-C7C4-F874-B68B-7ADDF94EBB7A}">
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+			<Plugins>
+				<AudioDevices>
+					<Plugin Id="2317455096" Name="No_Output" LibName="No Output" LibId="11862023"/>
+					<Plugin Id="3859886410" Name="System" LibName="System" LibId="11403271"/>
+				</AudioDevices>
+			</Plugins>
+			<Busses>
+				<Bus Id="3803692087" Name="Master Audio Bus"/>
+			</Busses>
+		</SoundBank>
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{27649C28-B314-C3D4-0090-95E32B55D4C6}">
+			<ShortName>Main</ShortName>
+			<Path>Main.bnk</Path>
+			<Media>
+				<File Id="88074839" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sci-fi_weapon_blaster_laser_boom_small_01.wav</ShortName>
+					<CachePath>SFX/sci-fi_weapon_blaster_laser_boom_small_01_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="234733618" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sci-fi_weapon_blaster_laser_boom_small_03.wav</ShortName>
+					<CachePath>SFX/sci-fi_weapon_blaster_laser_boom_small_03_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="283447737" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sci-fi_alarm_warning_loop_01.wav</ShortName>
+					<CachePath>SFX/sci-fi_alarm_warning_loop_01_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="288456913" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sci-fi_explosion_06.wav</ShortName>
+					<CachePath>SFX/sci-fi_explosion_06_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="386753448" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sci-fi_shield_power_deflect_block_01.wav</ShortName>
+					<CachePath>SFX/sci-fi_shield_power_deflect_block_01_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="396279610" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sci-fi_electric_pulse_power_down_03.wav</ShortName>
+					<CachePath>SFX/sci-fi_electric_pulse_power_down_03_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="411798977" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sci-fi_weapon_blaster_laser_boom_small_02.wav</ShortName>
+					<CachePath>SFX/sci-fi_weapon_blaster_laser_boom_small_02_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="430414124" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sci-fi_explosion_04.wav</ShortName>
+					<CachePath>SFX/sci-fi_explosion_04_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="431351286" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sci-fi_beep_computer_ui_01.wav</ShortName>
+					<CachePath>SFX/sci-fi_beep_computer_ui_01_D69A5F0F.wem</CachePath>
+				</File>
+				<File Id="535845375" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sci-fi_beep_computer_ui_05.wav</ShortName>
+					<CachePath>SFX/sci-fi_beep_computer_ui_05_10C4C929.wem</CachePath>
+				</File>
+				<File Id="581944972" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sci-fi_explosion_05.wav</ShortName>
+					<CachePath>SFX/sci-fi_explosion_05_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="595196291" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sci-fi_code_fail_01.wav</ShortName>
+					<CachePath>SFX/sci-fi_code_fail_01_10C4C929.wem</CachePath>
+				</File>
+				<File Id="596142099" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sci-fi_power_up_08.wav</ShortName>
+					<CachePath>SFX/sci-fi_power_up_08_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="652151227" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sci-fi_spaceship_background_room_tone_hum_loop_03.wav</ShortName>
+					<CachePath>SFX/sci-fi_spaceship_background_room_tone_hum_loop_03_9EDFC787.wem</CachePath>
+				</File>
+				<File Id="766381284" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sci-fi_power_up_object_01.wav</ShortName>
+					<CachePath>SFX/sci-fi_power_up_object_01_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="814893108" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sci-fi_explosion_03.wav</ShortName>
+					<CachePath>SFX/sci-fi_explosion_03_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="1054923028" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sci-fi_power_down_object_01.wav</ShortName>
+					<CachePath>SFX/sci-fi_power_down_object_01_3F75BDB9.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="4158285989" Name="GameOver" DurationType="OneShot" DurationMin="7.633" DurationMax="7.633">
+					<MediaRefs>
+						<MediaRef Id="396279610"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="538233354" Name="Play_AlertRing" DurationType="OneShot" DurationMin="0.9170625" DurationMax="0.9170625">
+					<MediaRefs>
+						<MediaRef Id="283447737"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3196207338" Name="Play_Background" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="652151227"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1202337555" Name="Play_LevelUp" DurationType="OneShot" DurationMin="0.82" DurationMax="0.82">
+					<MediaRefs>
+						<MediaRef Id="386753448"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2631163362" Name="Play_MeteoriteDestruction" DurationType="OneShot" DurationMin="2.679979" DurationMax="3.2">
+					<MediaRefs>
+						<MediaRef Id="288456913"/>
+						<MediaRef Id="430414124"/>
+						<MediaRef Id="581944972"/>
+						<MediaRef Id="814893108"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3756780447" Name="Play_TurretConstruction" DurationType="OneShot" DurationMin="1.4" DurationMax="1.4">
+					<MediaRefs>
+						<MediaRef Id="766381284"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3039094228" Name="Play_TurretDestruction" DurationType="OneShot" DurationMin="2.679979" DurationMax="3.2">
+					<MediaRefs>
+						<MediaRef Id="288456913"/>
+						<MediaRef Id="430414124"/>
+						<MediaRef Id="581944972"/>
+						<MediaRef Id="814893108"/>
+						<MediaRef Id="1054923028"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2727078245" Name="Play_TurretShoot" DurationType="OneShot" DurationMin="0.85" DurationMax="1.0431666">
+					<MediaRefs>
+						<MediaRef Id="88074839"/>
+						<MediaRef Id="234733618"/>
+						<MediaRef Id="411798977"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="255120960" Name="Play_UIConfirm" DurationType="OneShot" DurationMin="0.35254166" DurationMax="0.35254166">
+					<MediaRefs>
+						<MediaRef Id="535845375"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="4214330844" Name="Play_UIFail" DurationType="OneShot" DurationMin="0.64" DurationMax="0.64">
+					<MediaRefs>
+						<MediaRef Id="595196291"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2502251926" Name="Play_UIHover" DurationType="OneShot" DurationMin="0.18975" DurationMax="0.18975">
+					<MediaRefs>
+						<MediaRef Id="431351286"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3646228513" Name="Play_WaveAlert" DurationType="OneShot" DurationMin="1.8521042" DurationMax="1.8521042">
+					<MediaRefs>
+						<MediaRef Id="596142099"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1244803444" Name="Stop_Background" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+			</Events>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{CBBD3214-217E-B091-FDD7-980DFCC3FC48}</FileHash>
+</SoundBanksInfo>
