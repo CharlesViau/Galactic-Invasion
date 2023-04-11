@@ -22,17 +22,13 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{27649C28-B314-C3D4-0090-95E32B55D4C6}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{B25F0CBF-65EC-C973-8339-D2478CFA01E5}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
 				<File Id="88074839" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>sci-fi_weapon_blaster_laser_boom_small_01.wav</ShortName>
-					<CachePath>SFX/sci-fi_weapon_blaster_laser_boom_small_01_3F75BDB9.wem</CachePath>
-				</File>
-				<File Id="234733618" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>sci-fi_weapon_blaster_laser_boom_small_03.wav</ShortName>
-					<CachePath>SFX/sci-fi_weapon_blaster_laser_boom_small_03_3F75BDB9.wem</CachePath>
+					<CachePath>SFX/sci-fi_weapon_blaster_laser_boom_small_01_6CA5370A.wem</CachePath>
 				</File>
 				<File Id="283447737" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>sci-fi_alarm_warning_loop_01.wav</ShortName>
@@ -49,10 +45,6 @@
 				<File Id="396279610" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>sci-fi_electric_pulse_power_down_03.wav</ShortName>
 					<CachePath>SFX/sci-fi_electric_pulse_power_down_03_3F75BDB9.wem</CachePath>
-				</File>
-				<File Id="411798977" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>sci-fi_weapon_blaster_laser_boom_small_02.wav</ShortName>
-					<CachePath>SFX/sci-fi_weapon_blaster_laser_boom_small_02_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="430414124" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>sci-fi_explosion_04.wav</ShortName>
@@ -111,7 +103,7 @@
 						<MediaRef Id="652151227"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1202337555" Name="Play_LevelUp" DurationType="OneShot" DurationMin="0.82" DurationMax="0.82">
+				<Event Id="1202337555" Name="Play_LevelUp" DurationType="OneShot" DurationMin="0.53170425" DurationMax="0.53170425">
 					<MediaRefs>
 						<MediaRef Id="386753448"/>
 					</MediaRefs>
@@ -138,11 +130,9 @@
 						<MediaRef Id="1054923028"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2727078245" Name="Play_TurretShoot" DurationType="OneShot" DurationMin="0.85" DurationMax="1.0431666">
+				<Event Id="2727078245" Name="Play_TurretShoot" DurationType="OneShot" DurationMin="1.0431666" DurationMax="1.0431666">
 					<MediaRefs>
 						<MediaRef Id="88074839"/>
-						<MediaRef Id="234733618"/>
-						<MediaRef Id="411798977"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="255120960" Name="Play_UIConfirm" DurationType="OneShot" DurationMin="0.35254166" DurationMax="0.35254166">
@@ -169,5 +159,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{37EDE4F9-42AE-C7C0-745F-90C0FEA46F99}</FileHash>
+	<FileHash>{E5294048-2524-8618-755C-BDD371A59CE6}</FileHash>
 </SoundBanksInfo>

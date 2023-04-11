@@ -12,9 +12,12 @@ public class EnemySpawner : MonoBehaviour
     public delegate void NoMoreEnemyEvent();
     public event NoMoreEnemyEvent noMoreEnemyEvent;
 
+    public AK.Wwise.Event notifyPlayer;
+
     private void Awake()
     {
         _enemyQueue = new List<EnemyTypes>();
+        notifyPlayer?.Post(gameObject);
     }
 
     private void FixedUpdate()

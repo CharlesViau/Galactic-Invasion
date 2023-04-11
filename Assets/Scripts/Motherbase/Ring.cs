@@ -5,6 +5,7 @@ using Enemies;
 using Motherbase;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Motherbase
 {
@@ -16,6 +17,8 @@ namespace Motherbase
         private int hp;
         public TextMeshProUGUI hpText;
 
+        public AK.Wwise.Event onDamageReceive;
+
         private void Start()
         {
             hp = maxHP;
@@ -23,6 +26,7 @@ namespace Motherbase
 
         private void ReceiveDamage(int dmg)
         {
+            onDamageReceive?.Post(gameObject);
             hp -= dmg;
             core.UpdateColor((float)hp/maxHP);
             hpText.text = ((int)((float)hp/maxHP * 100)).ToString();

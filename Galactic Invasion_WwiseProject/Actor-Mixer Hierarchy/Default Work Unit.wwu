@@ -29,7 +29,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-9</Value>
+										<Value>-8</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -146,6 +146,11 @@
 										<Value>True</Value>
 									</ValueList>
 								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -167,6 +172,10 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="sci-fi_weapon_blaster_laser_boom_small_01" ID="{18F94C9C-A286-4CDD-83EB-253FD4F4B0A9}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.415929273504274"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>sci-fi_weapon_blaster_laser_boom_small_01.wav</AudioFile>
 											<MediaIDList>
@@ -178,57 +187,18 @@
 										<ActiveSource Name="sci-fi_weapon_blaster_laser_boom_small_01" ID="{18F94C9C-A286-4CDD-83EB-253FD4F4B0A9}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
-								<Sound Name="sci-fi_weapon_blaster_laser_boom_small_02" ID="{E3E6D69B-0D46-4588-870C-D44E7059E2F8}" ShortID="945283767">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4DD561E6-306F-4E02-A8C6-7B7DD336E0F7}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{EFA36367-198B-4464-90DA-5E0EC365290C}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="sci-fi_weapon_blaster_laser_boom_small_02" ID="{F4355B18-8B09-4E6D-8E12-635D38B8B7AA}">
-											<Language>SFX</Language>
-											<AudioFile>sci-fi_weapon_blaster_laser_boom_small_02.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="411798977"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="sci-fi_weapon_blaster_laser_boom_small_02" ID="{F4355B18-8B09-4E6D-8E12-635D38B8B7AA}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="sci-fi_weapon_blaster_laser_boom_small_03" ID="{30D3C331-F07B-4DFB-BE07-88EB0D350703}" ShortID="69361067">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4DD561E6-306F-4E02-A8C6-7B7DD336E0F7}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{EFA36367-198B-4464-90DA-5E0EC365290C}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="sci-fi_weapon_blaster_laser_boom_small_03" ID="{AD00A8AD-9D14-4068-95FD-243F1AE73316}">
-											<Language>SFX</Language>
-											<AudioFile>sci-fi_weapon_blaster_laser_boom_small_03.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="234733618"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="sci-fi_weapon_blaster_laser_boom_small_03" ID="{AD00A8AD-9D14-4068-95FD-243F1AE73316}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
 							</ChildrenList>
 						</RandomSequenceContainer>
 						<Sound Name="LevelUp" ID="{AD76C230-4FF5-4714-98C6-559EDE1AA558}" ShortID="150004594">
 							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>750</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-4</Value>
+										<Value>3</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -323,6 +293,13 @@
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="WaveAlert" ID="{17A703B5-FFB3-4E3C-A861-792CDEFB3656}" ShortID="968329004">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>6</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4DD561E6-306F-4E02-A8C6-7B7DD336E0F7}"/>
@@ -345,6 +322,13 @@
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="TurretPowerUp" ID="{CB7EDD68-FA75-434B-A36E-16B581DC960D}" ShortID="722539600">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>2</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4DD561E6-306F-4E02-A8C6-7B7DD336E0F7}"/>

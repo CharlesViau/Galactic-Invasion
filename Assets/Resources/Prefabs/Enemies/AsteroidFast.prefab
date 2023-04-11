@@ -119,6 +119,10 @@ MonoBehaviour:
   maxHP: 1
   reward: 5
   _type: 1
+  explosion:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 72bfce7a5f262cc49927f9cfe9ce1ae9, type: 2}
 --- !u!135 &905996953501592721
 SphereCollider:
   m_ObjectHideFlags: 0

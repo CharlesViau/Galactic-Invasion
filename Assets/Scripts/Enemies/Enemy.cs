@@ -25,6 +25,8 @@ namespace Enemies
 
         private Rigidbody rb;
 
+        public AK.Wwise.Event explosion;
+
         [NonSerialized] public bool isPoolable = true;
         private void Awake()
         {
@@ -97,6 +99,7 @@ namespace Enemies
             }
             else
             {
+                explosion.Post(gameObject);
                 EnemyManager.OnEnemyDeathEvent(reward);
                 EnemyManager.Instance.Pool(this);
             }

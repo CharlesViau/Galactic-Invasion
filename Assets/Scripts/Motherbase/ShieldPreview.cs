@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Motherbase
 {
@@ -13,6 +14,7 @@ namespace Motherbase
         private Material _material;
         private PlayerCurrency _playerCurrency;
         private Color _selectedColor;
+        public AK.Wwise.Event onTurretConstruction;
 
         // Start
         private void Start()
@@ -30,6 +32,7 @@ namespace Motherbase
 
             if (!_playerCurrency.SpendMoney(_playerCurrency.shieldCost)) return;
             mb.SpawnShield(_index);
+            onTurretConstruction.Post(gameObject);
             gameObject.SetActive(false);
             _hand.OnPlaceShield();
             Controller.Instance.GameStart();

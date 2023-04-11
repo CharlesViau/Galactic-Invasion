@@ -90,7 +90,7 @@ namespace Towers
                     _projectileVelocity, true));
 
             //_animator.SetTrigger(Fire1);
-
+            shoot?.Post(gameObject);
             //ParticleSystemManager.Instance.Create(particleType,
             //new ParticleSystemScript.Args(particlePosition.position));
         }
@@ -111,6 +111,7 @@ namespace Towers
 
         public void Upgrade(int lvl)
         {
+            levelUP?.Post(gameObject);
             if (lvl == 2)
             {
                 projectileType = ProjectileTypes.PinkLaser;
@@ -174,6 +175,10 @@ namespace Towers
         private float _timer;
         private int _detectionRangePow2;
         private Rigidbody _targetRb;
+        
+        //Sounds
+        public AK.Wwise.Event shoot;
+        public AK.Wwise.Event levelUP;
 
         #endregion
 

@@ -1,5 +1,6 @@
 using Enemies;
 using Towers;
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -26,6 +27,7 @@ namespace Motherbase
         private Transform _sniper;
         private Tower _tower;
         private Vector3 _velocity;
+        public AK.Wwise.Event onDestruction;
 
         private void Reset()
         {
@@ -134,6 +136,7 @@ namespace Motherbase
 
             if (_hp <= 0)
             {
+                onDestruction?.Post(gameObject);
                 gameObject.SetActive(false);
                 //Destruction animation
                 deathEvent?.Invoke();
