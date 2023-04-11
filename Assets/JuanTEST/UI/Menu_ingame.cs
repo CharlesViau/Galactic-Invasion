@@ -65,6 +65,9 @@ public class Menu_ingame : MonoBehaviour
     public void QuitGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        Time.timeScale = 1f;
+        IsPaused = false;
+        //ToggleCursorLock();
     }
 
     public void QuitToDesktop()
