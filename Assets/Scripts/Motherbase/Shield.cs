@@ -112,7 +112,7 @@ namespace Motherbase
                     break;
             }
 
-            _material.color = _baseColor;
+            Repair();
         }
 
         public void Repair()
