@@ -45,7 +45,7 @@ public sealed class Scoreboard
         request.Dispose();
     }
 
-    public IEnumerator SetScore(string player, int score, Action<Score> callback)
+    public IEnumerator SetScore(string player, int score, Action<Score> callback, Action<string> errorCallback)
     {
         yield return GetAccessToken(accessToken => { _token = accessToken; });
 
@@ -60,7 +60,7 @@ public sealed class Scoreboard
         yield return request.SendWebRequest();
 
         if (request.result != UnityWebRequest.Result.Success)
-            Debug.Log(request.error);
+            errorCallback(request.error);
         else
             callback(JsonUtility.FromJson<Score>(request.downloadHandler.text));
 
