@@ -8,6 +8,7 @@
 				<Property Name="Event Action List\{4A2D689B-7AA9-4927-B4A1-76598D49B5D4}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{6914E4AB-B303-416D-826D-AA8571DCDD9D}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{7980FC4E-9FB7-42F6-ADBC-2960AAB0657D}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{7E9ACEF5-7327-4661-AF43-3DE45AFB110C}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{99E624A2-99FB-49E0-81FC-6CE7BA6F9D83}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{CF14EB84-6DE8-4B23-A8C5-E891CF97D3F1}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{D30DC232-BBB9-4CB6-8062-2914D4A39175}\x64_Expand States" Type="string" Value=""/>
@@ -27,6 +28,10 @@
 						<Value Platform="Mac">GeneratedSoundBanks\Mac\</Value>
 					</ValueList>
 				</Property>
+				<Property Name="GenerateSoundBanks\ShowHierarchy" Type="bool" Value="True"/>
+				<Property Name="GenerateSoundBanks\x64_SelectedLanguages" Type="string" Value="BvDMKA=="/>
+				<Property Name="GenerateSoundBanks\x64_SelectedPlatforms" Type="string" Value="6vS6IYyFUkG5iGDN5JoHnQ=="/>
+				<Property Name="GenerateSoundBanks\x64_SelectedSoundBanks" Type="string" Value="nCv9iVnSnEqP2dszkh6Vmg=="/>
 				<Property Name="HardwareController\CurrentSession" Type="string" Value="{2451DD2E-A7B2-45E6-B93B-6F49B9B887AD}"/>
 				<Property Name="MeterView\LastObject1" Type="string" Value="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"/>
 				<Property Name="MeterView\MeterMode1" Type="int32" Value="1"/>
@@ -34,6 +39,10 @@
 				<Property Name="MeterView\MeterMode1Viewpoint1" Type="int32" Value="2"/>
 				<Property Name="MeterView\MeterMode1Viewpoint2" Type="int32" Value="3"/>
 				<Property Name="MeterView\MeterMode1Viewpoint3" Type="int32" Value="0"/>
+				<Property Name="SoundBank Manager\x64_Expand Folders Auto" Type="string" Value=""/>
+				<Property Name="SoundBank Manager\x64_Expand Folders User" Type="string" Value="BwAAAA=="/>
+				<Property Name="SoundBank Manager\x64_Expand States Auto" Type="string" Value=""/>
+				<Property Name="SoundBank Manager\x64_Expand States User" Type="string" Value=""/>
 				<Property Name="SoundBankHeaderFilePath" Type="string" Value="GeneratedSoundBanks\"/>
 				<Property Name="SoundBankPaths" Type="string">
 					<ValueList>

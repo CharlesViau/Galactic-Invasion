@@ -145,6 +145,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_TurretConstruction" ID="{7E9ACEF5-7327-4661-AF43-3DE45AFB110C}">
+					<ChildrenList>
+						<Action Name="" ID="{9F9C2DC2-7E09-4701-8DF1-6708FFEB6425}" ShortID="194559161">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="TurretPowerUp" ID="{CB7EDD68-FA75-434B-A36E-16B581DC960D}" WorkUnitID="{D94B12DD-5521-4D0D-9E53-4979A5ADCDBA}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

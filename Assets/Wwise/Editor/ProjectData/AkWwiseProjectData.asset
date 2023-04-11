@@ -66,8 +66,22 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 5f591a7413241841b6a2bf0065438ee8
     GuidInternal: 
-    m_lastTime: -8585209617460741556
-    List: []
+    m_lastTime: -8585204116171346523
+    List:
+    - name: Main
+      guid: 9c2bfd8959d29c4a8fd9db33921e959a
+      id: 3161908922
+      PathAndIcons:
+      - ElementName: SoundBanks
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 5f591a7413241841b6a2bf0065438ee8
+      - ElementName: Main
+        ObjectType: 7
+        guid: 9c2bfd8959d29c4a8fd9db33921e959a
+      Path: SoundBanks\Default Work Unit\Main
   EventWwu:
   - PhysicalPath: Events\Default Work Unit.wwu
     PathAndIcons:
@@ -80,8 +94,229 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 9a9f6b7f7ec96b43baa90745655a5960
     GuidInternal: 
-    m_lastTime: -8585209617462961914
-    List: []
+    m_lastTime: -8585204116171226533
+    List:
+    - name: GameOver
+      guid: abe4146903b36d41826daa8571dcdd9d
+      id: 4158285989
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 9a9f6b7f7ec96b43baa90745655a5960
+      - ElementName: GameOver
+        ObjectType: 3
+        guid: abe4146903b36d41826daa8571dcdd9d
+      Path: Events\Default Work Unit\GameOver
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_AlertRing
+      guid: d68cb9e33ddd994f8433a2192f773eeb
+      id: 538233354
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 9a9f6b7f7ec96b43baa90745655a5960
+      - ElementName: Play_AlertRing
+        ObjectType: 3
+        guid: d68cb9e33ddd994f8433a2192f773eeb
+      Path: Events\Default Work Unit\Play_AlertRing
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Background
+      guid: 32c20dd3b9bbb64c80622914d4a39175
+      id: 3196207338
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 9a9f6b7f7ec96b43baa90745655a5960
+      - ElementName: Play_Background
+        ObjectType: 3
+        guid: 32c20dd3b9bbb64c80622914d4a39175
+      Path: Events\Default Work Unit\Play_Background
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_LevelUp
+      guid: e32581159d478440901dc084bf091802
+      id: 1202337555
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 9a9f6b7f7ec96b43baa90745655a5960
+      - ElementName: Play_LevelUp
+        ObjectType: 3
+        guid: e32581159d478440901dc084bf091802
+      Path: Events\Default Work Unit\Play_LevelUp
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_MeteoriteDestruction
+      guid: 84eb14cfe86d234ba8c5e891cf97d3f1
+      id: 2631163362
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 9a9f6b7f7ec96b43baa90745655a5960
+      - ElementName: Play_MeteoriteDestruction
+        ObjectType: 3
+        guid: 84eb14cfe86d234ba8c5e891cf97d3f1
+      Path: Events\Default Work Unit\Play_MeteoriteDestruction
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_TurretConstruction
+      guid: f5ce9a7e27736146af433de45afb110c
+      id: 3756780447
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 9a9f6b7f7ec96b43baa90745655a5960
+      - ElementName: Play_TurretConstruction
+        ObjectType: 3
+        guid: f5ce9a7e27736146af433de45afb110c
+      Path: Events\Default Work Unit\Play_TurretConstruction
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_TurretDestruction
+      guid: d9ccf0e5d74e0f4191a5259539d2ffa5
+      id: 3039094228
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 9a9f6b7f7ec96b43baa90745655a5960
+      - ElementName: Play_TurretDestruction
+        ObjectType: 3
+        guid: d9ccf0e5d74e0f4191a5259539d2ffa5
+      Path: Events\Default Work Unit\Play_TurretDestruction
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_TurretShoot
+      guid: e44470f295cd6b47928a59d8b8075bee
+      id: 2727078245
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 9a9f6b7f7ec96b43baa90745655a5960
+      - ElementName: Play_TurretShoot
+        ObjectType: 3
+        guid: e44470f295cd6b47928a59d8b8075bee
+      Path: Events\Default Work Unit\Play_TurretShoot
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_UIConfirm
+      guid: 4efc8079b79ff642adbc2960aab0657d
+      id: 255120960
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 9a9f6b7f7ec96b43baa90745655a5960
+      - ElementName: Play_UIConfirm
+        ObjectType: 3
+        guid: 4efc8079b79ff642adbc2960aab0657d
+      Path: Events\Default Work Unit\Play_UIConfirm
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_UIFail
+      guid: 55b76b31f881dd44b8e16c0fdfe61a56
+      id: 4214330844
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 9a9f6b7f7ec96b43baa90745655a5960
+      - ElementName: Play_UIFail
+        ObjectType: 3
+        guid: 55b76b31f881dd44b8e16c0fdfe61a56
+      Path: Events\Default Work Unit\Play_UIFail
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_UIHover
+      guid: 9b682d4aa97a2749b4a176598d49b5d4
+      id: 2502251926
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 9a9f6b7f7ec96b43baa90745655a5960
+      - ElementName: Play_UIHover
+        ObjectType: 3
+        guid: 9b682d4aa97a2749b4a176598d49b5d4
+      Path: Events\Default Work Unit\Play_UIHover
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_WaveAlert
+      guid: a224e699fb99e04981fc6ce7ba6f9d83
+      id: 3646228513
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 9a9f6b7f7ec96b43baa90745655a5960
+      - ElementName: Play_WaveAlert
+        ObjectType: 3
+        guid: a224e699fb99e04981fc6ce7ba6f9d83
+      Path: Events\Default Work Unit\Play_WaveAlert
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_Background
+      guid: edcef3fe44370142ba8b614374333e48
+      id: 1244803444
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 9a9f6b7f7ec96b43baa90745655a5960
+      - ElementName: Stop_Background
+        ObjectType: 3
+        guid: edcef3fe44370142ba8b614374333e48
+      Path: Events\Default Work Unit\Stop_Background
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -139,8 +374,8 @@ MonoBehaviour:
     m_lastTime: -8585209617460641565
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 
+  ExpandedWaapiItemIds: 0500000006000000070000001600000017000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0
-  CurrentPluginConfig: 
+  CurrentPluginConfig: Release
