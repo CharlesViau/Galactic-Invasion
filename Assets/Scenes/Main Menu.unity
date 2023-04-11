@@ -327,9 +327,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Upgrade shields up to level 3!
+  m_Text: 'Upgrades shields up to level 3!
 
-    (Increased fire rate and range)'
+    (Increases fire rate and range)'
 --- !u!222 &81036772
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3402,7 +3402,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Temporarily absorbs asteroids! No money earned from absorbed enemy
+  m_Text: Temporarily absorbs asteroids! No money earned from them
 --- !u!222 &542372494
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5499,7 +5499,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Repair shields!
+  m_Text: Repairs shields!
 --- !u!222 &738721312
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11083,7 +11083,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Temporarily force asteroids into controlled orbit with a planet!
+  m_Text: Temporarily forces asteroids into a controlled orbit with a planet!
 --- !u!222 &1403763043
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11648,7 +11648,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Shields with turrets for the motherbase!
+  m_Text: Shields with turrets that protect the motherbase!
 --- !u!222 &1423304493
 CanvasRenderer:
   m_ObjectHideFlags: 0
