@@ -8,6 +8,9 @@ TagManager:
   - Orbit
   - Base Planet
   - Enemy
+  - Shield
+  - Core
+  - AbilityZone
   layers:
   - Default
   - TransparentFX

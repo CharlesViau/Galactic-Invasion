@@ -7,14 +7,13 @@ namespace Planets
 {
     public class BlackHole : MonoBehaviour
     {
-        [SerializeField] private int numberOfEnemies;
-    
-        private void AbsorbEnemy()
+        [SerializeField] private float timer;
+
+        private void Update()
         {
-            numberOfEnemies -= 1;
-            if (numberOfEnemies <= 0)
+            timer -= Time.deltaTime;
+            if (timer <= 0)
             {
-                //Play animation
                 Destroy(gameObject.transform.parent.gameObject);
             }
         }
@@ -23,7 +22,6 @@ namespace Planets
         {
             if (collider.CompareTag("Enemy"))
             {
-                AbsorbEnemy();
                 Enemy enemy = collider.gameObject.GetComponent<Enemy>();
                 if (!enemy.isPoolable)
                 {

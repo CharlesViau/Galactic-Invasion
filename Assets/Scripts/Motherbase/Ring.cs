@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Enemies;
@@ -10,11 +11,18 @@ namespace Motherbase
     {
         [SerializeField] private CoreMotherBase core;
 
-        [SerializeField] int hp;
-        
+        [SerializeField] int maxHP;
+        private int hp;
+
+        private void Start()
+        {
+            hp = maxHP;
+        }
+
         private void ReceiveDamage(int dmg)
         {
             hp -= dmg;
+            core.UpdateColor((float)hp/maxHP);
         
             if (hp <= 0)
             {

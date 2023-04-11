@@ -5,12 +5,12 @@ namespace Core
 {
     public class ObjectPool
     {
+        private readonly Dictionary<ValueType, Stack<IPoolable>> _poolDict;
+
         public ObjectPool()
         {
             _poolDict = new Dictionary<ValueType, Stack<IPoolable>>();
         }
-        
-        private readonly Dictionary<ValueType, Stack<IPoolable>> _poolDict;
 
         public void Pool(IPoolable toPool)
         {
@@ -29,6 +29,11 @@ namespace Core
             if (_poolDict[componentType].Count <= 0) return null;
             _poolDict[componentType].Peek().Depool();
             return _poolDict[componentType].Pop();
+        }
+
+        public void Clear()
+        {
+            _poolDict.Clear();
         }
     }
 }

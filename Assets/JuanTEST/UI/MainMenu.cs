@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Enemies;
+using Projectiles;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -25,6 +27,9 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {
+        EnemyManager.Instance.Clear();
+        ProjectileManager.Instance.Clear();
+        if (Controller.Instance != null) Controller.Instance.Reset();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 

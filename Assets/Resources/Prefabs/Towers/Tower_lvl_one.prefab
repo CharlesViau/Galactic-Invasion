@@ -822,7 +822,7 @@ MonoBehaviour:
   detectionRange: 140
   attackSpeed: 1
   types: 0
-  projectileType: 0
+  projectileType: 1
   projectileDamage: 1
   projectileSpeed: 1000
   head: {fileID: 7240207716529013287}

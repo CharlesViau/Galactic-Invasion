@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5561349426305759274, guid: 61930377543bac443a28543f14d45b1a, type: 3}
+  - {fileID: 2100000, guid: 7327f3a2f1982cb4090893156aa592f1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 1168658943443502420}
   m_Layer: 11
   m_Name: anneauNO_geo
-  m_TagString: Untagged
+  m_TagString: Shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -224,7 +224,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 964cb25a62307b241a36f3d2e217f4f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 30
+  isSelectable: 0
+  maxHP: 30
   t: {fileID: 4240137484236857608}
   healthBar: {fileID: 2403996109247132641}
 --- !u!1 &1249205891885982494
@@ -289,7 +290,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5561349426305759274, guid: 61930377543bac443a28543f14d45b1a, type: 3}
+  - {fileID: 2100000, guid: 7327f3a2f1982cb4090893156aa592f1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -401,7 +402,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5561349426305759274, guid: 61930377543bac443a28543f14d45b1a, type: 3}
+  - {fileID: 2100000, guid: 7327f3a2f1982cb4090893156aa592f1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -513,7 +514,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5561349426305759274, guid: 61930377543bac443a28543f14d45b1a, type: 3}
+  - {fileID: 2100000, guid: 7327f3a2f1982cb4090893156aa592f1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -590,6 +591,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children:
+  - {fileID: 1103807453216260647}
   - {fileID: 7371937341250750653}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -641,7 +643,7 @@ GameObject:
   - component: {fileID: 5935530815176137751}
   m_Layer: 11
   m_Name: anneauO_geo
-  m_TagString: Untagged
+  m_TagString: Shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -738,7 +740,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 964cb25a62307b241a36f3d2e217f4f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 30
+  isSelectable: 0
+  maxHP: 30
   t: {fileID: 4670098880273021333}
   healthBar: {fileID: 5234093905671218446}
 --- !u!1 &4270653769549340854
@@ -754,9 +757,9 @@ GameObject:
   - component: {fileID: 8161993652078936585}
   - component: {fileID: 2346044282579672232}
   - component: {fileID: 7346361526038670814}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: noyau_geo
-  m_TagString: Untagged
+  m_TagString: Core
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -931,7 +934,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5561349426305759274, guid: 61930377543bac443a28543f14d45b1a, type: 3}
+  - {fileID: 2100000, guid: 7327f3a2f1982cb4090893156aa592f1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -996,7 +999,7 @@ GameObject:
   - component: {fileID: 6690829705508708418}
   m_Layer: 11
   m_Name: anneauSE_geo
-  m_TagString: Untagged
+  m_TagString: Shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1093,7 +1096,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 964cb25a62307b241a36f3d2e217f4f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 30
+  isSelectable: 0
+  maxHP: 30
   t: {fileID: 2030938935389361222}
   healthBar: {fileID: 84757907879554971}
 --- !u!1 &4605223959638205544
@@ -1143,7 +1147,7 @@ GameObject:
   - component: {fileID: 3987598774056954969}
   m_Layer: 11
   m_Name: anneauE_geo
-  m_TagString: Untagged
+  m_TagString: Shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1240,7 +1244,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 964cb25a62307b241a36f3d2e217f4f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 30
+  isSelectable: 0
+  maxHP: 30
   t: {fileID: 2790151147463811869}
   healthBar: {fileID: 5663354368024121212}
 --- !u!1 &6589689871949679755
@@ -1305,7 +1310,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5561349426305759274, guid: 61930377543bac443a28543f14d45b1a, type: 3}
+  - {fileID: 2100000, guid: 7327f3a2f1982cb4090893156aa592f1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1417,7 +1422,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5561349426305759274, guid: 61930377543bac443a28543f14d45b1a, type: 3}
+  - {fileID: 2100000, guid: 7327f3a2f1982cb4090893156aa592f1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1467,6 +1472,50 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 8202821746285945667, guid: 61930377543bac443a28543f14d45b1a, type: 3}
+--- !u!1 &6744595491333389523
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1103807453216260647}
+  - component: {fileID: 1343450279496469144}
+  m_Layer: 2
+  m_Name: AbilityZone
+  m_TagString: AbilityZone
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1103807453216260647
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6744595491333389523}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_Children: []
+  m_Father: {fileID: 7493435975579406794}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1343450279496469144
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6744595491333389523}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 11.3
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6816988794075825253
 GameObject:
   m_ObjectHideFlags: 0
@@ -1482,7 +1531,7 @@ GameObject:
   - component: {fileID: 8589708435405388948}
   m_Layer: 11
   m_Name: anneauNE_geo
-  m_TagString: Untagged
+  m_TagString: Shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1579,7 +1628,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 964cb25a62307b241a36f3d2e217f4f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 30
+  isSelectable: 0
+  maxHP: 30
   t: {fileID: 8991384155095672080}
   healthBar: {fileID: 2991555815174053716}
 --- !u!1 &6989546950293280348
@@ -1661,7 +1711,7 @@ GameObject:
   - component: {fileID: 3505271581343529099}
   m_Layer: 11
   m_Name: anneauS_geo
-  m_TagString: Untagged
+  m_TagString: Shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1758,7 +1808,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 964cb25a62307b241a36f3d2e217f4f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 30
+  isSelectable: 0
+  maxHP: 30
   t: {fileID: 4798278553068242954}
   healthBar: {fileID: 2418465369900384103}
 --- !u!1 &7584371240119096249
@@ -1823,7 +1874,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5561349426305759274, guid: 61930377543bac443a28543f14d45b1a, type: 3}
+  - {fileID: 2100000, guid: 7327f3a2f1982cb4090893156aa592f1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1943,7 +1994,7 @@ Transform:
   - {fileID: 1893138737537094257}
   - {fileID: 4792357577295516736}
   m_Father: {fileID: 7493435975579406794}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8346503213485059677
 GameObject:
@@ -1960,7 +2011,7 @@ GameObject:
   - component: {fileID: 3273469460467196446}
   m_Layer: 11
   m_Name: anneauN_geo
-  m_TagString: Untagged
+  m_TagString: Shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2057,7 +2108,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 964cb25a62307b241a36f3d2e217f4f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 30
+  isSelectable: 0
+  maxHP: 30
   t: {fileID: 1810398291676894661}
   healthBar: {fileID: 1102240245318566894}
 --- !u!1 &8768941875732438325
@@ -2075,7 +2127,7 @@ GameObject:
   - component: {fileID: 503570722415818986}
   m_Layer: 11
   m_Name: anneauInt_geo
-  m_TagString: Untagged
+  m_TagString: Core
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2170,7 +2222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   core: {fileID: 2346044282579672232}
-  hp: 50
+  maxHP: 50
 --- !u!1 &8806056278309560752
 GameObject:
   m_ObjectHideFlags: 0
@@ -2282,7 +2334,7 @@ GameObject:
   - component: {fileID: 8073088030912488608}
   m_Layer: 11
   m_Name: anneauSO_geo
-  m_TagString: Untagged
+  m_TagString: Shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2379,7 +2431,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 964cb25a62307b241a36f3d2e217f4f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 30
+  isSelectable: 0
+  maxHP: 30
   t: {fileID: 4316039128818521346}
   healthBar: {fileID: 6179189798251157455}
 --- !u!1001 &209051172434906964
@@ -3169,6 +3222,10 @@ PrefabInstance:
     - target: {fileID: 6792030737701652662, guid: 163a4f07654b2604cbd86e90e9b85995, type: 3}
       propertyPath: m_Layer
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6792030737701652662, guid: 163a4f07654b2604cbd86e90e9b85995, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6859863224490610565, guid: 163a4f07654b2604cbd86e90e9b85995, type: 3}
       propertyPath: m_Layer
@@ -4368,6 +4425,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1aabe6b14a98db948b2ecec7ef5cfe98, type: 3}
+--- !u!224 &84757906995761643 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6279801901552068331, guid: 1aabe6b14a98db948b2ecec7ef5cfe98, type: 3}
+  m_PrefabInstance: {fileID: 6200128823857919744}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &84757907879554971 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6279801902404655259, guid: 1aabe6b14a98db948b2ecec7ef5cfe98, type: 3}
@@ -4379,11 +4441,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &84757906995761643 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 6279801901552068331, guid: 1aabe6b14a98db948b2ecec7ef5cfe98, type: 3}
-  m_PrefabInstance: {fileID: 6200128823857919744}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6371932834616875893
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5479,6 +5536,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1aabe6b14a98db948b2ecec7ef5cfe98, type: 3}
+--- !u!224 &2418465369171509527 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6279801901552068331, guid: 1aabe6b14a98db948b2ecec7ef5cfe98, type: 3}
+  m_PrefabInstance: {fileID: 8554108097853401084}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2418465369900384103 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6279801902404655259, guid: 1aabe6b14a98db948b2ecec7ef5cfe98, type: 3}
@@ -5490,11 +5552,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &2418465369171509527 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 6279801901552068331, guid: 1aabe6b14a98db948b2ecec7ef5cfe98, type: 3}
-  m_PrefabInstance: {fileID: 8554108097853401084}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9078797133336009207
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -6,11 +6,13 @@ namespace Motherbase
 {
     public class PlayerCurrency : MonoBehaviour
     {
-        [SerializeField]private int balance;
-        public int Balance => balance;
+        [SerializeField] private int balance;
         public int shieldCost;
+        public int repairCost;
+        public int upgradeCost;
         public int blackHoleCost;
         public int tempoPlanetCost;
+        public int Balance => balance;
         public static PlayerCurrency Instance { get; private set; }
 
         private void Awake()
@@ -39,6 +41,7 @@ namespace Motherbase
         private void OnEnemyDeath(int reward)
         {
             AddMoney(reward);
+            PlayerScore.Instance.AddScore(1);
         }
 
         public void AddMoney(int amount)

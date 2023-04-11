@@ -1,3 +1,6 @@
+using System.Linq;
+using Enemies;
+using Projectiles;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -61,17 +64,21 @@ public class GameOverStateManager : MonoBehaviour
             {
                 var scoreRow = Instantiate(scoreRowPrefab, content);
                 scoreRow.GetComponent<TextMeshProUGUI>().text =
-                    $"{score.rank}\t{score.player}\t\t{score.score}";
+                    $"{score.rank}\t\t{score.player}\t\t{score.score}";
             }
 
+            if (newScore.rank <= scores.scores.Last().rank) return;
             var newScoreRow = Instantiate(scoreRowPrefab, content);
             newScoreRow.GetComponent<TextMeshProUGUI>().text =
-                $"{newScore.rank}\t{newScore.player}\t\t{newScore.score}";
+                $"{newScore.rank}\t\t{newScore.player}\t\t{newScore.score}";
         }));
     }
 
     public void ReplayGame()
     {
+        EnemyManager.Instance.Clear();
+        ProjectileManager.Instance.Clear();
+        Controller.Instance.Reset();
         SceneManager.LoadScene("MainScene");
     }
 
