@@ -4,6 +4,7 @@ namespace Motherbase
 {
     public class PlayerScore : MonoBehaviour
     {
+        public bool stopScore;
         private float _score;
         public static PlayerScore Instance { get; private set; }
 
@@ -23,6 +24,7 @@ namespace Motherbase
 
         private void Update()
         {
+            if (stopScore) return;
             if (!Controller.Instance.gameStarted) return;
             _score += Time.deltaTime;
             CurrentScore.SetScore((int)_score);
@@ -30,6 +32,7 @@ namespace Motherbase
 
         public void AddScore(int score)
         {
+            if (stopScore) return;
             _score += score;
             CurrentScore.SetScore((int)_score);
         }
