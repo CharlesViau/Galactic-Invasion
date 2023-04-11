@@ -49,7 +49,7 @@ namespace Motherbase
 
         private void OnDestroy()
         {
-            onDeath.Post(gameObject);
+            if (Controller.Instance.gameStarted) onDeath.Post(gameObject);
             foreach (var s in shields) s.deathEvent -= OnShieldDestroy;
         }
 
