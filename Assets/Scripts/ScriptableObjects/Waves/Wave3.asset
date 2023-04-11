@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Wave3
   m_EditorClassIdentifier: 
   normal:
-    numberOfEnemies: 20
+    numberOfEnemies: 25
     newSpawner: 0
     spawnCooldown: 0.5
   fast:

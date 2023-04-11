@@ -102,7 +102,7 @@ MonoBehaviour:
   rotationSpeed: {x: 50, y: 50, z: 50}
   gravityStrength: 3
   maxHP: 0
-  reward: 5
+  reward: 1
   _type: 0
   explosion:
     idInternal: 0
@@ -240,7 +240,7 @@ MonoBehaviour:
   rotationSpeed: {x: 50, y: 50, z: 50}
   gravityStrength: 3
   maxHP: 0
-  reward: 5
+  reward: 1
   _type: 0
   explosion:
     idInternal: 0
@@ -378,7 +378,7 @@ MonoBehaviour:
   rotationSpeed: {x: 50, y: 50, z: 50}
   gravityStrength: 3
   maxHP: 0
-  reward: 5
+  reward: 1
   _type: 0
   explosion:
     idInternal: 0
@@ -516,7 +516,7 @@ MonoBehaviour:
   rotationSpeed: {x: 50, y: 50, z: 50}
   gravityStrength: 3
   maxHP: 0
-  reward: 5
+  reward: 1
   _type: 0
   explosion:
     idInternal: 0
@@ -725,7 +725,7 @@ MonoBehaviour:
   rotationSpeed: {x: 50, y: 50, z: 50}
   gravityStrength: 3
   maxHP: 0
-  reward: 5
+  reward: 1
   _type: 0
   explosion:
     idInternal: 0
@@ -895,7 +895,7 @@ MonoBehaviour:
   rotationSpeed: {x: 50, y: 50, z: 50}
   gravityStrength: 3
   maxHP: 0
-  reward: 5
+  reward: 1
   _type: 0
   explosion:
     idInternal: 0
@@ -1033,7 +1033,7 @@ MonoBehaviour:
   rotationSpeed: {x: 50, y: 50, z: 50}
   gravityStrength: 3
   maxHP: 0
-  reward: 5
+  reward: 1
   _type: 0
   explosion:
     idInternal: 0
@@ -1171,7 +1171,7 @@ MonoBehaviour:
   rotationSpeed: {x: 50, y: 50, z: 50}
   gravityStrength: 3
   maxHP: 0
-  reward: 5
+  reward: 1
   _type: 0
   explosion:
     idInternal: 0
@@ -1309,7 +1309,7 @@ MonoBehaviour:
   rotationSpeed: {x: 50, y: 50, z: 50}
   gravityStrength: 3
   maxHP: 0
-  reward: 5
+  reward: 1
   _type: 0
   explosion:
     idInternal: 0
@@ -1447,7 +1447,7 @@ MonoBehaviour:
   rotationSpeed: {x: 50, y: 50, z: 50}
   gravityStrength: 3
   maxHP: 0
-  reward: 5
+  reward: 1
   _type: 0
   explosion:
     idInternal: 0
@@ -1585,7 +1585,7 @@ MonoBehaviour:
   rotationSpeed: {x: 50, y: 50, z: 50}
   gravityStrength: 3
   maxHP: 0
-  reward: 5
+  reward: 1
   _type: 0
   explosion:
     idInternal: 0
@@ -1722,7 +1722,7 @@ MonoBehaviour:
   rotationSpeed: {x: 50, y: 50, z: 50}
   gravityStrength: 3
   maxHP: 0
-  reward: 5
+  reward: 1
   _type: 0
   explosion:
     idInternal: 0
@@ -1860,7 +1860,7 @@ MonoBehaviour:
   rotationSpeed: {x: 50, y: 50, z: 50}
   gravityStrength: 3
   maxHP: 0
-  reward: 5
+  reward: 1
   _type: 0
   explosion:
     idInternal: 0
@@ -1998,7 +1998,7 @@ MonoBehaviour:
   rotationSpeed: {x: 50, y: 50, z: 50}
   gravityStrength: 3
   maxHP: 0
-  reward: 5
+  reward: 1
   _type: 0
   explosion:
     idInternal: 0
@@ -2135,7 +2135,7 @@ MonoBehaviour:
   rotationSpeed: {x: 50, y: 50, z: 50}
   gravityStrength: 3
   maxHP: 0
-  reward: 5
+  reward: 1
   _type: 0
   explosion:
     idInternal: 0
@@ -2273,7 +2273,7 @@ MonoBehaviour:
   rotationSpeed: {x: 50, y: 50, z: 50}
   gravityStrength: 3
   maxHP: 0
-  reward: 5
+  reward: 1
   _type: 0
   explosion:
     idInternal: 0
@@ -2411,7 +2411,7 @@ MonoBehaviour:
   rotationSpeed: {x: 50, y: 50, z: 50}
   gravityStrength: 3
   maxHP: 0
-  reward: 5
+  reward: 1
   _type: 0
   explosion:
     idInternal: 0
@@ -2549,7 +2549,7 @@ MonoBehaviour:
   rotationSpeed: {x: 50, y: 50, z: 50}
   gravityStrength: 3
   maxHP: 0
-  reward: 5
+  reward: 1
   _type: 0
   explosion:
     idInternal: 0
@@ -2687,7 +2687,7 @@ MonoBehaviour:
   rotationSpeed: {x: 50, y: 50, z: 50}
   gravityStrength: 3
   maxHP: 0
-  reward: 5
+  reward: 1
   _type: 0
   explosion:
     idInternal: 0
@@ -2825,7 +2825,7 @@ MonoBehaviour:
   rotationSpeed: {x: 50, y: 50, z: 50}
   gravityStrength: 3
   maxHP: 0
-  reward: 5
+  reward: 1
   _type: 0
   explosion:
     idInternal: 0
@@ -2962,7 +2962,7 @@ MonoBehaviour:
   rotationSpeed: {x: 50, y: 50, z: 50}
   gravityStrength: 3
   maxHP: 0
-  reward: 5
+  reward: 1
   _type: 0
   explosion:
     idInternal: 0
@@ -3100,7 +3100,7 @@ MonoBehaviour:
   rotationSpeed: {x: 50, y: 50, z: 50}
   gravityStrength: 3
   maxHP: 0
-  reward: 5
+  reward: 1
   _type: 0
   explosion:
     idInternal: 0
@@ -3238,7 +3238,7 @@ MonoBehaviour:
   rotationSpeed: {x: 50, y: 50, z: 50}
   gravityStrength: 3
   maxHP: 0
-  reward: 5
+  reward: 1
   _type: 0
   explosion:
     idInternal: 0
@@ -3376,7 +3376,7 @@ MonoBehaviour:
   rotationSpeed: {x: 50, y: 50, z: 50}
   gravityStrength: 3
   maxHP: 0
-  reward: 5
+  reward: 1
   _type: 0
   explosion:
     idInternal: 0
@@ -3514,7 +3514,7 @@ MonoBehaviour:
   rotationSpeed: {x: 50, y: 50, z: 50}
   gravityStrength: 3
   maxHP: 0
-  reward: 5
+  reward: 1
   _type: 0
   explosion:
     idInternal: 0
@@ -3652,7 +3652,7 @@ MonoBehaviour:
   rotationSpeed: {x: 50, y: 50, z: 50}
   gravityStrength: 3
   maxHP: 0
-  reward: 5
+  reward: 1
   _type: 0
   explosion:
     idInternal: 0
@@ -3731,7 +3731,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 3
+  m_Radius: 4
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1245487575960187528
 MonoBehaviour:
@@ -3850,7 +3850,7 @@ MonoBehaviour:
   rotationSpeed: {x: 50, y: 50, z: 50}
   gravityStrength: 3
   maxHP: 0
-  reward: 5
+  reward: 1
   _type: 0
   explosion:
     idInternal: 0
@@ -3988,7 +3988,7 @@ MonoBehaviour:
   rotationSpeed: {x: 50, y: 50, z: 50}
   gravityStrength: 3
   maxHP: 0
-  reward: 5
+  reward: 1
   _type: 0
   explosion:
     idInternal: 0

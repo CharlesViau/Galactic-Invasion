@@ -90,7 +90,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Radius: 0.27
+    - Radius: 0.45
     - RingThickness: 0.01
     - _AlphaClip: 0
     - _Blend: 0

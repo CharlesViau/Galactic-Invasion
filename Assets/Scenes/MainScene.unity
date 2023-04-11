@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.21294463, g: 0.21653786, b: 0.2505507, a: 1}
+  m_IndirectSpecularColor: {r: 0.22461137, g: 0.22763598, b: 0.2630367, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -856,7 +856,7 @@ MonoBehaviour:
   balance: 500
   shieldCost: 250
   repairCost: 200
-  upgradeCost: 400
+  upgradeCost: 500
   blackHoleCost: 250
   tempoPlanetCost: 100
 --- !u!114 &759237337
@@ -930,6 +930,7 @@ MonoBehaviour:
   - {fileID: 725924771}
   - {fileID: 1027459993}
   - {fileID: 98924174}
+  - {fileID: 993846980}
   towerAbilityPurchased: 0
 --- !u!114 &806815446 stripped
 MonoBehaviour:
@@ -1344,7 +1345,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 310610771958433259, guid: 16591cb407e76564e8050d31c477041b, type: 3}
       propertyPath: cost
-      value: 600
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 310610771958433259, guid: 16591cb407e76564e8050d31c477041b, type: 3}
       propertyPath: costTextMeshPro
@@ -1386,6 +1387,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &993846980 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 310610771958433256, guid: 16591cb407e76564e8050d31c477041b, type: 3}
+  m_PrefabInstance: {fileID: 993846978}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &1013442857 stripped
