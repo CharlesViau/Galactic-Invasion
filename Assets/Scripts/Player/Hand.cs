@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Motherbase;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 internal enum CurrentAbility
 {
@@ -44,6 +45,32 @@ public class Hand : MonoBehaviour
     {
         if (_menuInGame.IsPaused) return;
 
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            OnPlaceShieldAbilityClick();
+        }
+
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            OnRepairClick();
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            OnUpgradeClick();
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            OnBlackHoleAbilityClick();
+        }
+
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            OnTempoPlanetAbilityClick();
+        }
+        
+        
         var currentPos = Input.mousePosition;
         if (Camera.main != null)
         {
@@ -134,7 +161,7 @@ public class Hand : MonoBehaviour
     {
         if (PlayerCurrency.Instance.Balance < PlayerCurrency.Instance.shieldCost)
         {
-            MessageUI.Instance.Show("Not enough money!");
+            AkSoundEngine.PostEvent("Play_UIFail", gameObject);
             return;
         }
 
@@ -159,7 +186,7 @@ public class Hand : MonoBehaviour
     {
         if (PlayerCurrency.Instance.Balance < PlayerCurrency.Instance.repairCost)
         {
-            MessageUI.Instance.Show("Not enough money!");
+            AkSoundEngine.PostEvent("Play_UIFail", gameObject);
             return;
         }
 
@@ -189,7 +216,7 @@ public class Hand : MonoBehaviour
     {
         if (PlayerCurrency.Instance.Balance < PlayerCurrency.Instance.upgradeCost)
         {
-            MessageUI.Instance.Show("Not enough money!");
+            AkSoundEngine.PostEvent("Play_UIFail", gameObject);
             return;
         }
 
@@ -221,7 +248,11 @@ public class Hand : MonoBehaviour
         _mb.ShowShieldsPreview(_isShowingPreview);
 
         if (_isPlacingAbilty) return;
-        if (!PlayerCurrency.Instance.SpendMoney(PlayerCurrency.Instance.tempoPlanetCost)) return;
+        if (!PlayerCurrency.Instance.SpendMoney(PlayerCurrency.Instance.tempoPlanetCost))
+        {
+            AkSoundEngine.PostEvent("Play_UIFail", gameObject);
+            return;
+        }
         _animator.SetTrigger("Grab");
         _currentAbility = CurrentAbility.TempoPlanet;
         _isPlacingAbilty = true;
@@ -243,7 +274,11 @@ public class Hand : MonoBehaviour
         _mb.ShowShieldsPreview(_isShowingPreview);
 
         if (_isPlacingAbilty) return;
-        if (!PlayerCurrency.Instance.SpendMoney(PlayerCurrency.Instance.blackHoleCost)) return;
+        if (!PlayerCurrency.Instance.SpendMoney(PlayerCurrency.Instance.blackHoleCost))
+        {
+            AkSoundEngine.PostEvent("Play_UIFail", gameObject);
+            return;
+        }
         _animator.SetTrigger("Grab");
         _currentAbility = CurrentAbility.BlackHole;
         _isPlacingAbilty = true;
