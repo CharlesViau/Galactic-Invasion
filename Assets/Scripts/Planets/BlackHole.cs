@@ -25,6 +25,7 @@ namespace Planets
                 Enemy enemy = collider.gameObject.GetComponent<Enemy>();
                 if (!enemy.isPoolable)
                 {
+                    EnemyManager.Instance.Remove(enemy);
                     Destroy(enemy.gameObject);
                 }
                 else

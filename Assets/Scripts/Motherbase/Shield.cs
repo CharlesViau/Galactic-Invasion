@@ -78,9 +78,14 @@ namespace Motherbase
             var enemy = collider.gameObject.GetComponent<Enemy>();
             ReceiveDamage(enemy.damage);
             if (!enemy.isPoolable)
+            {
+                EnemyManager.Instance.Remove(enemy);
                 Destroy(enemy.gameObject);
+            }
             else
+            {
                 EnemyManager.Instance.Pool(collider.gameObject.GetComponent<Enemy>());
+            }
         }
 
         public event DeathEvent deathEvent;

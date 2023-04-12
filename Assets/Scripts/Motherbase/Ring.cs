@@ -49,6 +49,7 @@ namespace Motherbase
                 ReceiveDamage(enemy.damage);
                 if (!enemy.isPoolable)
                 {
+                    EnemyManager.Instance.Remove(enemy);
                     Destroy(enemy.gameObject);
                 }
                 else
