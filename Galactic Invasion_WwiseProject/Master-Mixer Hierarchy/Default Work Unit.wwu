@@ -10,12 +10,20 @@
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<Bus Name="Music" ID="{DD50C22E-59EC-4E5E-A8E3-B4E865C6957B}"/>
+						<Bus Name="Music" ID="{DD50C22E-59EC-4E5E-A8E3-B4E865C6957B}">
+							<PropertyList>
+								<Property Name="BusVolume" Type="Real64">
+									<ValueList>
+										<Value>-5</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+						</Bus>
 						<Bus Name="SFX" ID="{E9E97F45-85B7-4063-A93A-9ABF0CAAB697}">
 							<PropertyList>
 								<Property Name="BusVolume" Type="Real64">
 									<ValueList>
-										<Value>-4</Value>
+										<Value>-5</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
