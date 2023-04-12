@@ -122,7 +122,7 @@ MonoBehaviour:
   explosion:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 72bfce7a5f262cc49927f9cfe9ce1ae9, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: 23b75c58aee40f34ab58f4c8961a3dbe, type: 2}
 --- !u!135 &6333878178452164048
 SphereCollider:
   m_ObjectHideFlags: 0
