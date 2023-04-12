@@ -9,6 +9,7 @@ public class Controller : MonoBehaviour
     private CoreMotherBase _mb;
     private Plane _plane;
     private WaveManager _waveManager;
+    public GameObject arrowFeedback;
     public static Controller Instance { get; private set; }
 
     private void Awake()
@@ -39,6 +40,7 @@ public class Controller : MonoBehaviour
     public void GameStart()
     {
         if (gameStarted) return;
+        arrowFeedback.SetActive(false);
         gameStarted = true;
         _waveManager.GameStart();
     }
