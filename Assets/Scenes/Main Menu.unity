@@ -512,11 +512,11 @@ MonoBehaviour:
   hoverEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: e5146bbe4431a7744bdefcd72fdb6fae, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: 4c4a527e93cb2964badd59d08a9d49e8, type: 2}
   onClickEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 275ae19620c10484eb8754241e3eed0a, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: 1482026dcabd5fc4fb7f2cae42818257, type: 2}
 --- !u!114 &94599673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1247,11 +1247,11 @@ MonoBehaviour:
   hoverEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: e5146bbe4431a7744bdefcd72fdb6fae, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: 4c4a527e93cb2964badd59d08a9d49e8, type: 2}
   onClickEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 275ae19620c10484eb8754241e3eed0a, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: 1482026dcabd5fc4fb7f2cae42818257, type: 2}
 --- !u!1 &202395232
 GameObject:
   m_ObjectHideFlags: 0
@@ -1426,11 +1426,11 @@ MonoBehaviour:
   hoverEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: e5146bbe4431a7744bdefcd72fdb6fae, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: 4c4a527e93cb2964badd59d08a9d49e8, type: 2}
   onClickEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: e7f074841cf91d44485b8e7c347fa2f0, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: a9ac319a377fbb04487b39807e81b962, type: 2}
 --- !u!114 &202395238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3063,11 +3063,11 @@ MonoBehaviour:
   hoverEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: e5146bbe4431a7744bdefcd72fdb6fae, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: 4c4a527e93cb2964badd59d08a9d49e8, type: 2}
   onClickEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 275ae19620c10484eb8754241e3eed0a, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: 1482026dcabd5fc4fb7f2cae42818257, type: 2}
 --- !u!114 &460039674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5261,11 +5261,11 @@ MonoBehaviour:
   hoverEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: e5146bbe4431a7744bdefcd72fdb6fae, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: 4c4a527e93cb2964badd59d08a9d49e8, type: 2}
   onClickEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 275ae19620c10484eb8754241e3eed0a, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: 1482026dcabd5fc4fb7f2cae42818257, type: 2}
 --- !u!114 &715625706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6473,11 +6473,11 @@ MonoBehaviour:
   hoverEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: e5146bbe4431a7744bdefcd72fdb6fae, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: 4c4a527e93cb2964badd59d08a9d49e8, type: 2}
   onClickEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 275ae19620c10484eb8754241e3eed0a, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: 1482026dcabd5fc4fb7f2cae42818257, type: 2}
 --- !u!114 &852189195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6697,7 +6697,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &904163427
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6839,11 +6839,11 @@ MonoBehaviour:
   hoverEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: e5146bbe4431a7744bdefcd72fdb6fae, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: 4c4a527e93cb2964badd59d08a9d49e8, type: 2}
   onClickEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: e7f074841cf91d44485b8e7c347fa2f0, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: a9ac319a377fbb04487b39807e81b962, type: 2}
 --- !u!114 &904163432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8441,11 +8441,11 @@ MonoBehaviour:
   hoverEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: e5146bbe4431a7744bdefcd72fdb6fae, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: 4c4a527e93cb2964badd59d08a9d49e8, type: 2}
   onClickEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: e7f074841cf91d44485b8e7c347fa2f0, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: a9ac319a377fbb04487b39807e81b962, type: 2}
 --- !u!114 &1054339994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8698,6 +8698,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1082165175}
   - component: {fileID: 1082165176}
+  - component: {fileID: 1082165177}
   m_Layer: 5
   m_Name: MainMenu
   m_TagString: Untagged
@@ -8750,6 +8751,26 @@ MonoBehaviour:
   confirmationPrompt: {fileID: 0}
   warningPanel: {fileID: 0}
   mainMenuPanel: {fileID: 0}
+--- !u!114 &1082165177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082165174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4922b9604c7c53a46816db94005b6906, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playMenuMusic:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 9b836d80129ab6f4098628b181816b9b, type: 2}
+  stopLevelMusic:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: f5b2dffa70617464181f05d542e7550b, type: 2}
 --- !u!1 &1089622509
 GameObject:
   m_ObjectHideFlags: 0
@@ -9232,11 +9253,11 @@ MonoBehaviour:
   hoverEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: e5146bbe4431a7744bdefcd72fdb6fae, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: 4c4a527e93cb2964badd59d08a9d49e8, type: 2}
   onClickEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: e7f074841cf91d44485b8e7c347fa2f0, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: a9ac319a377fbb04487b39807e81b962, type: 2}
 --- !u!1 &1137294040
 GameObject:
   m_ObjectHideFlags: 0
@@ -9901,11 +9922,11 @@ MonoBehaviour:
   hoverEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: e5146bbe4431a7744bdefcd72fdb6fae, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: 4c4a527e93cb2964badd59d08a9d49e8, type: 2}
   onClickEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: e7f074841cf91d44485b8e7c347fa2f0, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: a9ac319a377fbb04487b39807e81b962, type: 2}
 --- !u!114 &1234129902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11410,11 +11431,11 @@ MonoBehaviour:
   hoverEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: e5146bbe4431a7744bdefcd72fdb6fae, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: 4c4a527e93cb2964badd59d08a9d49e8, type: 2}
   onClickEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: e7f074841cf91d44485b8e7c347fa2f0, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: a9ac319a377fbb04487b39807e81b962, type: 2}
 --- !u!114 &1407263989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12148,11 +12169,11 @@ MonoBehaviour:
   hoverEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: e5146bbe4431a7744bdefcd72fdb6fae, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: 4c4a527e93cb2964badd59d08a9d49e8, type: 2}
   onClickEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 275ae19620c10484eb8754241e3eed0a, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: 1482026dcabd5fc4fb7f2cae42818257, type: 2}
 --- !u!1 &1463204774
 GameObject:
   m_ObjectHideFlags: 0
@@ -12631,11 +12652,11 @@ MonoBehaviour:
   hoverEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: e5146bbe4431a7744bdefcd72fdb6fae, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: 4c4a527e93cb2964badd59d08a9d49e8, type: 2}
   onClickEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: e7f074841cf91d44485b8e7c347fa2f0, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: a9ac319a377fbb04487b39807e81b962, type: 2}
 --- !u!114 &1519491495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15604,7 +15625,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 727.34, y: 286}
+  m_AnchoredPosition: {x: 727.34, y: 403.82}
   m_SizeDelta: {x: 430.416, y: 107.6177}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1991083561
@@ -15740,11 +15761,11 @@ MonoBehaviour:
   hoverEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: e5146bbe4431a7744bdefcd72fdb6fae, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: 4c4a527e93cb2964badd59d08a9d49e8, type: 2}
   onClickEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: e7f074841cf91d44485b8e7c347fa2f0, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: a9ac319a377fbb04487b39807e81b962, type: 2}
 --- !u!114 &1991083565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16233,11 +16254,11 @@ MonoBehaviour:
   hoverEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: e5146bbe4431a7744bdefcd72fdb6fae, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: 4c4a527e93cb2964badd59d08a9d49e8, type: 2}
   onClickEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: e7f074841cf91d44485b8e7c347fa2f0, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: a9ac319a377fbb04487b39807e81b962, type: 2}
 --- !u!114 &2050112566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16536,11 +16557,11 @@ MonoBehaviour:
   hoverEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: e5146bbe4431a7744bdefcd72fdb6fae, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: 4c4a527e93cb2964badd59d08a9d49e8, type: 2}
   onClickEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: e7f074841cf91d44485b8e7c347fa2f0, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: a9ac319a377fbb04487b39807e81b962, type: 2}
 --- !u!1 &2113942806
 GameObject:
   m_ObjectHideFlags: 0
