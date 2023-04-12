@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: 6763a3ef8b19644490da5e0ec365290c
     GuidInternal: 
-    m_lastTime: -8585209617463111896
+    m_lastTime: -8585203401652155072
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -54,6 +54,40 @@ MonoBehaviour:
         ObjectType: 2
         guid: d8a41415a61d2a41a17e75ca0c2149f3
       Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus
+    - name: Music
+      guid: 2ec250ddec595e4ea8e3b4e865c6957b
+      id: 3991942870
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 6763a3ef8b19644490da5e0ec365290c
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: Music
+        ObjectType: 2
+        guid: 2ec250ddec595e4ea8e3b4e865c6957b
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Music
+    - name: SFX
+      guid: 457fe9e9b7856340a93a9abf0caab697
+      id: 393239870
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 6763a3ef8b19644490da5e0ec365290c
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: SFX
+        ObjectType: 2
+        guid: 457fe9e9b7856340a93a9abf0caab697
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     PathAndIcons:
@@ -66,7 +100,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 5f591a7413241841b6a2bf0065438ee8
     GuidInternal: 
-    m_lastTime: -8585204116171346523
+    m_lastTime: -8585203414898516790
     List:
     - name: Main
       guid: 9c2bfd8959d29c4a8fd9db33921e959a
@@ -94,7 +128,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 9a9f6b7f7ec96b43baa90745655a5960
     GuidInternal: 
-    m_lastTime: -8585204116171226533
+    m_lastTime: -8585203399382577392
     List:
     - name: GameOver
       guid: abe4146903b36d41826daa8571dcdd9d
@@ -147,6 +181,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Play_Level1
+      guid: 091a8917c874c44f81651cc4db095e83
+      id: 3659125941
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 9a9f6b7f7ec96b43baa90745655a5960
+      - ElementName: Play_Level1
+        ObjectType: 3
+        guid: 091a8917c874c44f81651cc4db095e83
+      Path: Events\Default Work Unit\Play_Level1
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Play_LevelUp
       guid: e32581159d478440901dc084bf091802
       id: 1202337555
@@ -161,6 +212,23 @@ MonoBehaviour:
         ObjectType: 3
         guid: e32581159d478440901dc084bf091802
       Path: Events\Default Work Unit\Play_LevelUp
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_MenuMusic
+      guid: e6662127e8b5ef41a72c1459abd614e1
+      id: 2570041344
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 9a9f6b7f7ec96b43baa90745655a5960
+      - ElementName: Play_MenuMusic
+        ObjectType: 3
+        guid: e6662127e8b5ef41a72c1459abd614e1
+      Path: Events\Default Work Unit\Play_MenuMusic
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -314,6 +382,40 @@ MonoBehaviour:
         ObjectType: 3
         guid: edcef3fe44370142ba8b614374333e48
       Path: Events\Default Work Unit\Stop_Background
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_Level1
+      guid: aadd6fd830f8bf44ae8fcdbe122e7959
+      id: 1761439791
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 9a9f6b7f7ec96b43baa90745655a5960
+      - ElementName: Stop_Level1
+        ObjectType: 3
+        guid: aadd6fd830f8bf44ae8fcdbe122e7959
+      Path: Events\Default Work Unit\Stop_Level1
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_MenuMusic
+      guid: 47b95cd28bb3574692e00314f3295f48
+      id: 2753202630
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 9a9f6b7f7ec96b43baa90745655a5960
+      - ElementName: Stop_MenuMusic
+        ObjectType: 3
+        guid: 47b95cd28bb3574692e00314f3295f48
+      Path: Events\Default Work Unit\Stop_MenuMusic
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1

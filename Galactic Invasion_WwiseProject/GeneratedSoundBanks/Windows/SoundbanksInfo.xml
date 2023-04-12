@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{986487A9-2683-E47A-8688-3D0FE6FDB954}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{EC4FA1EA-5421-107E-76D1-7D45B77D95BE}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -19,10 +19,12 @@
 				</AudioDevices>
 			</Plugins>
 			<Busses>
+				<Bus Id="393239870" Name="SFX"/>
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
+				<Bus Id="3991942870" Name="Music"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{B25F0CBF-65EC-C973-8339-D2478CFA01E5}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{9D9CF56B-803B-98FE-D207-F6878AFA3FA5}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -52,11 +54,15 @@
 				</File>
 				<File Id="431351286" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>sci-fi_beep_computer_ui_01.wav</ShortName>
-					<CachePath>SFX/sci-fi_beep_computer_ui_01_D69A5F0F.wem</CachePath>
+					<CachePath>SFX/sci-fi_beep_computer_ui_01_8A807D5F.wem</CachePath>
+				</File>
+				<File Id="451124326" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Star Fox Zero - Sector Beta.wav</ShortName>
+					<CachePath>SFX/Star Fox Zero - Sector Beta_AF6762AE.wem</CachePath>
 				</File>
 				<File Id="535845375" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>sci-fi_beep_computer_ui_05.wav</ShortName>
-					<CachePath>SFX/sci-fi_beep_computer_ui_05_10C4C929.wem</CachePath>
+					<CachePath>SFX/sci-fi_beep_computer_ui_05_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="581944972" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>sci-fi_explosion_05.wav</ShortName>
@@ -64,7 +70,7 @@
 				</File>
 				<File Id="595196291" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>sci-fi_code_fail_01.wav</ShortName>
-					<CachePath>SFX/sci-fi_code_fail_01_10C4C929.wem</CachePath>
+					<CachePath>SFX/sci-fi_code_fail_01_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="596142099" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>sci-fi_power_up_08.wav</ShortName>
@@ -74,6 +80,10 @@
 					<ShortName>sci-fi_spaceship_background_room_tone_hum_loop_03.wav</ShortName>
 					<CachePath>SFX/sci-fi_spaceship_background_room_tone_hum_loop_03_9EDFC787.wem</CachePath>
 				</File>
+				<File Id="661303725" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Star Fox Zero - Return To Corneria.wav</ShortName>
+					<CachePath>SFX/Star Fox Zero - Return To Corneria_E6F4DBAA.wem</CachePath>
+				</File>
 				<File Id="766381284" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>sci-fi_power_up_object_01.wav</ShortName>
 					<CachePath>SFX/sci-fi_power_up_object_01_3F75BDB9.wem</CachePath>
@@ -81,6 +91,10 @@
 				<File Id="814893108" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>sci-fi_explosion_03.wav</ShortName>
 					<CachePath>SFX/sci-fi_explosion_03_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="949054255" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Star Fox Zero - Stage Selection Screen.wav</ShortName>
+					<CachePath>SFX/Star Fox Zero - Stage Selection Screen_D8C07C79.wem</CachePath>
 				</File>
 				<File Id="1054923028" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>sci-fi_power_down_object_01.wav</ShortName>
@@ -103,9 +117,20 @@
 						<MediaRef Id="652151227"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="3659125941" Name="Play_Level1" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="451124326"/>
+						<MediaRef Id="661303725"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="1202337555" Name="Play_LevelUp" DurationType="OneShot" DurationMin="0.53170425" DurationMax="0.53170425">
 					<MediaRefs>
 						<MediaRef Id="386753448"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2570041344" Name="Play_MenuMusic" DurationType="OneShot" DurationMin="135.29108" DurationMax="135.29108">
+					<MediaRefs>
+						<MediaRef Id="949054255"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="2631163362" Name="Play_MeteoriteDestruction" DurationType="OneShot" DurationMin="2.679979" DurationMax="3.2">
@@ -156,8 +181,10 @@
 					</MediaRefs>
 				</Event>
 				<Event Id="1244803444" Name="Stop_Background" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="1761439791" Name="Stop_Level1" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2753202630" Name="Stop_MenuMusic" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{E5294048-2524-8618-755C-BDD371A59CE6}</FileHash>
+	<FileHash>{0F5104AC-CA88-B45B-EBA1-B1F9F224975A}</FileHash>
 </SoundBanksInfo>

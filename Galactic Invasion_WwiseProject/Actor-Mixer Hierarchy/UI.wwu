@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<WwiseDocument Type="WorkUnit" ID="{2692E3BF-9CC0-4749-89F0-33C414D1D660}" SchemaVersion="110">
+<WwiseDocument Type="WorkUnit" ID="{2692E3BF-9CC0-4749-89F0-33C414D1D660}" SchemaVersion="110" RootDocumentID="{D94B12DD-5521-4D0D-9E53-4979A5ADCDBA}" ParentDocumentID="{D94B12DD-5521-4D0D-9E53-4979A5ADCDBA}">
 	<AudioObjects>
-		<WorkUnit Name="UI" ID="{2692E3BF-9CC0-4749-89F0-33C414D1D660}" PersistMode="Standalone">
+		<WorkUnit Name="UI" ID="{2692E3BF-9CC0-4749-89F0-33C414D1D660}" OwnerID="{A3CBD50C-7AD7-459E-B4BB-8C983216CB35}" PersistMode="Nested">
 			<ChildrenList>
 				<Sound Name="sci-fi_beep_computer_ui_01" ID="{071DFF52-EA21-48A5-BA01-67F2E52AF252}" ShortID="848268850">
 					<ReferenceList>

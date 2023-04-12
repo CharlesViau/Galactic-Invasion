@@ -21,6 +21,7 @@ namespace Motherbase
         private List<int> _spawnedShields;
         private Color _startingColor;
         public AK.Wwise.Event onDeath;
+        public AK.Wwise.Event stopMusic;
 
         private void Awake()
         {
@@ -49,7 +50,8 @@ namespace Motherbase
 
         private void OnDestroy()
         {
-            onDeath.Post(gameObject);
+            stopMusic?.Post(gameObject);
+            onDeath?.Post(gameObject);
             foreach (var s in shields) s.deathEvent -= OnShieldDestroy;
         }
 

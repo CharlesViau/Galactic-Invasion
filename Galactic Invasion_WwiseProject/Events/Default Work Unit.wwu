@@ -156,6 +156,58 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_MenuMusic" ID="{272166E6-B5E8-41EF-A72C-1459ABD614E1}">
+					<ChildrenList>
+						<Action Name="" ID="{7A75BAE7-6903-42BC-8798-3462420ADB92}" ShortID="710403689">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Star Fox Zero - Stage Selection Screen" ID="{B8326635-9907-4653-A761-306FF1978E4C}" WorkUnitID="{D94B12DD-5521-4D0D-9E53-4979A5ADCDBA}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_MenuMusic" ID="{D25CB947-B38B-4657-92E0-0314F3295F48}">
+					<ChildrenList>
+						<Action Name="" ID="{908D5D0C-539D-4CA3-B361-A7F60008C939}" ShortID="55415705">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Star Fox Zero - Stage Selection Screen" ID="{B8326635-9907-4653-A761-306FF1978E4C}" WorkUnitID="{D94B12DD-5521-4D0D-9E53-4979A5ADCDBA}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Level1" ID="{17891A09-74C8-4FC4-8165-1CC4DB095E83}">
+					<ChildrenList>
+						<Action Name="" ID="{F00C6003-4813-4421-A75B-829733D53138}" ShortID="700445849">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MusicLevel" ID="{3A8C6EE9-DCDF-404B-AED2-7CA14482C116}" WorkUnitID="{D94B12DD-5521-4D0D-9E53-4979A5ADCDBA}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_Level1" ID="{D86FDDAA-F830-44BF-AE8F-CDBE122E7959}">
+					<ChildrenList>
+						<Action Name="" ID="{8989282D-E4D0-4544-87B6-E866D9D4794B}" ShortID="461727167">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MusicLevel" ID="{3A8C6EE9-DCDF-404B-AED2-7CA14482C116}" WorkUnitID="{D94B12DD-5521-4D0D-9E53-4979A5ADCDBA}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

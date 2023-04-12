@@ -4,6 +4,8 @@
 		<UserProjectSettings Name="" ID="{0C8936E2-86F9-402F-A2B8-78B18443A126}">
 			<PropertyList>
 				<Property Name="Event Action List\{158125E3-479D-4084-901D-C084BF091802}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{17891A09-74C8-4FC4-8165-1CC4DB095E83}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{272166E6-B5E8-41EF-A72C-1459ABD614E1}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{316BB755-81F8-44DD-B8E1-6C0FDFE61A56}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{4A2D689B-7AA9-4927-B4A1-76598D49B5D4}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{6914E4AB-B303-416D-826D-AA8571DCDD9D}\x64_Expand States" Type="string" Value=""/>
@@ -11,7 +13,9 @@
 				<Property Name="Event Action List\{7E9ACEF5-7327-4661-AF43-3DE45AFB110C}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{99E624A2-99FB-49E0-81FC-6CE7BA6F9D83}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{CF14EB84-6DE8-4B23-A8C5-E891CF97D3F1}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{D25CB947-B38B-4657-92E0-0314F3295F48}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{D30DC232-BBB9-4CB6-8062-2914D4A39175}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{D86FDDAA-F830-44BF-AE8F-CDBE122E7959}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{E3B98CD6-DD3D-4F99-8433-A2192F773EEB}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{E5F0CCD9-4ED7-410F-91A5-259539D2FFA5}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{F27044E4-CD95-476B-928A-59D8B8075BEE}\x64_Expand States" Type="string" Value=""/>
@@ -28,6 +32,7 @@
 						<Value Platform="Mac">GeneratedSoundBanks\Mac\</Value>
 					</ValueList>
 				</Property>
+				<Property Name="General\SourceControlPluginID" Type="string" Value="{C403A906-0C19-4ED5-808E-748707065301}"/>
 				<Property Name="GenerateSoundBanks\ShowHierarchy" Type="bool" Value="True"/>
 				<Property Name="GenerateSoundBanks\x64_SelectedLanguages" Type="string" Value="BvDMKA=="/>
 				<Property Name="GenerateSoundBanks\x64_SelectedPlatforms" Type="string" Value="6vS6IYyFUkG5iGDN5JoHnQ=="/>

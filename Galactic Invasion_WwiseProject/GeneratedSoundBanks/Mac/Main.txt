@@ -3,12 +3,16 @@ Event	ID	Name			Wwise Object Path	Notes
 	538233354	Play_AlertRing			\Default Work Unit\Play_AlertRing	
 	1202337555	Play_LevelUp			\Default Work Unit\Play_LevelUp	
 	1244803444	Stop_Background			\Default Work Unit\Stop_Background	
+	1761439791	Stop_Level1			\Default Work Unit\Stop_Level1	
 	2502251926	Play_UIHover			\Default Work Unit\Play_UIHover	
+	2570041344	Play_MenuMusic			\Default Work Unit\Play_MenuMusic	
 	2631163362	Play_MeteoriteDestruction			\Default Work Unit\Play_MeteoriteDestruction	
 	2727078245	Play_TurretShoot			\Default Work Unit\Play_TurretShoot	
+	2753202630	Stop_MenuMusic			\Default Work Unit\Stop_MenuMusic	
 	3039094228	Play_TurretDestruction			\Default Work Unit\Play_TurretDestruction	
 	3196207338	Play_Background			\Default Work Unit\Play_Background	
 	3646228513	Play_WaveAlert			\Default Work Unit\Play_WaveAlert	
+	3659125941	Play_Level1			\Default Work Unit\Play_Level1	
 	3756780447	Play_TurretConstruction			\Default Work Unit\Play_TurretConstruction	
 	4158285989	GameOver			\Default Work Unit\GameOver	
 	4214330844	Play_UIFail			\Default Work Unit\Play_UIFail	
@@ -20,13 +24,16 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	386753448	LevelUp	C:\Users\Charles\Documents\GitHub\Galactic Invasion\Galactic Invasion_WwiseProject\.cache\Mac\SFX\sci-fi_shield_power_deflect_block_01_3F75BDB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\LevelUp		19072
 	396279610	GameOver	C:\Users\Charles\Documents\GitHub\Galactic Invasion\Galactic Invasion_WwiseProject\.cache\Mac\SFX\sci-fi_electric_pulse_power_down_03_3F75BDB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\GameOver		139790
 	430414124	sci-fi_explosion_04	C:\Users\Charles\Documents\GitHub\Galactic Invasion\Galactic Invasion_WwiseProject\.cache\Mac\SFX\sci-fi_explosion_04_3F75BDB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Explosion\sci-fi_explosion_04		43251
-	431351286	sci-fi_beep_computer_ui_01	C:\Users\Charles\Documents\GitHub\Galactic Invasion\Galactic Invasion_WwiseProject\.cache\Mac\SFX\sci-fi_beep_computer_ui_01_D69A5F0F.wem		\Actor-Mixer Hierarchy\UI\sci-fi_beep_computer_ui_01		36528
-	535845375	sci-fi_beep_computer_ui_05	C:\Users\Charles\Documents\GitHub\Galactic Invasion\Galactic Invasion_WwiseProject\.cache\Mac\SFX\sci-fi_beep_computer_ui_05_10C4C929.wem		\Actor-Mixer Hierarchy\UI\sci-fi_beep_computer_ui_05		67784
+	431351286	sci-fi_beep_computer_ui_01	C:\Users\Charles\Documents\GitHub\Galactic Invasion\Galactic Invasion_WwiseProject\.cache\Mac\SFX\sci-fi_beep_computer_ui_01_8A807D5F.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\UI\sci-fi_beep_computer_ui_01		6097
+	451124326	Star Fox Zero - Sector Beta	C:\Users\Charles\Documents\GitHub\Galactic Invasion\Galactic Invasion_WwiseProject\.cache\Mac\SFX\Star Fox Zero - Sector Beta_AF6762AE.wem		\Actor-Mixer Hierarchy\Default Work Unit\Music\MusicLevel\Star Fox Zero - Sector Beta		4665256
+	535845375	sci-fi_beep_computer_ui_05	C:\Users\Charles\Documents\GitHub\Galactic Invasion\Galactic Invasion_WwiseProject\.cache\Mac\SFX\sci-fi_beep_computer_ui_05_3F75BDB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\UI\sci-fi_beep_computer_ui_05		7165
 	581944972	sci-fi_explosion_05	C:\Users\Charles\Documents\GitHub\Galactic Invasion\Galactic Invasion_WwiseProject\.cache\Mac\SFX\sci-fi_explosion_05_3F75BDB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Explosion\sci-fi_explosion_05		47824
-	595196291	sci-fi_code_fail_01	C:\Users\Charles\Documents\GitHub\Galactic Invasion\Galactic Invasion_WwiseProject\.cache\Mac\SFX\sci-fi_code_fail_01_10C4C929.wem		\Actor-Mixer Hierarchy\UI\sci-fi_code_fail_01		122976
+	595196291	sci-fi_code_fail_01	C:\Users\Charles\Documents\GitHub\Galactic Invasion\Galactic Invasion_WwiseProject\.cache\Mac\SFX\sci-fi_code_fail_01_3F75BDB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\UI\sci-fi_code_fail_01		11440
 	596142099	WaveAlert	C:\Users\Charles\Documents\GitHub\Galactic Invasion\Galactic Invasion_WwiseProject\.cache\Mac\SFX\sci-fi_power_up_08_3F75BDB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\WaveAlert		32433
 	652151227	Background	C:\Users\Charles\Documents\GitHub\Galactic Invasion\Galactic Invasion_WwiseProject\.cache\Mac\SFX\sci-fi_spaceship_background_room_tone_hum_loop_03_9EDFC787.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Background		189477
+	661303725	Star Fox Zero - Return To Corneria	C:\Users\Charles\Documents\GitHub\Galactic Invasion\Galactic Invasion_WwiseProject\.cache\Mac\SFX\Star Fox Zero - Return To Corneria_E6F4DBAA.wem		\Actor-Mixer Hierarchy\Default Work Unit\Music\MusicLevel\Star Fox Zero - Return To Corneria		8068523
 	766381284	TurretPowerUp	C:\Users\Charles\Documents\GitHub\Galactic Invasion\Galactic Invasion_WwiseProject\.cache\Mac\SFX\sci-fi_power_up_object_01_3F75BDB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\TurretPowerUp		23341
 	814893108	sci-fi_explosion_03	C:\Users\Charles\Documents\GitHub\Galactic Invasion\Galactic Invasion_WwiseProject\.cache\Mac\SFX\sci-fi_explosion_03_3F75BDB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Explosion\sci-fi_explosion_03		44791
+	949054255	Star Fox Zero - Stage Selection Screen	C:\Users\Charles\Documents\GitHub\Galactic Invasion\Galactic Invasion_WwiseProject\.cache\Mac\SFX\Star Fox Zero - Stage Selection Screen_D8C07C79.wem		\Actor-Mixer Hierarchy\Default Work Unit\Music\Star Fox Zero - Stage Selection Screen		3369024
 	1054923028	TurretPowerDown	C:\Users\Charles\Documents\GitHub\Galactic Invasion\Galactic Invasion_WwiseProject\.cache\Mac\SFX\sci-fi_power_down_object_01_3F75BDB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\TurretPowerDown		24447
 

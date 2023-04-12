@@ -8,9 +8,12 @@
 						<ObjectRef Name="Play_LevelUp" ID="{158125E3-479D-4084-901D-C084BF091802}" WorkUnitID="{7F6B9F9A-C97E-436B-BAA9-0745655A5960}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_TurretDestruction" ID="{E5F0CCD9-4ED7-410F-91A5-259539D2FFA5}" WorkUnitID="{7F6B9F9A-C97E-436B-BAA9-0745655A5960}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="GameOver" ID="{6914E4AB-B303-416D-826D-AA8571DCDD9D}" WorkUnitID="{7F6B9F9A-C97E-436B-BAA9-0745655A5960}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_MenuMusic" ID="{272166E6-B5E8-41EF-A72C-1459ABD614E1}" WorkUnitID="{7F6B9F9A-C97E-436B-BAA9-0745655A5960}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Stop_Background" ID="{FEF3CEED-3744-4201-BA8B-614374333E48}" WorkUnitID="{7F6B9F9A-C97E-436B-BAA9-0745655A5960}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_UIConfirm" ID="{7980FC4E-9FB7-42F6-ADBC-2960AAB0657D}" WorkUnitID="{7F6B9F9A-C97E-436B-BAA9-0745655A5960}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_Level1" ID="{D86FDDAA-F830-44BF-AE8F-CDBE122E7959}" WorkUnitID="{7F6B9F9A-C97E-436B-BAA9-0745655A5960}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_UIFail" ID="{316BB755-81F8-44DD-B8E1-6C0FDFE61A56}" WorkUnitID="{7F6B9F9A-C97E-436B-BAA9-0745655A5960}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_MenuMusic" ID="{D25CB947-B38B-4657-92E0-0314F3295F48}" WorkUnitID="{7F6B9F9A-C97E-436B-BAA9-0745655A5960}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_TurretConstruction" ID="{7E9ACEF5-7327-4661-AF43-3DE45AFB110C}" WorkUnitID="{7F6B9F9A-C97E-436B-BAA9-0745655A5960}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_TurretShoot" ID="{F27044E4-CD95-476B-928A-59D8B8075BEE}" WorkUnitID="{7F6B9F9A-C97E-436B-BAA9-0745655A5960}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_UIHover" ID="{4A2D689B-7AA9-4927-B4A1-76598D49B5D4}" WorkUnitID="{7F6B9F9A-C97E-436B-BAA9-0745655A5960}" Origin="Manual" Filter="7"/>
@@ -18,6 +21,7 @@
 						<ObjectRef Name="Play_MeteoriteDestruction" ID="{CF14EB84-6DE8-4B23-A8C5-E891CF97D3F1}" WorkUnitID="{7F6B9F9A-C97E-436B-BAA9-0745655A5960}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Background" ID="{D30DC232-BBB9-4CB6-8062-2914D4A39175}" WorkUnitID="{7F6B9F9A-C97E-436B-BAA9-0745655A5960}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_AlertRing" ID="{E3B98CD6-DD3D-4F99-8433-A2192F773EEB}" WorkUnitID="{7F6B9F9A-C97E-436B-BAA9-0745655A5960}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Level1" ID="{17891A09-74C8-4FC4-8165-1CC4DB095E83}" WorkUnitID="{7F6B9F9A-C97E-436B-BAA9-0745655A5960}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>

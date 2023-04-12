@@ -9,7 +9,7 @@
 							<ObjectRef Name="SFX" ID="{65A49E6B-3B93-451A-9931-912A85579494}" WorkUnitID="{4DD561E6-306F-4E02-A8C6-7B7DD336E0F7}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{EFA36367-198B-4464-90DA-5E0EC365290C}"/>
+							<ObjectRef Name="SFX" ID="{E9E97F45-85B7-4063-A93A-9ABF0CAAB697}" WorkUnitID="{EFA36367-198B-4464-90DA-5E0EC365290C}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -25,11 +25,6 @@
 								<Property Name="UseMaxSoundPerInstance" Type="bool">
 									<ValueList>
 										<Value>True</Value>
-									</ValueList>
-								</Property>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>-8</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -148,7 +143,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-2</Value>
+										<Value>5</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -198,7 +193,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>3</Value>
+										<Value>4</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -386,6 +381,123 @@
 								<ActiveSource Name="sci-fi_alarm_warning_loop_01" ID="{CAFDD0AC-41B4-4E6B-B65E-C59C542DAA0C}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<WorkUnit Name="UI" ID="{2692E3BF-9CC0-4749-89F0-33C414D1D660}" PersistMode="Reference"/>
+					</ChildrenList>
+				</ActorMixer>
+				<ActorMixer Name="Music" ID="{C16C187F-C9E6-4467-B388-4F5D47347B9F}" ShortID="509349009">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Music" ID="{3519B16B-E0E4-421B-9714-519FE769B8B0}" WorkUnitID="{4DD561E6-306F-4E02-A8C6-7B7DD336E0F7}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Music" ID="{DD50C22E-59EC-4E5E-A8E3-B4E865C6957B}" WorkUnitID="{EFA36367-198B-4464-90DA-5E0EC365290C}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Star Fox Zero - Stage Selection Screen" ID="{B8326635-9907-4653-A761-306FF1978E4C}" ShortID="716895675">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4DD561E6-306F-4E02-A8C6-7B7DD336E0F7}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{EFA36367-198B-4464-90DA-5E0EC365290C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Star Fox Zero - Stage Selection Screen" ID="{947F4BE9-B74F-461B-AC3D-8987D1B29323}">
+									<Language>SFX</Language>
+									<AudioFile>Star Fox Zero - Stage Selection Screen.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="949054255"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Star Fox Zero - Stage Selection Screen" ID="{947F4BE9-B74F-461B-AC3D-8987D1B29323}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<RandomSequenceContainer Name="MusicLevel" ID="{3A8C6EE9-DCDF-404B-AED2-7CA14482C116}" ShortID="806014426">
+							<PropertyList>
+								<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+								<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>1</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4DD561E6-306F-4E02-A8C6-7B7DD336E0F7}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{EFA36367-198B-4464-90DA-5E0EC365290C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Star Fox Zero - Sector Beta" ID="{7AF425EE-77BF-464B-B3C3-909DE6599D73}" ShortID="554541668">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4DD561E6-306F-4E02-A8C6-7B7DD336E0F7}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{EFA36367-198B-4464-90DA-5E0EC365290C}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Star Fox Zero - Sector Beta" ID="{5ABB06BA-8CFB-419F-9B8E-155E5F6157A7}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimEnd" Type="Real64" Value="200.454584509987"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Star Fox Zero - Sector Beta.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="451124326"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Star Fox Zero - Sector Beta" ID="{5ABB06BA-8CFB-419F-9B8E-155E5F6157A7}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Star Fox Zero - Return To Corneria" ID="{132337AC-A6A3-4D27-86BD-ABCC2362520F}" ShortID="429260284">
+									<PropertyList>
+										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4DD561E6-306F-4E02-A8C6-7B7DD336E0F7}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{EFA36367-198B-4464-90DA-5E0EC365290C}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Star Fox Zero - Return To Corneria" ID="{ABD57A33-062E-44A8-A276-DE0AFB1D0FCA}">
+											<PropertyList>
+												<Property Name="LoopBegin" Type="Real64" Value="10.6104553285577"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="1.37772753217734"/>
+												<Property Name="TrimEnd" Type="Real64" Value="330.509966862373"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Star Fox Zero - Return To Corneria.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="661303725"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Star Fox Zero - Return To Corneria" ID="{ABD57A33-062E-44A8-A276-DE0AFB1D0FCA}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<Playlist>
+								<ItemRef Name="Star Fox Zero - Sector Beta" ID="{7AF425EE-77BF-464B-B3C3-909DE6599D73}"/>
+								<ItemRef Name="Star Fox Zero - Return To Corneria" ID="{132337AC-A6A3-4D27-86BD-ABCC2362520F}"/>
+							</Playlist>
+						</RandomSequenceContainer>
 					</ChildrenList>
 				</ActorMixer>
 			</ChildrenList>
