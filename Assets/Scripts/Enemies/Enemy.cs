@@ -93,16 +93,16 @@ namespace Enemies
 
         private void Die()
         {
-            if (!isPoolable)
+            /*if (!isPoolable)
             {
                 Destroy(gameObject);
             }
             else
-            {
+            {*/
                 explosion.Post(gameObject);
                 EnemyManager.OnEnemyDeathEvent(reward);
                 EnemyManager.Instance.Pool(this);
-            }
+            //}
             
         }
 

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.21985468, g: 0.22301093, b: 0.2578244, a: 1}
+  m_IndirectSpecularColor: {r: 0.14323077, g: 0.14952248, b: 0.17571393, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -782,7 +782,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 1007, y: -734}
-  m_SizeDelta: {x: 284.6022, y: 125.3537}
+  m_SizeDelta: {x: 415, y: 125.3537}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &270897974
 MonoBehaviour:
@@ -893,11 +893,11 @@ MonoBehaviour:
   hoverEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 4c4a527e93cb2964badd59d08a9d49e8, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: e5146bbe4431a7744bdefcd72fdb6fae, type: 2}
   onClickEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: a9ac319a377fbb04487b39807e81b962, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: e7f074841cf91d44485b8e7c347fa2f0, type: 2}
 --- !u!114 &270897978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1949,11 +1949,11 @@ MonoBehaviour:
   hoverEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 4c4a527e93cb2964badd59d08a9d49e8, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: e5146bbe4431a7744bdefcd72fdb6fae, type: 2}
   onClickEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: a9ac319a377fbb04487b39807e81b962, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: e7f074841cf91d44485b8e7c347fa2f0, type: 2}
 --- !u!114 &966551122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3490,11 +3490,11 @@ MonoBehaviour:
   hoverEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 4c4a527e93cb2964badd59d08a9d49e8, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: e5146bbe4431a7744bdefcd72fdb6fae, type: 2}
   onClickEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: a9ac319a377fbb04487b39807e81b962, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: e7f074841cf91d44485b8e7c347fa2f0, type: 2}
 --- !u!114 &2061616222
 MonoBehaviour:
   m_ObjectHideFlags: 0

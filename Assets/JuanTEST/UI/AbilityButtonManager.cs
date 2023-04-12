@@ -21,7 +21,7 @@ public class AbilityButtonManager : MonoBehaviour
     private void Update()
     {
         if (!Controller.Instance.gameStarted) return;
-        UpdateAbilityButton(_playerCurrency.Balance);
+        UpdateAbilityButton(PlayerScore.Instance.stopScore ? 0 : _playerCurrency.Balance);
     }
 
     private void UpdateAbilityButton(int currentBalance)

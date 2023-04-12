@@ -42,9 +42,15 @@ public class GameOverStateManager : MonoBehaviour
     private void SubmitScore()
     {
         submitButton.interactable = false;
+        submitButton.GetComponentInChildren<TextMeshProUGUI>().text = "Submitting...";
         StartCoroutine(Scoreboard.Instance.SetScore(_username, _score, score =>
         {
             RefreshScoreboard(score);
+            ShowScoreboardPanel();
+        }, s =>
+        {
+            var errorRow = Instantiate(scoreRowPrefab, content);
+            errorRow.GetComponent<TextMeshProUGUI>().text = "Error while submitting score";
             ShowScoreboardPanel();
         }));
     }

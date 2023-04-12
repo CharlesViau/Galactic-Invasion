@@ -101,9 +101,13 @@ MonoBehaviour:
   damage: 1
   rotationSpeed: {x: 50, y: 50, z: 50}
   gravityStrength: 3
-  hp: 1
-  reward: 1
+  maxHP: 0
+  reward: 5
   _type: 0
+  explosion:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!54 &356044306478959859
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -235,9 +239,13 @@ MonoBehaviour:
   damage: 1
   rotationSpeed: {x: 50, y: 50, z: 50}
   gravityStrength: 3
-  hp: 1
-  reward: 1
+  maxHP: 0
+  reward: 5
   _type: 0
+  explosion:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!54 &7683335853162371700
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -369,9 +377,13 @@ MonoBehaviour:
   damage: 1
   rotationSpeed: {x: 50, y: 50, z: 50}
   gravityStrength: 3
-  hp: 1
-  reward: 1
+  maxHP: 0
+  reward: 5
   _type: 0
+  explosion:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!54 &7069651602082383659
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -503,9 +515,13 @@ MonoBehaviour:
   damage: 1
   rotationSpeed: {x: 50, y: 50, z: 50}
   gravityStrength: 3
-  hp: 1
-  reward: 1
+  maxHP: 0
+  reward: 5
   _type: 0
+  explosion:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!54 &8729696876035483278
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -708,9 +724,13 @@ MonoBehaviour:
   damage: 1
   rotationSpeed: {x: 50, y: 50, z: 50}
   gravityStrength: 3
-  hp: 1
-  reward: 1
+  maxHP: 0
+  reward: 5
   _type: 0
+  explosion:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!54 &7503237743110147610
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -874,9 +894,13 @@ MonoBehaviour:
   damage: 1
   rotationSpeed: {x: 50, y: 50, z: 50}
   gravityStrength: 3
-  hp: 1
-  reward: 1
+  maxHP: 0
+  reward: 5
   _type: 0
+  explosion:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!54 &2246961923271327217
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1008,9 +1032,13 @@ MonoBehaviour:
   damage: 1
   rotationSpeed: {x: 50, y: 50, z: 50}
   gravityStrength: 3
-  hp: 1
-  reward: 1
+  maxHP: 0
+  reward: 5
   _type: 0
+  explosion:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!54 &4659358205157109826
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1142,9 +1170,13 @@ MonoBehaviour:
   damage: 1
   rotationSpeed: {x: 50, y: 50, z: 50}
   gravityStrength: 3
-  hp: 1
-  reward: 1
+  maxHP: 0
+  reward: 5
   _type: 0
+  explosion:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!54 &5433039520267319324
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1276,9 +1308,13 @@ MonoBehaviour:
   damage: 1
   rotationSpeed: {x: 50, y: 50, z: 50}
   gravityStrength: 3
-  hp: 1
-  reward: 1
+  maxHP: 0
+  reward: 5
   _type: 0
+  explosion:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!54 &4154075240852079620
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1410,9 +1446,13 @@ MonoBehaviour:
   damage: 1
   rotationSpeed: {x: 50, y: 50, z: 50}
   gravityStrength: 3
-  hp: 1
-  reward: 1
+  maxHP: 0
+  reward: 5
   _type: 0
+  explosion:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!54 &7373907398560085025
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1544,9 +1584,13 @@ MonoBehaviour:
   damage: 1
   rotationSpeed: {x: 50, y: 50, z: 50}
   gravityStrength: 3
-  hp: 1
-  reward: 1
+  maxHP: 0
+  reward: 5
   _type: 0
+  explosion:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!54 &4361719694719399255
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1677,9 +1721,13 @@ MonoBehaviour:
   damage: 1
   rotationSpeed: {x: 50, y: 50, z: 50}
   gravityStrength: 3
-  hp: 1
-  reward: 1
+  maxHP: 0
+  reward: 5
   _type: 0
+  explosion:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!54 &4444376610316180973
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1811,9 +1859,13 @@ MonoBehaviour:
   damage: 1
   rotationSpeed: {x: 50, y: 50, z: 50}
   gravityStrength: 3
-  hp: 1
-  reward: 1
+  maxHP: 0
+  reward: 5
   _type: 0
+  explosion:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!54 &2205251290677169993
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1945,9 +1997,13 @@ MonoBehaviour:
   damage: 1
   rotationSpeed: {x: 50, y: 50, z: 50}
   gravityStrength: 3
-  hp: 1
-  reward: 1
+  maxHP: 0
+  reward: 5
   _type: 0
+  explosion:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!54 &8794202061155918125
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2078,9 +2134,13 @@ MonoBehaviour:
   damage: 1
   rotationSpeed: {x: 50, y: 50, z: 50}
   gravityStrength: 3
-  hp: 1
-  reward: 1
+  maxHP: 0
+  reward: 5
   _type: 0
+  explosion:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!54 &297731970116316396
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2212,9 +2272,13 @@ MonoBehaviour:
   damage: 1
   rotationSpeed: {x: 50, y: 50, z: 50}
   gravityStrength: 3
-  hp: 1
-  reward: 1
+  maxHP: 0
+  reward: 5
   _type: 0
+  explosion:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!54 &4222390787617149317
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2346,9 +2410,13 @@ MonoBehaviour:
   damage: 1
   rotationSpeed: {x: 50, y: 50, z: 50}
   gravityStrength: 3
-  hp: 1
-  reward: 1
+  maxHP: 0
+  reward: 5
   _type: 0
+  explosion:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!54 &9202532661080067492
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2480,9 +2548,13 @@ MonoBehaviour:
   damage: 1
   rotationSpeed: {x: 50, y: 50, z: 50}
   gravityStrength: 3
-  hp: 1
-  reward: 1
+  maxHP: 0
+  reward: 5
   _type: 0
+  explosion:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!54 &4794685486797014954
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2614,9 +2686,13 @@ MonoBehaviour:
   damage: 1
   rotationSpeed: {x: 50, y: 50, z: 50}
   gravityStrength: 3
-  hp: 1
-  reward: 1
+  maxHP: 0
+  reward: 5
   _type: 0
+  explosion:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!54 &5555281588229804076
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2748,9 +2824,13 @@ MonoBehaviour:
   damage: 1
   rotationSpeed: {x: 50, y: 50, z: 50}
   gravityStrength: 3
-  hp: 1
-  reward: 1
+  maxHP: 0
+  reward: 5
   _type: 0
+  explosion:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!54 &3615127210421688598
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2881,9 +2961,13 @@ MonoBehaviour:
   damage: 1
   rotationSpeed: {x: 50, y: 50, z: 50}
   gravityStrength: 3
-  hp: 1
-  reward: 1
+  maxHP: 0
+  reward: 5
   _type: 0
+  explosion:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!54 &2196596277486472094
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3015,9 +3099,13 @@ MonoBehaviour:
   damage: 1
   rotationSpeed: {x: 50, y: 50, z: 50}
   gravityStrength: 3
-  hp: 1
-  reward: 1
+  maxHP: 0
+  reward: 5
   _type: 0
+  explosion:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!54 &4718407297006321437
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3149,9 +3237,13 @@ MonoBehaviour:
   damage: 1
   rotationSpeed: {x: 50, y: 50, z: 50}
   gravityStrength: 3
-  hp: 1
-  reward: 1
+  maxHP: 0
+  reward: 5
   _type: 0
+  explosion:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!54 &2056875916403249035
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3283,9 +3375,13 @@ MonoBehaviour:
   damage: 1
   rotationSpeed: {x: 50, y: 50, z: 50}
   gravityStrength: 3
-  hp: 1
-  reward: 1
+  maxHP: 0
+  reward: 5
   _type: 0
+  explosion:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!54 &525536473945461142
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3417,9 +3513,13 @@ MonoBehaviour:
   damage: 1
   rotationSpeed: {x: 50, y: 50, z: 50}
   gravityStrength: 3
-  hp: 1
-  reward: 1
+  maxHP: 0
+  reward: 5
   _type: 0
+  explosion:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!54 &4605671930792323393
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3551,9 +3651,13 @@ MonoBehaviour:
   damage: 1
   rotationSpeed: {x: 50, y: 50, z: 50}
   gravityStrength: 3
-  hp: 1
-  reward: 1
+  maxHP: 0
+  reward: 5
   _type: 0
+  explosion:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!54 &476587201519314514
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3627,7 +3731,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 3
+  m_Radius: 4
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1245487575960187528
 MonoBehaviour:
@@ -3745,9 +3849,13 @@ MonoBehaviour:
   damage: 1
   rotationSpeed: {x: 50, y: 50, z: 50}
   gravityStrength: 3
-  hp: 1
-  reward: 1
+  maxHP: 0
+  reward: 5
   _type: 0
+  explosion:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!54 &757967939773938019
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3879,9 +3987,13 @@ MonoBehaviour:
   damage: 1
   rotationSpeed: {x: 50, y: 50, z: 50}
   gravityStrength: 3
-  hp: 1
-  reward: 1
+  maxHP: 0
+  reward: 5
   _type: 0
+  explosion:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!54 &6552129433642022753
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -34,6 +34,7 @@ namespace Motherbase
             if (hp <= 0)
             {
                 //Destruction animation
+                hpText.text = "0";
                 PlayerScore.Instance.stopScore = true;
                 core.DestroyShields();
                 gameObject.SetActive(false);
