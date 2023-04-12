@@ -3402,7 +3402,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Temporarily absorbs asteroids! No money earned from them
+  m_Text: Temporarily absorbs asteroids! Beware, no money is earned on kill.
 --- !u!222 &542372494
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3847,8 +3847,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Planets can create fragments that damage the motherbase!
-
+  m_Text: 'Planets will create fragments that damage the motherbase!
 
 
 
@@ -5499,7 +5498,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Repairs shields!
+  m_Text: Repairs a turret!
 --- !u!222 &738721312
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11882,7 +11881,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: To start the game, place a shield!
+  m_Text: To start the game, place a turret!
 --- !u!222 &1439201567
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13795,7 +13794,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Now challenge yourself and see how high you can climb on the leaderboard!
+  m_Text: Now, challenge yourself and see how high you can climb on the leaderboard!
 --- !u!222 &1717290252
 CanvasRenderer:
   m_ObjectHideFlags: 0
