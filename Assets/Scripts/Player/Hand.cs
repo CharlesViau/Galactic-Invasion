@@ -170,7 +170,7 @@ public class Hand : MonoBehaviour
             _mb.ShowFirstShieldPreview(true);
         else
             _mb.ShowShieldsPreview(_isShowingPreview);
-        _animator.SetTrigger("Shoot");
+        if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Idle")) _animator.SetTrigger("Shoot");
     }
 
     public void OnPlaceShield()
@@ -191,7 +191,7 @@ public class Hand : MonoBehaviour
         }
 
         _mb.ShieldsSelectable(true);
-        _animator.SetTrigger("Click");
+        if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Idle")) _animator.SetTrigger("Click");
         _isRepairing = true;
     }
 
@@ -221,7 +221,7 @@ public class Hand : MonoBehaviour
         }
 
         _mb.ShieldsSelectable(true, true);
-        _animator.SetTrigger("Click");
+        if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Idle")) _animator.SetTrigger("Click");
         _isUpgrading = true;
     }
 
@@ -253,7 +253,7 @@ public class Hand : MonoBehaviour
             AkSoundEngine.PostEvent("Play_UIFail", gameObject);
             return;
         }
-        _animator.SetTrigger("Grab");
+        if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Idle")) _animator.SetTrigger("Grab");
         _currentAbility = CurrentAbility.TempoPlanet;
         _isPlacingAbilty = true;
         _previewRef = Instantiate(tempoPreview,
@@ -279,7 +279,7 @@ public class Hand : MonoBehaviour
             AkSoundEngine.PostEvent("Play_UIFail", gameObject);
             return;
         }
-        _animator.SetTrigger("Grab");
+        if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Idle")) _animator.SetTrigger("Grab");
         _currentAbility = CurrentAbility.BlackHole;
         _isPlacingAbilty = true;
         _previewRef = Instantiate(blackHolePreview,
